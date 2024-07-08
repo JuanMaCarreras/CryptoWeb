@@ -27,7 +27,7 @@ export const getCoinMarket = async (perPage = 50): Promise<MarketCoins[]> => {
 
 
 
-export const getMarketPriceHistory = async (coinId: string, days: number) => {
-  const response = await axios.get()
+// export const getMarketPriceHistory = async (coinId: string, days: number) => {
+//   const response = await axios.get()
 
-}
+// }
