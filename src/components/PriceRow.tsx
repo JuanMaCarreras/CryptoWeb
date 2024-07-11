@@ -7,7 +7,7 @@ interface PriceProp {
 function PriceRow({coin}: PriceProp) {
   return (
     <>
-      <tr className=' border-b-2 border-green-700 '>
+      <tr className=' border-b-2 border-gray-300 '>
         <td  className='w-20 p-3 text-sm text-center '>
           <p className='mx-2 font-medium'>{coin.market_cap_rank}</p>
         </td>
