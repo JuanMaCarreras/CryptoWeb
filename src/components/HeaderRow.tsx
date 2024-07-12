@@ -1,17 +1,17 @@
 function HeaderRow() {
   return (
     <>
-      <thead className=''>
-        <tr className='border-b-2 border-gray-300 h-11'>
-          <th className='w-20 p-3 text-center '>
+      <thead className='text-verdeClaro1 '>
+        <tr className='h-16 [&_th]:p-3 [&_th]:font-semibold'>
+          <th className='w-20 text-center '>
             <span>#</span>
           </th>
-          <th className='w-72 p-3 text-left '>
+          <th className='w-72 text-left '>
             <span>Nombre</span>
           </th>
-          <th className='w-32 p-3  text-right '>Precio</th>
-          <th className='w-32 p-3  text-right '>24H</th>
-          <th className='w-52 p-3  text-right '>Capitalización de Mercado</th>
+          <th className='w-32 text-right '>Precio</th>
+          <th className='w-32 text-right '>24H</th>
+          <th className='w-52 text-right '>Capitalización de Mercado</th>
         </tr>
       </thead>
     </>
