@@ -22,7 +22,7 @@ export default {
         grisOscuro: '#0B0C0D',
         grisClaro: '#0F1110',
         grisLetras: '#868C8A',
-        gris1: '#1F2523'
+        gris1: '#292929'
       }
     },
   },
