@@ -1,4 +1,4 @@
-export default  interface MarketCoins {
+export default  interface DataCoins {
     id: string
     symbol: string
     name: string
