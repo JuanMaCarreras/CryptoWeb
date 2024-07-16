@@ -8,8 +8,6 @@ export default {
     extend: {
       colors: {
         //cambiar ref a ingles!!
-
-        azul: '#011640',
         verdeSemiClaro: '#03402F',
         verdeHover: '#021710',
         verdeClaro1: '#07F2B0',
