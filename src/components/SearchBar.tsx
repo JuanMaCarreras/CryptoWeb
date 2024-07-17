@@ -9,7 +9,7 @@ function SearchBar({search, setSearch}: SerchBarProps) {
 
   return (
     <>
-      <div className='flex justify-end mr-20'>
+      <div className=''>
         <input 
           type='text' 
           placeholder='Buscar...'
