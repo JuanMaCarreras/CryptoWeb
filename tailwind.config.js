@@ -8,6 +8,7 @@ export default {
     extend: {
       colors: {
         //cambiar ref a ingles!!
+        logoText: '#D0D0DE',
         verdeSemiClaro: '#03402F',
         verdeHover: '#021710',
         verdeClaro1: '#07F2B0',
@@ -21,6 +22,10 @@ export default {
         grisClaro: '#0F1110',
         grisLetras: '#868C8A',
         gris1: '#292929'
+      },
+      fontFamily: {
+        popins: ['Poppins', 'sans-serif',],
+        sinkia: ['Signika Negative', 'sans-serif']
       }
     },
   },
