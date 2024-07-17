@@ -38,10 +38,15 @@ function Cryptocurrency() {
 
   return (
     <>
-      <article className='w-full bg-verdeOscuro2 py-20 text-white'>
-        <SearchBar search={search} setSearch={setSearch}/>
+      <article className='w-full bg-verdeOscuro2 pb-20 pt-16 text-white'>
+        <h1 className='text-white ml-16 text-2xl font-medium'>Precios actuales</h1>
 
-        <div className='flex justify-center mx-11 my-11 border-t-[1px] border-gris1'>
+        <div className='flex justify-between mx-20 mt-14'>
+          <span className='mt-2 border-[1px] px-4 py-1 rounded-2xl border-gris1 text-grisLetras'>USD</span>
+          <SearchBar search={search} setSearch={setSearch}/>
+        </div>
+
+        <div className='flex justify-center mx-11 mt-8 mb-11 border-t-[1px] border-gris1'>
           <table className='mx-6 w-full border-collapse mt-6'> 
             <HeaderRow />
             <tbody className=''>
@@ -59,7 +64,7 @@ function Cryptocurrency() {
             contentPerPage && (
               <button 
                 onClick={handleLoadContent}
-                className='w-44 py-1 rounded-2xl border-2 border-gris1 text-grisLetras hover:border-verdeClaro hover:text-verdeClaro1 hover:bg-verdeHover  transition duration-700'
+                className='w-44 p-1 rounded-2xl font-semibold border-2 border-verdeClaro text-verdeClaro1 bg-verdeSemiOscuro hover:bg-verdeClaro1 hover:border-verdeClaro1 hover:text-black transition duration-500'
               >Cargar Más</button>
             )
           }

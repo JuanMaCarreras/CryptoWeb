@@ -1,12 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+.signika-negative-custom {
+    font-family: "Signika Negative", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+
