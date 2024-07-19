@@ -15,8 +15,7 @@ export default {
         verdeClaro: '#0A7355',
         verdeSemiOscuro: '#07261D',
         verdeOscuro: '#010907',
-        verdeOscuro2: '#020D09',
-
+        'green-bg': '#020D09',
         // tablas 
         grisOscuro: '#0B0C0D',
         grisClaro: '#0F1110',
