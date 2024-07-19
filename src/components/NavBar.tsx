@@ -3,7 +3,7 @@ import img from '../assets/logo.png'
 function NavBar() {
   return (
     <>
-      <nav className='flex top-0 justify-between items-center w-full px-10 h-20 bg-verdeOscuro2 border-b-[1px] border-gris1'>
+      <nav className='fixed top-0 left-0 right-0 flex justify-between items-center px-10 h-20 bg-green-bg border-b-[1px] border-gris1'>
         <div className='flex items-center'>
           <img 
             src={img} 
