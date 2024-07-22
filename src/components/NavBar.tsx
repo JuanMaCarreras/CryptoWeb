@@ -1,9 +1,10 @@
+import { Link } from 'wouter'
 import img from '../assets/logo.png'
 
 function NavBar() {
   return (
     <>
-      <nav className='fixed top-0 left-0 right-0 flex justify-between items-center px-10 h-20 bg-green-bg border-b-[1px] border-gris1'>
+      <nav className='fixed top-0 left-0 right-0 flex justify-between items-center px-10 h-20 bg-transparent border-b-[1px] border-gris1'>
         <div className='flex items-center'>
           <img 
             src={img} 
@@ -14,10 +15,29 @@ function NavBar() {
         </div>
         
         <ul className='flex w-96 text-grisLetras font-medium justify-around'>
-          <li className='hover:text-verdeClaro1 cursor-pointer transition duration-300'>Inicio</li>
-          <li className='hover:text-verdeClaro1 cursor-pointer transition duration-300'>Precios</li>
-          <li className='hover:text-verdeClaro1 cursor-pointer transition duration-300'>Aprender Más</li>
-          <li className='hover:text-verdeClaro1 cursor-pointer transition duration-300'>Más Info</li>
+          <li 
+            className='hover:text-verdeClaro1 cursor-pointer transition duration-300'
+          >
+           <Link to='/'>Inicio</Link>
+          </li>
+          
+          <li 
+            className='hover:text-verdeClaro1 cursor-pointer transition duration-300'
+          >
+            <Link to='/price'>Precios</Link>
+          </li>
+          
+          <li 
+            className='hover:text-verdeClaro1 cursor-pointer transition duration-300'
+          >
+            Aprender Más
+          </li>
+          
+          <li 
+            className='hover:text-verdeClaro1 cursor-pointer transition duration-300'
+          >
+           <Link to='/description'> Más Info </Link>
+          </li>
         </ul>
 
         <div className=''>
