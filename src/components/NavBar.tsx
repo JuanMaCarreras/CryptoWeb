@@ -6,12 +6,14 @@ function NavBar() {
     <>
       <nav className='fixed top-0 left-0 right-0 flex justify-between items-center px-10 h-20 bg-transparent border-b-[1px] border-gris1'>
         <div className='flex items-center'>
-          <img 
-            src={img} 
-            alt='Lynx logo' 
-            className='h-[4rem] w-[4.3rem] mr-1'
-          />
-          <span className='font-sinkia text-logoText text-3xl font-bold select-none '>LYNX</span>
+          <Link to='/'>
+            <img 
+              src={img} 
+              alt='Lynx logo' 
+              className='h-[4rem] w-[4.3rem] mr-1'
+            />
+            <span className='font-sinkia text-logoText text-3xl font-bold select-none '>LYNX</span>
+          </Link>
         </div>
         
         <ul className='flex w-96 text-grisLetras font-medium justify-around'>
