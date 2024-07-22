@@ -38,15 +38,15 @@ function Cryptocurrency() {
 
   return (
     <>
-      <article className='w-full bg-verdeOscuro2 pb-20 pt-16 text-white'>
-        <h1 className='text-white ml-16 text-2xl font-medium'>Precios actuales</h1>
+      <article className='w-full h-full pb-20 pt-32 text-white'>
+        <h1 className=' ml-16 text-2xl'>Precios actuales</h1>
 
         <div className='flex justify-between mx-20 mt-14'>
           <span className='mt-2 border-[1px] px-4 py-1 rounded-2xl border-gris1 text-grisLetras'>USD</span>
           <SearchBar search={search} setSearch={setSearch}/>
         </div>
 
-        <div className='flex justify-center mx-11 mt-8 mb-11 border-t-[1px] border-gris1'>
+        <div className='flex justify-center mt-8 mb-11 border-t-[1px] border-gris1'>
           <table className='mx-6 w-full border-collapse mt-6'> 
             <HeaderRow />
             <tbody className=''>
