@@ -5,7 +5,11 @@ interface CoinProp {
   index: number
 }
 
+
 function CoinsRow({coin, index}: CoinProp) {
+
+  const priceColorClass =  coin.price_change_percentage_24h >= 0 ? 'text-green-400' : 'text-red-400'
+
   return (
     <>
       <tr className={`text-sm [&_td]:p-4 ${index % 2 === 0 ? 'bg-grisOscuro' : 'bg-grisClaro'}`}>
@@ -26,7 +30,7 @@ function CoinsRow({coin, index}: CoinProp) {
         </td>
 
         <td  className='w-32 text-right'>${coin.current_price.toLocaleString()}</td>
-        <td  className='w-32 text-right'>{coin.price_change_percentage_24h.toFixed(2)}%</td>
+        <td  className={`w-32 text-right ${priceColorClass}`}>{coin.price_change_percentage_24h.toFixed(2)}%</td>
         <td  className='w-52 text-right'>${coin.market_cap.toLocaleString()}</td>
       </tr>  
     </>

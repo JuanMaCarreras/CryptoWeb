@@ -2,7 +2,7 @@ function HeaderRow() {
   return (
     <>
       <thead className='text-verdeClaro1 '>
-        <tr className='h-16 [&_th]:p-3 [&_th]:font-semibold'>
+        <tr className='h-16 [&_th]:p-3 '>
           <th className='w-20 text-center '>
             <span>#</span>
           </th>
