@@ -23,7 +23,7 @@ export default {
         gris1: '#292929'
       },
       backgroundImage: {
-        'radial-gradient': 'radial-gradient(circle, rgba(6,36,27,1) 0%, rgba(2,13,9,1) 50%)'
+        'radial-gradient': 'radial-gradient(circle, rgba(6,36,27,1) 0%, rgba(2,13,9,1) 50%)',
       },
       fontFamily: {
         popins: ['Poppins', 'sans-serif',],
