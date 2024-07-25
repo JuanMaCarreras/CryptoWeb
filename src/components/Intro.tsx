@@ -1,12 +1,20 @@
+import IntroCards from "./IntroCards"
 
 function Intro() {
   return (
     <>
-      <section className='h-screen flex flex-col items-center justify-center'>
-        <h2 className='text-3xl'
-          >Descubre el Mundo Cripto con Lynx
-        </h2>
-        <h3>Toda la Información que Necesitas</h3>
+      <section className='h-screen flex flex-col items-center justify-center space-y-11 bg-radial-gradient'>
+    
+          <h2 className='text-5xl font-semibold text-verdeClaro1'
+            >Descubre el Mundo Cripto con Lynx
+          </h2>
+
+          <h4 className='text-2xl mt-5 text-logoText'
+            >Toda la Información que Necesitas
+          </h4>
+
+        <IntroCards />
+
       </section>
     </>
   )
