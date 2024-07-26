@@ -9,10 +9,11 @@ interface CoinProp {
 function CoinsRow({coin, index}: CoinProp) {
 
   const priceColorClass =  coin.price_change_percentage_24h >= 0 ? 'text-green-400' : 'text-red-400'
+  const tableColor = index % 2 === 0 ? 'bg-grisOscuro' : 'bg-grisClaro'
 
   return (
     <>
-      <tr className={`text-sm [&_td]:p-4 ${index % 2 === 0 ? 'bg-grisOscuro' : 'bg-grisClaro'}`}>
+      <tr className={`text-sm [&_td]:p-4 ${tableColor}`}>
         <td  className='w-20 text-center '>
           <p className='mx-2 font-medium'>{coin.market_cap_rank}</p>
         </td>
