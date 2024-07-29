@@ -1,4 +1,4 @@
-export default  interface DataCoins {
+export interface MarketCoins {
     id: string
     symbol: string
     name: string
@@ -10,3 +10,11 @@ export default  interface DataCoins {
     price_change_percentage_24h: number
     market_cap_change_percentage_24h: number
 }
+
+export interface CoinMarketChart {
+    prices : [number, number] []
+    market_caps: [number, number][]
+    total_volumes: [number, number][]
+}
+
+
