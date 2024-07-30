@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react'
 import HeaderRow from '../components/HeaderRow'
-import DataCoins from '../types/Coins'
+import { MarketCoins }from '../types/Coins'
 import { getCoinMarket } from '../service/api'
 import CoinsRow from '../components/CoinsRow'
 import SearchBar from '../components/SearchBar'
 
 function Cryptocurrency() {
 
-  const [coins, setCoins] = useState<DataCoins[]>([])
+  const [coins, setCoins] = useState<MarketCoins[]>([])
   const [search, setSearch] = useState('')
   const [contentPerPage, setContentPerPage] = useState(50)
 
@@ -38,7 +38,7 @@ function Cryptocurrency() {
 
   return (
     <>
-      <article className='w-full h-full pb-20 pt-32 text-white'>
+      <article className='w-full h-full pb-20 pt-16 text-white'>
         <h1 className=' ml-16 text-2xl'>Precios actuales</h1>
 
         <div className='flex justify-between mx-20 mt-14'>
