@@ -1,18 +1,20 @@
-import NavBar from './components/NavBar'
-import Home from './page/Home'
+// import NavBar from './components/NavBar'
 import Cryptocurrency from './page/Cryptocurrency'
 import Description from './page/Description'
+import data from './data'
 import { Route, Switch } from 'wouter'
 import './App.css'
 
 function App() {
   return (
     <>
-      <NavBar />
+      {/* <NavBar /> */}
       <Switch>
-        <Route path='/' component={Home}  />
-        <Route path='price' component={Cryptocurrency} />
-        <Route path='description' component={Description} />
+        <div className='mx-11'>
+          <Route path='/' component={Cryptocurrency}  />
+          <Route path='/description' component={Description} />
+          <Route path='/chart' component={data } />
+        </div>
       </Switch>
     </>
   )
