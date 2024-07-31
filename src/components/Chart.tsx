@@ -46,9 +46,9 @@ function Chart ({coinId}: DataParams) {
       <LineChart data={dataChart}>
         <CartesianGrid strokeDasharray="2 2" />
         <YAxis domain={[minPrice * 0.95, maxPrice * 1.05]} />
-        <XAxis dataKey="date" />
+        <XAxis dataKey='date' />
         <Tooltip />
-        <Line type="monotone" dataKey="price" stroke="#8884d8" dot={false} />
+        <Line type="monotone" dataKey="price" stroke="#23c4e0" dot={false} />
       </LineChart>
      </ResponsiveContainer>
     </>
