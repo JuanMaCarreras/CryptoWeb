@@ -1,4 +1,4 @@
-import MarketCoins from "../types/Coins"
+import { MarketCoins } from '../types/Coins'
 
 interface CoinProp {
   coin: MarketCoins
