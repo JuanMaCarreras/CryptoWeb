@@ -48,7 +48,7 @@ function Chart ({coinId}: DataParams) {
         <YAxis domain={[minPrice * 0.95, maxPrice * 1.05]} />
         <XAxis dataKey='date' />
         <Tooltip />
-        <Line type="monotone" dataKey="price" stroke="#23c4e0" dot={false} />
+        <Line type="monotone" dataKey="price" stroke="#07F2B0" dot={false} />
       </LineChart>
      </ResponsiveContainer>
     </>
