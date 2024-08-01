@@ -4,6 +4,7 @@ import { MarketCoins }from '../types/Coins'
 import { getCoinMarket } from '../service/api'
 import CoinsRow from '../components/CoinsRow'
 import SearchBar from '../components/SearchBar'
+import { Link } from 'wouter'
 
 function Cryptocurrency() {
 
@@ -50,11 +51,14 @@ function Cryptocurrency() {
           <table className='mx-6 w-full border-collapse mt-6'> 
             <HeaderRow />
             <tbody className=''>
-              {
-                filteredCoins.slice(0, contentPerPage).map((coin, index) => (
-                    <CoinsRow key={coin.id} coin={coin} index={index}/>
-                ))
-              }
+             
+                {
+                  filteredCoins.slice(0, contentPerPage).map((coin, index) => (
+                    <Link to={`/price/${coin.id}`} >
+                      <CoinsRow key={coin.id} coin={coin} index={index}/>
+                    </Link>
+                  ))
+                }
             </tbody>
           </table>
         </div>
