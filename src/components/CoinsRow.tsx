@@ -1,4 +1,8 @@
 import { MarketCoins } from '../types/Coins'
+import {
+  TableCell,
+  TableRow,
+} from "@/components/ui/table"
 
 interface CoinProp {
   coin: MarketCoins
@@ -13,12 +17,12 @@ function CoinsRow({coin, index}: CoinProp) {
 
   return (
     <>
-      <tr className={`text-sm [&_td]:p-4 ${tableColor}`}>
-        <td  className='w-20 text-center '>
-          <p className='mx-2 font-medium'>{coin.market_cap_rank}</p>
-        </td>
+      <TableRow className={`text-sm [&_td]:p-4 ${tableColor}`}>
+        <TableCell className="text-center" >
+          {coin.market_cap_rank}
+        </TableCell>
 
-        <td  className='flex w-72 text-left items-center '>
+        <TableCell className='flex'>
           <img 
             src={coin.image} 
             alt={coin.name} 
@@ -28,12 +32,12 @@ function CoinsRow({coin, index}: CoinProp) {
             <span className='text-[1rem] font-medium'>{coin.name}</span>
             <span className='text-xs uppercase text-grisLetras font-medium'>{coin.symbol}</span>
           </div>
-        </td>
+        </TableCell>
 
-        <td  className='w-32 text-right'>${coin.current_price.toLocaleString()}</td>
-        <td  className={`w-32 text-right ${priceColorClass}`}>{coin.price_change_percentage_24h.toFixed(2)}%</td>
-        <td  className='w-52 text-right'>${coin.market_cap.toLocaleString()}</td>
-      </tr>  
+        <TableCell className="text-right">${coin.current_price.toLocaleString()}</TableCell>
+        <TableCell className={`text-right ${priceColorClass}`}>{coin.price_change_percentage_24h.toFixed(2)}%</TableCell>
+        <TableCell className="text-center">${coin.market_cap.toLocaleString()}</TableCell>
+      </TableRow>  
     </>
   )
 }
