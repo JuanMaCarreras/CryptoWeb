@@ -21,6 +21,10 @@ interface MarketValue {
     [key: string]: number
 }
 
+interface ImgaeValue {
+    [key:string]: string
+}
+
 interface  MarketData{
     current_price: MarketValue
     market_cap: MarketValue
@@ -33,7 +37,7 @@ export interface CoinDetailsById {
     symbol: string
     name: string
     description: Description
-    image: string
+    image: ImgaeValue
     market_data: MarketData
 }
 
