@@ -1,19 +1,25 @@
+import {
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table"
+
 function HeaderRow() {
   return (
     <>
-      <thead className='text-verdeClaro1 '>
-        <tr className='h-16 [&_th]:p-3 '>
-          <th className='w-20 text-center '>
-            <span>#</span>
-          </th>
-          <th className='w-72 text-left '>
-            <span>Nombre</span>
-          </th>
-          <th className='w-32 text-right '>Precio</th>
-          <th className='w-32 text-right '>24H</th>
-          <th className='w-52 text-right '>Capitalización de Mercado</th>
-        </tr>
-      </thead>
+      <TableHeader className='text-verdeClaro1 py-6'>
+        <TableRow>
+          <TableHead className="text-center">
+            #
+          </TableHead>
+          <TableHead >
+            Nombre
+          </TableHead>
+          <TableHead className="text-right">Precio</TableHead>
+          <TableHead className="text-right">24H</TableHead>
+          <TableHead className="text-center">Capitalización de Mercado</TableHead>
+        </TableRow>
+      </TableHeader>
     </>
   )
 }
