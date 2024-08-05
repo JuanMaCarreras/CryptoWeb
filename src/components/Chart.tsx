@@ -55,17 +55,12 @@ function Chart ({coinId}: DataParams) {
 
   return (
     <>
-      <ChartContainer config={chartConfig}>
-       <ResponsiveContainer width="100%" height={400}>
-        <LineChart accessibilityLayer data={dataChart} margin={{left: 12, right: 12,}}>
-          <CartesianGrid strokeDasharray="2" vertical={false} />
-          <YAxis domain={[minPrice * 0.95, maxPrice * 1.05]} />
-          <XAxis dataKey='date '  
-            tickLine={false}
-            axisLine={false}
-            tickMargin={8}
-            tickFormatter={(value) => value.slice(0, 3)}
-          />
+      <ChartContainer config={chartConfig} className='h-[30rem] w-[75rem] '>
+       <ResponsiveContainer width="75%" height='50%'>
+        <LineChart accessibilityLayer data={dataChart} margin={{ right: 12 }}>
+          <CartesianGrid vertical={false} />
+          <YAxis  domain={[minPrice * 0.95, maxPrice * 1.05]} tick={false}/>
+          <XAxis dataKey='date'/>
           <ChartTooltip cursor={false} content={<ChartTooltipContent hideLabel />}/>
           <Line type="linear" dataKey="price" stroke="#07F2B0" dot={false} strokeWidth={2}/>
         </LineChart>
