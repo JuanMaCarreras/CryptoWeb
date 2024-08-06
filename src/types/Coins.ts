@@ -17,7 +17,6 @@ interface Description {
 }
 
 interface MarketValue {
-    usd: number
     [key: string]: number
 }
 
@@ -28,7 +27,9 @@ interface ImgaeValue {
 interface  MarketData{
     current_price: MarketValue
     market_cap: MarketValue
-    price_change_24h: MarketValue
+    price_change_24h: number
+    high_24h: MarketValue
+    low_24h: MarketValue
 }
 
 
