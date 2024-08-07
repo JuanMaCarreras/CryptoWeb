@@ -4,7 +4,11 @@ import { MarketCoins }from '../types/Coins'
 import { getCoinMarket } from '../service/api'
 import CoinsRow from '../components/CoinsRow'
 import SearchBar from '../components/SearchBar'
-import { Link } from 'wouter'
+// import { Link } from 'wouter'
+import {
+  Table,
+  TableBody,
+} from "@/components/ui/table"
 
 function Cryptocurrency() {
 
@@ -47,20 +51,19 @@ function Cryptocurrency() {
           <SearchBar search={search} setSearch={setSearch}/>
         </div>
 
-        <div className='flex justify-center mt-8 mb-11 border-t-[1px] border-gris1'>
-          <table className='mx-6 w-full border-collapse mt-6'> 
+        <div className='flex justify-center mt-11 mb-11 border-t-[1px] border-gris1'>
+          <Table> 
             <HeaderRow />
-            <tbody className=''>
-             
+            <TableBody>
                 {
                   filteredCoins.slice(0, contentPerPage).map((coin, index) => (
-                    <Link to={`/price/${coin.id}`} >
+                    // <Link to={`/price/${coin.id}`} >
                       <CoinsRow key={coin.id} coin={coin} index={index}/>
-                    </Link>
+                    // </Link>
                   ))
                 }
-            </tbody>
-          </table>
+            </TableBody>
+          </Table>
         </div>
 
         <div className='flex justify-center w-full mt-4'>
