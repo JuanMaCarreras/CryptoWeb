@@ -1,5 +1,5 @@
 import { useState } from 'react'
-// import CoinDetails from '@/components/CoinDetails'
+import CoinDetails from '@/components/CoinDetails'
 import CurrencySelect from '@/components/CurrencySelect';
 
 function Details() {
@@ -21,7 +21,7 @@ function Details() {
       <header className='text-white'>
         <CurrencySelect value={currency} onChange={handleCurrencyChange}/>
       </header>
-      {/* <CoinDetails currency={currency}/> */}
+      <CoinDetails currency={currency}/>
     
     </>
   )
