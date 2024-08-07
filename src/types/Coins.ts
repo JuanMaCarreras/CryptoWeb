@@ -16,20 +16,20 @@ interface Description {
     [key: string]: string
 }
 
-interface MarketValue {
-    [key: string]: number
-}
-
 interface ImgaeValue {
     [key:string]: string
+}
+
+interface MarketValue {
+    [key: string]: number
 }
 
 interface  MarketData{
     current_price: MarketValue
     market_cap: MarketValue
     price_change_24h: number
-    high_24h: MarketValue
-    low_24h: MarketValue
+    high_24h: { [key: string]: number }
+    low_24h: { [key: string]: number }
 }
 
 
