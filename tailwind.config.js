@@ -17,25 +17,25 @@ export default {
       },
     },
     extend: {
-      colors: {
-        logoText: '#D0D0DE',
-        verdeSemiClaro: '#03402F',
-        verdeHover: '#021710',
-        verdeClaro1: '#07F2B0',
-        verdeClaro: '#0A7355',
-        verdeSemiOscuro: '#07261D',
-        verdeOscuro: '#010907',
-        'green-bg': '#020D09',
-        // tablas 
-        grisOscuro: '#0B0C0D',
-        grisClaro: '#0F1110',
-        grisLetras: '#868C8A',
-        gris1: '#292929'
-      },
-      fontFamily: {
-        popins: ['Poppins', 'sans-serif',],
-        sinkia: ['Signika Negative', 'sans-serif']
-      },
+      // colors: {
+      //   logoText: '#D0D0DE',
+      //   verdeSemiClaro: '#03402F',
+      //   verdeHover: '#021710',
+      //   verdeClaro1: '#07F2B0',
+      //   verdeClaro: '#0A7355',
+      //   verdeSemiOscuro: '#07261D',
+      //   verdeOscuro: '#010907',
+      //   'green-bg': '#020D09',
+      //   // tablas 
+      //   grisOscuro: '#0B0C0D',
+      //   grisClaro: '#0F1110',
+      //   grisLetras: '#868C8A',
+      //   gris1: '#292929'
+      // },
+      // fontFamily: {
+      //   popins: ['Poppins', 'sans-serif',],
+      //   sinkia: ['Signika Negative', 'sans-serif']
+      // },
 
       border: "hsl(var(--border))",
       input: "hsl(var(--input))",
@@ -73,7 +73,7 @@ export default {
     },
     borderRadius: {
       lg: "var(--radius)",
-      md: "calc(var(--radius) - 2px)",
+      md: "calc(var(--radius) - 4px)",
       sm: "calc(var(--radius) - 4px)",
     },
     keyframes: {
