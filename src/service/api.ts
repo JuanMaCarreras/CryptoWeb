@@ -31,10 +31,10 @@ export const getCoinById = async (coinId: string): Promise<CoinDetailsById> => {
 }
 
 
-export const getCoinChartMarket = async (coinId: string): Promise<CoinMarketChart> => {
+export const getCoinChartMarket = async ({coinId, currency}: { coinId: string; currency: string }): Promise<CoinMarketChart> => {
   const response = await api.get<CoinMarketChart>(`/coins/${coinId}/market_chart`, {
     params: {
-      vs_currency: 'usd',
+      vs_currency: currency,
       days: 30
     }
   })

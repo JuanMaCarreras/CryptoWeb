@@ -82,7 +82,7 @@ function CoinDetails({currency}: Prop) {
           </CardDescription>
         </CardHeader>    
         <CardContent>  
-          <Chart coinId={coinId}/>
+          <Chart coinId={coinId} currency={currency}/>
         </CardContent>    
         <CardFooter>
         </CardFooter>  

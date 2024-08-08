@@ -11,6 +11,7 @@ import {
 
 interface DataParams {
   coinId: string
+  currency: string
 }
 
 interface DataChart {
@@ -25,7 +26,7 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
-function Chart ({coinId}: DataParams) {
+function Chart ({coinId, currency}: DataParams) {
 
   const [dataChart, setDataChart] = useState<DataChart[]>([])
 
@@ -33,7 +34,7 @@ function Chart ({coinId}: DataParams) {
   useEffect(() => {
     const fetchDataChart = async () => {
       try {
-        const data:CoinMarketChart  = await getCoinChartMarket(coinId)
+        const data:CoinMarketChart  = await getCoinChartMarket({coinId,currency})
     
         const dataFormat = data.prices.map(price => ({
           date: new Date(price[0]).toLocaleDateString(),
@@ -47,7 +48,7 @@ function Chart ({coinId}: DataParams) {
       }
     }
     fetchDataChart()
-  },[coinId])
+  },[coinId,currency])
 
   const minPrice = Math.min(...dataChart.map(d => d.price))
   const maxPrice = Math.max(...dataChart.map(d => d.price))
@@ -55,7 +56,7 @@ function Chart ({coinId}: DataParams) {
 
   return (
     <>
-      <ChartContainer config={chartConfig} className='h-[30rem] w-[69rem] '>
+      <ChartContainer config={chartConfig} className='h-[30rem] w-[95%] '>
        <ResponsiveContainer width="75%" height='50%'>
         <AreaChart accessibilityLayer data={dataChart} margin={{ right: 12 }}>
           <CartesianGrid vertical={false}  />
