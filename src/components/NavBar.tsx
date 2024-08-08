@@ -4,7 +4,7 @@ import img from '../assets/logo.png'
 function NavBar() {
   return (
     <>
-      <nav className='w-full flex justify-between items-center px-10 h-24 bg-transparent border-b-[1px] border-gris1'>
+      <nav className='w-full flex justify-between items-center px-10 h-24 bg-transparent border-b-[1px] border-lightGray'>
         <Link to='/'>
           <div className='flex items-center'>
             <img 
@@ -16,7 +16,7 @@ function NavBar() {
           </div>
         </Link>
         <Link to='/description'>
-          <div className='p-[6px] px-4 border-2 rounded-2xl border-verdeClaro text-verdeClaro1 bg-verdeSemiOscuro hover:bg-verdeClaro1 hover:border-verdeClaro1 hover:text-black transition duration-500'>
+          <div className='p-[6px] px-4 border-2 rounded-2xl border-lightGreen text-lightGreen1 bg-semiDarkGreen hover:bg-lightGreen1 hover:border-lightGreen1 hover:text-black transition duration-500'>
             <span>Información</span>
           </div>
         </Link>

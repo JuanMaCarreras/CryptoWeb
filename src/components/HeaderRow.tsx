@@ -7,7 +7,7 @@ import {
 function HeaderRow() {
   return (
     <>
-      <TableHeader className='text-verdeClaro1 py-6'>
+      <TableHeader className='text-brightGreen py-6'>
         <TableRow>
           <TableHead className="text-center">
             #

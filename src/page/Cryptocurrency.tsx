@@ -13,7 +13,7 @@ import {
 function Cryptocurrency() {
 
   const [coins, setCoins] = useState<MarketCoins[]>([])
-  const [search, setSearch] = useState('')
+  const [search, setSearch] = useState<string>('')
   const [contentPerPage, setContentPerPage] = useState(50)
 
 
@@ -47,11 +47,11 @@ function Cryptocurrency() {
         <h1 className=' ml-16 text-2xl'>Precios actuales</h1>
 
         <div className='flex justify-between mx-20 mt-14'>
-          <span className='mt-2 border-[1px] px-4 py-1 rounded-2xl border-gris1 text-grisLetras'>USD</span>
+          <span className='mt-2 border-[1px] px-4 py-1 rounded-2xl border-lightGray text-grisLetras'>USD</span>
           <SearchBar search={search} setSearch={setSearch}/>
         </div>
 
-        <div className='flex justify-center mt-11 mb-11 border-t-[1px] border-gris1'>
+        <div className='flex justify-center mt-11 mb-11 border-t-[1px] border-lightGray'>
           <Table> 
             <HeaderRow />
             <TableBody>
@@ -71,7 +71,7 @@ function Cryptocurrency() {
             contentPerPage && (
               <button 
                 onClick={handleLoadContent}
-                className='w-44 p-1 rounded-2xl font-semibold border-2 border-verdeClaro text-verdeClaro1 bg-verdeSemiOscuro hover:bg-verdeClaro1 hover:border-verdeClaro1 hover:text-black transition duration-500'
+                className='w-44 p-1 rounded-2xl font-semibold border-2 border-lightGreen text-brightGreen bg-semiDarkGreen hover:bg-brightGreen hover:border-brightGreen hover:text-black transition duration-500'
               >Cargar Más</button>
             )
           }

@@ -15,7 +15,7 @@ function SearchBar({search, setSearch}: SerchBarProps) {
           placeholder='Buscar...'
           value={search}
           onChange={(e) => setSearch(e.target.value) }
-          className='outline-none w-80 h-7 pl-4 py-4 rounded-2xl border-2 border-gris1 bg-transparent placeholder:text-grisLetras focus:border-verdeClaro focus:bg-verdeHover transition duration-500'
+          className='outline-none w-80 h-7 pl-4 py-4 rounded-2xl border-2 border-lightGray bg-darkGreen placeholder:text-textGray focus:border-lightGreen focus:bg-hoverGreen transition duration-500'
         />
       </div>
     </>

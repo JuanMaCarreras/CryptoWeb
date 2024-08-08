@@ -21,7 +21,7 @@ interface DataChart {
 const chartConfig = {
   desktop: {
     label: "Desktop",
-    color: "hsl(var(--chart-1))",
+    color: "#07F2B0",
   },
 } satisfies ChartConfig
 
@@ -71,7 +71,7 @@ function Chart ({coinId}: DataParams) {
               type="linear"
               fill="var(--color-desktop)"
               fillOpacity={0.1}
-              stroke="var(--color-desktop)"
+              stroke="#07F2B0"
               strokeWidth={2}
             />
         </AreaChart>

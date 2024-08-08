@@ -41,16 +41,16 @@ function CoinDetails({currency}: Prop) {
   
   return (
     <>
-      <Card className='text-white bg-verdeOscuro my-8'>
+      <Card className='text-white bg-deepGreen my-8'>
         <CardHeader className='mb-5'>
           <CardTitle className='flex items-center mb-6'>
             <img src={coins?.image.small} alt={coins?.name} className='mr-3 w-9 h-9'/> 
             <h2 className='text-3xl'>{coins?.name}</h2> 
-            <span className='uppercase text-sm text-grisLetras ml-3 mt-2'>{coins?.symbol}</span>
+            <span className='uppercase text-sm text-textGray ml-3 mt-2'>{coins?.symbol}</span>
           </CardTitle>
           <CardDescription className='flex justify-around'>
            <dl> 
-            <dt className='text-grisLetras font-semibold'>Precio Actual</dt>
+            <dt className='text-textGray font-semibold'>Precio Actual</dt>
             <dd className='font-medium text-xl'>
               ${coins?.market_data.current_price[currency].toLocaleString()}
               <span className='uppercase mx-1'>{currency}</span>
@@ -58,7 +58,7 @@ function CoinDetails({currency}: Prop) {
            </dl>
 
            <dl> 
-            <dt className='text-grisLetras font-semibold'>24H Máximo</dt>
+            <dt className='text-textGray font-semibold'>24H Máximo</dt>
             <dd className='font-medium text-xl'>
               ${coins?.market_data.high_24h[currency].toLocaleString()}
               <span className='uppercase mx-1'>{currency}</span>
@@ -66,14 +66,14 @@ function CoinDetails({currency}: Prop) {
            </dl>
 
            <dl> 
-            <dt className='text-grisLetras font-semibold'>24H Mínimo</dt>
+            <dt className='text-textGray font-semibold'>24H Mínimo</dt>
             <dd className='font-medium text-xl'>
               ${coins?.market_data.low_24h[currency].toLocaleString()}
               <span className='uppercase mx-1'>{currency}</span>
             </dd>
            </dl>
            <dl> 
-            <dt className='text-grisLetras font-semibold'>Capitalización de Mercado</dt>
+            <dt className='text-textGray font-semibold'>Capitalización de Mercado</dt>
             <dd className='font-medium text-xl'>
               ${coins?.market_data.market_cap[currency].toLocaleString()}
               <span className='uppercase mx-1'>{currency}</span>

@@ -24,7 +24,7 @@ function CurrencySelect({value, onChange}:Props) {
     <>
       <Select value={value} onValueChange={onChange}>
         <SelectTrigger className="w-[180px]">
-          <SelectValue placeholder="Divisas" />
+          <SelectValue placeholder={`Divisas ${value}`} />
         </SelectTrigger>
         <SelectContent>
           {options.map(option => (

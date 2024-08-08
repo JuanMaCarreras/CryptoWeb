@@ -13,7 +13,7 @@ interface CoinProp {
 function CoinsRow({coin, index}: CoinProp) {
 
   const priceColorClass =  coin.price_change_percentage_24h >= 0 ? 'text-green-400' : 'text-red-400'
-  const tableColor = index % 2 === 0 ? 'bg-grisOscuro' : 'bg-grisClaro'
+  const tableColor = index % 2 === 0 ? 'bg-deepGray' : 'bg-darkGray'
 
   return (
     <>
@@ -30,7 +30,7 @@ function CoinsRow({coin, index}: CoinProp) {
           />
           <div className='[&>span]:block'>
             <span className='text-[1rem] font-medium'>{coin.name}</span>
-            <span className='text-xs uppercase text-grisLetras font-medium'>{coin.symbol}</span>
+            <span className='text-xs uppercase text-textGray font-medium'>{coin.symbol}</span>
           </div>
         </TableCell>
 
