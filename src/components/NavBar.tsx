@@ -16,9 +16,9 @@ function NavBar() {
           </div>
         </Link>
         <Link to='/description'>
-          <div className='p-[6px] px-4 rounded-2xl font-semibold border-2 border-lightGreen text-brightGreen bg-semiDarkGreen hover:bg-brightGreen hover:border-brightGreen hover:text-black transition duration-500'>
-            <span>Información</span>
-          </div>
+          <button className='p-[6px] px-4 rounded-2xl font-semibold border-2 border-lightGreen text-brightGreen bg-semiDarkGreen hover:bg-brightGreen hover:border-brightGreen hover:text-black transition duration-500'>
+            Información
+          </button>
         </Link>
       </nav>
     </>
