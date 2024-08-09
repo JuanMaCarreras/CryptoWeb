@@ -10,7 +10,7 @@ module.exports = {
   prefix: "",
   theme: {
     colors: {
-      //cambiar ref a ingles!!
+      black: '#000000',
       logoText: '#D0D0DE',
       SemiGreen: '#03402F',
       hoverGreen: '#021710',
@@ -19,11 +19,14 @@ module.exports = {
       semiDarkGreen: '#07261D',
       deepGreen: '#010907',
       darkGreen: '#020D09',
-      // tablas 
       lightGray: '#292929',
       darkGray: '#0F1110',
       deepGray: '#0B0C0D',
-      textGray: '#868C8A'
+      textGray: '#868C8A',
+      negativeNum: '#F87171',
+      positiveNum: '#4ADE80',
+      skeletonGray: '#18181b',
+      skeletonGray2: '#27272a'
     },
     container: {
       center: true,
