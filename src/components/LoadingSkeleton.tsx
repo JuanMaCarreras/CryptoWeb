@@ -53,6 +53,7 @@ export function DescDetailsSkeleton() {
 export function TableSkeleton() {
   return (
     <>
+      <Skeleton className='w-[1255px] h-[3000px] rounded-lg'/>
     </>
   )
 }
