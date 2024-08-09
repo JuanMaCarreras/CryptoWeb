@@ -14,11 +14,11 @@ const api = axios.create({
 })
 
 
-export const getCoinMarket = async (perPage = 50): Promise<MarketCoins[]> => {
+export const getCoinMarket = async ({currency, contentPerPage}: { currency: string; contentPerPage: number }): Promise<MarketCoins[]> => {
   const response = await api.get<MarketCoins[]>('/coins/markets', {
     params: {
-      vs_currency: 'usd', // Moneda contra la que se comparan los precios
-      per_page: perPage,
+      vs_currency: currency, 
+      per_page: contentPerPage,
       page: 1
     },
   })
