@@ -27,11 +27,13 @@ function CurrencySelect({value, onChange}:Props) {
           <SelectValue placeholder={`Divisas ${value}`} />
         </SelectTrigger>
         <SelectContent>
-          {options.map(option => (
-            <SelectItem className='text-white' key={option.value} value={option.value}>
-              {option.label}
-            </SelectItem>
-          ))}
+          {
+            options.map(option => (
+              <SelectItem className='cursor-pointer hover:text-brightGreen transition duration-500' key={option.value} value={option.value}>
+                {option.label}
+              </SelectItem>
+            ))
+          }
         </SelectContent>
       </Select>
     </>
