@@ -1,28 +1,32 @@
 import { useState } from 'react'
 import CoinDetails from '@/components/CoinDetails'
-import CurrencySelect from '@/components/CurrencySelect';
+import CurrencySelect from '@/components/CurrencySelect'
+import { FaArrowLeft } from 'react-icons/fa'
+import { Link } from 'wouter'
 
 function Details() {
 
   const [currency, setCurrency] = useState<string>('usd')    
 
-  // useEffect(() => {
-  //   setCurrency('usd')
-  // },[])
 
   const handleCurrencyChange = (value: string) => {
-    setCurrency(value);
-  };
-
-  console.log(currency)
+    setCurrency(value)
+  }
 
   return (
     <>
-      <header className='text-white'>
-        <CurrencySelect value={currency} onChange={handleCurrencyChange}/>
-      </header>
-      <CoinDetails currency={currency}/>
-    
+      <article className='mt-16'>
+        <header className='w-full flex justify-between items-center'>
+          <Link to='/'>
+            <h2 className='text-lg font-semibold flex items-center gap-2'> 
+              <FaArrowLeft className='text-[1rem]'/> Volver Atras
+            </h2>
+          </Link>
+          <CurrencySelect value={currency} onChange={handleCurrencyChange}/>
+        </header>
+
+        <CoinDetails currency={currency}/>
+      </article>
     </>
   )
 }
