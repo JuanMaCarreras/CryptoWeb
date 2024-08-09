@@ -8,6 +8,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from '@/components/ui/chart'
+import { ChartSkeleton } from './LoadingSkeleton'
 
 interface DataParams {
   coinId: string
@@ -29,6 +30,7 @@ const chartConfig = {
 function Chart ({coinId, currency}: DataParams) {
 
   const [dataChart, setDataChart] = useState<DataChart[]>([])
+  const [loading, setLoading] = useState(true)
 
 
   useEffect(() => {
@@ -42,7 +44,7 @@ function Chart ({coinId, currency}: DataParams) {
         }))
         
         setDataChart(dataFormat)
-
+        setLoading(false)
       } catch (error) {
         console.log('Error feching data chart', error)
       }
@@ -56,28 +58,32 @@ function Chart ({coinId, currency}: DataParams) {
 
   return (
     <>
-      <ChartContainer config={chartConfig} className='h-[30rem] w-[95%] '>
-       <ResponsiveContainer width="75%" height='50%'>
-        <AreaChart accessibilityLayer data={dataChart} margin={{ right: 12 }}>
-          <CartesianGrid vertical={false}  />
-          <YAxis domain={[minPrice * 0.95, maxPrice * 1.05]} tick={false}/>
-          <XAxis 
-            dataKey='date'
-            tickLine={true}
-            tickMargin={8}
-          />
-          <ChartTooltip cursor={false} content={<ChartTooltipContent hideLabel />}/>
-          <Area
-              dataKey="price"
-              type="linear"
-              fill="var(--color-desktop)"
-              fillOpacity={0.1}
-              stroke="#07F2B0"
-              strokeWidth={2}
-            />
-        </AreaChart>
-       </ResponsiveContainer>
-      </ChartContainer>
+      {
+        loading ? <ChartSkeleton /> : (
+          <ChartContainer config={chartConfig} className='h-[33rem] w-[95%] '>
+            <ResponsiveContainer width="75%" height='50%'>
+              <AreaChart accessibilityLayer data={dataChart} margin={{ right: 12 }}>
+                <CartesianGrid vertical={false}  />
+                <YAxis domain={[minPrice * 0.95, maxPrice * 1.05]} tick={false}/>
+                <XAxis 
+                  dataKey='date'
+                  tickLine={true}
+                  tickMargin={8}
+                />
+                <ChartTooltip cursor={false} content={<ChartTooltipContent hideLabel />}/>
+                <Area
+                    dataKey="price"
+                    type="linear"
+                    fill="var(--color-desktop)"
+                    fillOpacity={0.1}
+                    stroke="#07F2B0"
+                    strokeWidth={2}
+                  />
+              </AreaChart>
+            </ResponsiveContainer>
+          </ChartContainer>
+        )
+      }
     </>
   )
 }
