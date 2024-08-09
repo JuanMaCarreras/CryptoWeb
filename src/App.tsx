@@ -1,7 +1,6 @@
-// import NavBar from './components/NavBar'
+import NavBar from './components/NavBar'
 import Cryptocurrency from './page/Cryptocurrency'
 import Description from './page/Description'
-// import CoinDetails from './components/CoinDetails'
 import Details from '@/page/Details'
 import { Route, Switch } from 'wouter'
 import './App.css'
@@ -9,12 +8,12 @@ import './App.css'
 function App() {
   return (
     <>
-      {/* <NavBar /> */}
+      <NavBar />
       <Switch>
-        <div className='mx-11'>
+        <div className='mx-11 font-popins'>
           <Route path='/' component={Cryptocurrency}  />
           <Route path='/description' component={Description} />
-          <Route path='/price/:coinId' component={Details} />
+          <Route path='/coin/:coinId' component={Details} />
         </div>
       </Switch>
     </>
