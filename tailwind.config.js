@@ -9,6 +9,10 @@ module.exports = {
   ],
   prefix: "",
   theme: {
+    fontFamily: {
+      popins: ['Poppins', 'sans-serif',],
+      sinkia: ['Signika Negative', 'sans-serif']
+    },
     colors: {
       black: '#000000',
       logoText: '#D0D0DE',
