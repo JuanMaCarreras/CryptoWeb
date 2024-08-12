@@ -4,7 +4,7 @@ import img from '../assets/logo.png'
 function NavBar() {
   return (
     <>
-      <nav className='w-full flex justify-between items-center px-10 h-24 bg-transparent border-b-[1px] border-lightGray'>
+      <nav className='w-full flex justify-between items-center px-10  h-24 bg-darkGreen border-b-[1px] border-lightGray'>
         <Link to='/'>
           <div className='flex items-center'>
             <img 
