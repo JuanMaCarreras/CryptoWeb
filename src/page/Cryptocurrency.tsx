@@ -16,10 +16,9 @@ function Cryptocurrency() {
 
   const [coins, setCoins] = useState<MarketCoins[]>([])
   const [search, setSearch] = useState<string>('')
-  const [contentPerPage, setContentPerPage] = useState(50)
+  const [contentPerPage, setContentPerPage] = useState<number>(50)
   const [currency, setCurrency] = useState<string>('usd')
   const [loading, setLoading] = useState(true)  
-
 
   const handleCurrencyChange = (value: string) => {
     setCurrency(value)
@@ -48,8 +47,11 @@ function Cryptocurrency() {
   )
 
   const handleLoadContent = () => {
-    setContentPerPage(prevCont => prevCont + 20)
-  }
+    setContentPerPage((prevCount) => prevCount + 50)
+  };
+
+  const visibleData = filteredCoins.slice(0, contentPerPage)
+
 
   return (
     <>
@@ -68,7 +70,7 @@ function Cryptocurrency() {
               loading ? <TableSkeleton /> : (
                 <TableBody>
                   {
-                    filteredCoins.slice(0, contentPerPage).map((coin, index) => (
+                    visibleData.map((coin, index) => (
                       <CoinsRow key={coin.id}  coin={coin} index={index}/>
                     ))
                   }
@@ -80,12 +82,13 @@ function Cryptocurrency() {
 
         <div className='flex justify-center w-full mt-4'>
           {
-            contentPerPage && (
+            contentPerPage <= filteredCoins.length && 
               <button 
                 onClick={handleLoadContent}
-                className='w-44 p-1 rounded-xl font-semibold border-2 border-lightGreen text-brightGreen bg-semiDarkGreen hover:bg-brightGreen hover:border-brightGreen hover:text-black  transition duration-500'
-              >Cargar Más</button>
-            )
+                className='w-44 p-2 rounded-xl font-semibold border-2 border-lightGreen text-brightGreen bg-semiDarkGreen hover:bg-brightGreen hover:border-brightGreen hover:text-black transition duration-500'
+              >
+                Cargar Más
+              </button>
           }
         </div>
         
