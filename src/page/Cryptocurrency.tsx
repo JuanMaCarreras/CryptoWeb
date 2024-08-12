@@ -5,12 +5,12 @@ import { getCoinMarket } from '@/service/api'
 import CoinsRow from '@/components/CoinsRow'
 import SearchBar from '@/components/SearchBar'
 import CurrencySelect from '@/components/CurrencySelect'
-// import { Link } from 'wouter' 
 import { TableSkeleton } from '@/components/LoadingSkeleton'
 import {
   Table,
   TableBody,
 } from '@/components/ui/table'
+import ScrollToTop from '@/components/ScrollToTop'
 
 function Cryptocurrency() {
 
@@ -88,6 +88,9 @@ function Cryptocurrency() {
             )
           }
         </div>
+        
+        <ScrollToTop />
+
       </article>
     </>
   )
