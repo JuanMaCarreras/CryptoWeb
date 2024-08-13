@@ -14,7 +14,7 @@ function Description() {
           </Link>
 
           <div className='flex flex-col space-y-14 mx-20 mt-16'>
-          <h1 className='ml-16 text-2xl'>Proyecto Tecnico</h1>
+          <h1 className='ml-16 text-2xl'>Proyecto Personal</h1>
             <p className='text-center text-textGray'>Esta página web es un proyecto personal, creado con la intención poner a pruba conocimientos de programación 
             y a su vez ser util para usuarios que buscar informance sobre el mundo de las cripto monedas de una manera simple y sencilla.
             </p>
