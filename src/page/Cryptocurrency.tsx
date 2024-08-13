@@ -85,7 +85,7 @@ function Cryptocurrency() {
             contentPerPage <= filteredCoins.length && 
               <button 
                 onClick={handleLoadContent}
-                className='w-44 p-2 rounded-xl font-semibold border-2 border-lightGreen text-brightGreen bg-semiDarkGreen hover:bg-brightGreen hover:border-brightGreen hover:text-black transition duration-500'
+                className='px-8 py-2 rounded-2xl font-semibold bg-deepGreen border-2 border-logoText hover:bg-brightGreen hover:text-black hover:border-2 hover:border-logoText  transition duration-500'
               >
                 Cargar Más
               </button>
