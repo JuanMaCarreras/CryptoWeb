@@ -1,17 +1,9 @@
-import { useState } from 'react'
 import CoinDetails from '@/components/CoinDetails'
 import CurrencySelect from '@/components/CurrencySelect'
 import { FaArrowLeft } from 'react-icons/fa'
 import { Link } from 'wouter'
 
 function Details() {
-
-  const [currency, setCurrency] = useState<string>('usd')    
-
-
-  const handleCurrencyChange = (value: string) => {
-    setCurrency(value)
-  }
 
   return (
     <>
@@ -22,10 +14,10 @@ function Details() {
               <FaArrowLeft className='text-[1rem]'/> Volver Atras
             </h2>
           </Link>
-          <CurrencySelect value={currency} onChange={handleCurrencyChange}/>
+          <CurrencySelect />
         </header>
 
-        <CoinDetails currency={currency}/>
+        <CoinDetails />
       </article>
     </>
   )

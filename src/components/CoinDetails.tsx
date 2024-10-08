@@ -12,14 +12,11 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
+import { useCryptoStore } from "../store"
 
-interface Prop {
-  currency: string;
-}
+function CoinDetails() {
 
-
-function CoinDetails({currency}: Prop) {
-
+  const currency = useCryptoStore(state => state.currency)
   const { coinId } = useParams<{coinId: string}>()
   const [coins, setCoins] = useState<CoinDetailsById | null>( null)
   const [loading, setLoading] = useState(true)
@@ -37,7 +34,7 @@ function CoinDetails({currency}: Prop) {
     }
     fetchDetailById()
 
-  },[coinId])
+  },[coinId,currency])
   
   return (
     <>

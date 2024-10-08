@@ -11,18 +11,16 @@ import {
   TableBody,
 } from '@/components/ui/table'
 import ScrollToTop from '@/components/ScrollToTop'
+import { useCryptoStore } from '@/store'
+
 
 function Cryptocurrency() {
 
+  const currency = useCryptoStore(state => state.currency)
   const [coins, setCoins] = useState<MarketCoins[]>([])
   const [search, setSearch] = useState<string>('')
   const [contentPerPage, setContentPerPage] = useState<number>(50)
-  const [currency, setCurrency] = useState<string>('usd')
   const [loading, setLoading] = useState(true)  
-
-  const handleCurrencyChange = (value: string) => {
-    setCurrency(value)
-  }
 
 
   useEffect(() => {
@@ -59,7 +57,7 @@ function Cryptocurrency() {
         <h1 className=' ml-16 text-2xl'>Precios actuales</h1>
 
         <div className='flex justify-between mx-20 mt-14'>
-          <CurrencySelect value={currency} onChange={handleCurrencyChange}/>
+          <CurrencySelect />
           <SearchBar search={search} setSearch={setSearch}/>
         </div>
 
@@ -71,7 +69,7 @@ function Cryptocurrency() {
                 <TableBody>
                   {
                     visibleData.map((coin, index) => (
-                      <CoinsRow key={coin.id}  coin={coin} index={index}/>
+                      <CoinsRow key={coin.id} coin={coin} index={index}/>
                     ))
                   }
                 </TableBody>
