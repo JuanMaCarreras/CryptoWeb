@@ -9,17 +9,14 @@ Desarrollada con TypeScript, React, Tailwind CSS, y shadcn/ui, con un diseño si
 
 ### Tecnologías Utilizadas
 
-#### Frontend
-
--   **TypeScript**: Utilizado para asegurar un código más robusto y manejable.
--   **React**: Para construir una interfaz interactiva y modular.
--   **Tailwind CSS**: Utilizado para crear un diseño limpio.
--   **shadcn/ui**: Usado para incorporar componentes de interfaz de usuario, mejorando la estética.
--   **Axios**: Usado para realizar solicitudes a la API de CoinGecko.
--   **Wouter**: Utilizado para manejar la navegación entre las secciones de la aplicación.
+-   **TypeScript.**
+-   **React.**
+-   **Tailwind CSS**
+-   **shadcn/ui**: Componentes de interfaz de usuario.
+-   **Zustand**: Estado global para las divisas (currency).
+-   **Axios**: Solicitudes a la API de CoinGecko.
+-   **Wouter**: Opción liviana para manejar la navegación entre las secciones de la aplicación.
 -   **Recharts**: Usado para construir los graficos.
 -   **CoinGecko API**: Fuente externa utilizada para obtener datos actualizados sobre las criptomonedas.
 
 #### Aplicación desplegada en Vercel
-
-Este proyecto no solo facilita el seguimiento de las criptomonedas más relevantes del mercado.

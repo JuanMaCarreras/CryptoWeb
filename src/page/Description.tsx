@@ -19,7 +19,7 @@ function Description() {
             y a su vez ser util para usuarios que buscar informance sobre el mundo de las cripto monedas de una manera simple y sencilla.
             </p>
             <p className='text-center text-textGray'>Usando <span className='text-logoText'>Vite</span> como empaquetador,  <span className='text-logoText'>React</span> para la interface de usuario y <span className='text-logoText'>TailwindCSS</span> para los estilos. <span className='text-logoText'>TypeScript</span> para un mejor 
-              manejo de los datos al hacer peticiones con <span className='text-logoText'>Axios</span> a la API de <span className='text-logoText'>Coin Gecko</span>, <span className='text-logoText'>Recharts</span> para los gráficos de las criptos. Y <span className='text-logoText'>Wouter</span>
+              manejo de los datos al hacer peticiones con <span className='text-logoText'>Axios</span> a la API de <span className='text-logoText'>Coin Gecko</span>, <span className='text-logoText'>Zustand</span>para tener un estado global para seleccionar las divisas (currency),<span className='text-logoText'>Recharts</span> para los gráficos de las criptos. Y <span className='text-logoText'>Wouter</span>
               para una rápida y sencilla forma de enrutador. Además, el uso del logo obtenido de <span className='text-logoText'>Vecteezy</span> 
             </p>
             <ul className='flex  justify-evenly'>
@@ -42,6 +42,10 @@ function Description() {
               <li>
                 <a href='https://axios-http.com/' target='_blank' rel='noopener noreferrer' className='hover:underline  hover:text-brightGreen  transition duration-500'>Axios</a>
               </li>  
+
+              <li>
+                <a href='https://zustand-demo.pmnd.rs/' target='_blank' rel='noopener noreferrer' className='hover:underline  hover:text-brightGreen  transition duration-500'>Zustand</a>
+              </li>
 
               <li>
                 <a href='https://github.com/molefrog/wouter' target='_blank' rel='noopener noreferrer' className='hover:underline  hover:text-brightGreen  transition duration-500'>Wouter</a>
