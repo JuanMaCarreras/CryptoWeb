@@ -5,13 +5,16 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
+import { useCryptoStore } from '@/store'
 
-interface Props {
-  value: string
-  onChange: (value: string) => void
-}
+function CurrencySelect() {
 
-function CurrencySelect({value, onChange}:Props) {
+  const currency = useCryptoStore((state) => state.currency)
+  const setCurrency = useCryptoStore((state) => state.setCurrency)
+
+  const handleChange = (value: string) => {
+    setCurrency(value)
+  }
 
   const options = [
     { value: 'usd', label: 'USD' },
@@ -22,9 +25,9 @@ function CurrencySelect({value, onChange}:Props) {
 
   return (
     <>
-      <Select value={value} onValueChange={onChange}>
+      <Select value={currency} onValueChange={handleChange}>
         <SelectTrigger className="w-[180px]">
-          <SelectValue placeholder={`Divisas ${value}`} />
+          <SelectValue placeholder={`Divisas ${currency}`} />
         </SelectTrigger>
         <SelectContent>
           {
