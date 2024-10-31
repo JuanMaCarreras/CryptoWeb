@@ -9,6 +9,9 @@ module.exports = {
   ],
   prefix: "",
   theme: {
+    screens:{
+      mini: {min :'330px', max: '440px'},
+    },
     fontFamily: {
       popins: ['Poppins', 'sans-serif',],
       sinkia: ['Signika Negative', 'sans-serif']
