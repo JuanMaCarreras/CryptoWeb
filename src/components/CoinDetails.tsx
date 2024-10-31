@@ -51,7 +51,7 @@ function CoinDetails() {
             }
             {
               loading ? <DescDetailsSkeleton /> : (
-                  <CardDescription className='flex justify-around'>
+                  <CardDescription className='flex justify-around flex-wrap mini:flex-col mini:[&>dl]:mb-3 '>
                     <dl> 
                       <dt className='text-textGray font-semibold'>Precio Actual</dt>
                       <dd className='font-medium text-xl'>
