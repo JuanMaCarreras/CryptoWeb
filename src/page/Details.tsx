@@ -7,12 +7,12 @@ function Details() {
 
   return (
     <>
-      <article className='mt-16'>
+      <article className='mt-16 mini:mt-11'>
         <header className='w-full flex justify-between items-center'>
           <Link to='/'>
           <h2 className='text-sm font-semibold flex items-center gap-2 hover:text-brightGreen transition duration-500'>  
-              <FaArrowLeft className='text-[1rem]'/> <span className='mini:hidden'>Volver Atras</span>
-            </h2>
+            <FaArrowLeft className='text-[1rem]'/> <span className='mini:hidden'>Volver Atras</span>
+          </h2>
           </Link>
           <CurrencySelect />
         </header>

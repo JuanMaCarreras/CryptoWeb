@@ -12,7 +12,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
-import { useCryptoStore } from "../store"
+import { useCryptoStore } from "@/store"
 
 function CoinDetails() {
 
@@ -38,11 +38,11 @@ function CoinDetails() {
   
   return (
     <>
-      <Card className='bg-deepGreen my-8'>
+      <Card className='bg-deepGreen my-8 mini:mt-16'>
         <CardHeader className='mb-5'>
             {
               loading ? <TitleDetailsSkeleton /> : (
-                <CardTitle className='flex items-center mb-6'>
+                <CardTitle className='flex items-center mb-6 mini:justify-center mini:mb-11 mini:mt-4'>
                   <img src={coins?.image.small} alt={coins?.name} className='mr-3 w-9 h-9'/> 
                   <h2 className='text-3xl'>{coins?.name}</h2> 
                   <span className='uppercase text-sm text-textGray ml-3 mt-2'>{coins?.symbol}</span>

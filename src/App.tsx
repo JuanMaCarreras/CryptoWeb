@@ -11,7 +11,7 @@ function App() {
     <>
       <NavBar />
       <Switch>
-        <div className='mx-11 font-popins'>
+        <div className='mx-11 font-popins mini:mx-5'>
           <Route path='/' component={Cryptocurrency}  />
           <Route path='/description' component={Description} />
           <Route path='/coin/:coinId' component={Details} />

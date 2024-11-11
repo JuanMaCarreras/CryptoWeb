@@ -61,7 +61,7 @@ function Chart ({coinId, currency}: DataParams) {
       {
         loading ? <ChartSkeleton /> : (
           <ChartContainer config={chartConfig} className='h-[33rem] w-[95%] '>
-            <ResponsiveContainer width="75%" height='50%'>
+            <ResponsiveContainer width="20" height='50%'>
               <AreaChart accessibilityLayer data={dataChart} margin={{ right: 12 }}>
                 <CartesianGrid vertical={false}  />
                 <YAxis domain={[minPrice * 0.95, maxPrice * 1.05]} tick={false}/>

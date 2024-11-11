@@ -56,7 +56,7 @@ function Cryptocurrency() {
       <article className='w-full h-full pb-20 mt-16'>
         <h1 className=' ml-16 text-2xl'>Precios actuales</h1>
 
-        <div className='flex justify-between mx-20 mt-14'>
+        <div className='flex justify-between mx-20 mt-14 mini:mx-5 mini:mt-10 mini:flex-col mini:space-y-10'>
           <CurrencySelect />
           <SearchBar search={search} setSearch={setSearch}/>
         </div>
