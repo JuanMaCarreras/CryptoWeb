@@ -1,5 +1,5 @@
 import { Link } from 'wouter'
-import img from '../assets/logo.png'
+import logo from '../assets/logo.png'
 
 function NavBar() {
   return (
@@ -8,7 +8,7 @@ function NavBar() {
         <Link to='/'>
           <div className='flex items-center'>
             <img 
-              src={img} 
+              src={logo} 
               alt='Lynx logo' 
               className='h-[4rem] w-[4.3rem] mr-1'
             />
