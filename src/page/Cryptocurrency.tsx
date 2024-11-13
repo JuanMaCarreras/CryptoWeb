@@ -3,8 +3,6 @@ import HeaderRow from '@/components/HeaderRow'
 import { MarketCoins }from '@/types/Coins'
 import { getCoinMarket } from '@/service/api'
 import CoinsRow from '@/components/CoinsRow'
-import SearchBar from '@/components/SearchBar'
-import CurrencySelect from '@/components/CurrencySelect'
 import { TableSkeleton } from '@/components/LoadingSkeleton'
 import {
   Table,
@@ -12,16 +10,16 @@ import {
 } from '@/components/ui/table'
 import ScrollToTop from '@/components/ScrollToTop'
 import { useCryptoStore } from '@/store'
+import { useSearch } from '@/store'
 
 
 function Cryptocurrency() {
 
   const currency = useCryptoStore(state => state.currency)
   const [coins, setCoins] = useState<MarketCoins[]>([])
-  const [search, setSearch] = useState<string>('')
   const [contentPerPage, setContentPerPage] = useState<number>(50)
   const [loading, setLoading] = useState(true)  
-
+  const search = useSearch((state) => state.search)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -54,12 +52,7 @@ function Cryptocurrency() {
   return (
     <>
       <article className='w-full h-full pb-20 mt-16'>
-        <h1 className=' ml-16 text-2xl'>Precios actuales</h1>
-
-        <div className='flex justify-between mx-20 mt-14 mini:mx-5 mini:mt-10 mini:flex-col mini:space-y-10'>
-          <CurrencySelect />
-          <SearchBar search={search} setSearch={setSearch}/>
-        </div>
+        <h1 className=' ml-11 text-xl'>Precios actuales de las criptomonedas</h1>
 
         <div className='flex justify-center mt-11 mb-11 border-t-[1px] border-lightGray'>
           <Table> 
