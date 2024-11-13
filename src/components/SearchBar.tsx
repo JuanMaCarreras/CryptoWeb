@@ -1,13 +1,15 @@
 import { Input } from '@/components/ui/input'
+import { useSearch } from '@/store'
 
 
-interface SerchBarProps {
-  search: string
-  setSearch: (value: string) => void
-}
-
-
-function SearchBar({search, setSearch}: SerchBarProps) {
+function SearchBar() {
+  
+  const search = useSearch((state) => state.search)
+  const setSearch = useSearch((state) => state.setSearch)
+  
+  const handleChange = (value: string) => {
+    setSearch(value)
+  }
 
   return (
     <>
@@ -16,8 +18,8 @@ function SearchBar({search, setSearch}: SerchBarProps) {
           type='text' 
           placeholder='Buscar...'
           value={search}
-          onChange={(e) => setSearch(e.target.value) }
-          className='outline-none w-80 h-7 pl-4 py-4 bg-deepGreen '
+          onChange={(e) => handleChange(e.target.value)}
+          className='outline-none w-80 h-10 pl-4 py-4 bg-deepGreen '
         />
       </div>
     </>
