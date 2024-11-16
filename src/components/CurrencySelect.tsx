@@ -25,14 +25,20 @@ function CurrencySelect() {
 
   return (
     <>
-      <Select value={currency} onValueChange={handleChange}>
-        <SelectTrigger className="w-[180px]">
+      <Select 
+        value={currency} 
+        onValueChange={handleChange} 
+      >
+        <SelectTrigger className='w-[6rem] h-[2.1rem] rounded-xl'>
           <SelectValue placeholder={`Divisas ${currency}`} />
         </SelectTrigger>
-        <SelectContent>
+        <SelectContent  className='w-[6rem] rounded-xl'>
           {
             options.map(option => (
-              <SelectItem className='cursor-pointer hover:text-brightGreen transition duration-500' key={option.value} value={option.value}>
+              <SelectItem className='cursor-pointer rounded-xl hover:text-brightGreen transition duration-700' 
+                key={option.value} 
+                value={option.value}
+              >
                 {option.label}
               </SelectItem>
             ))
