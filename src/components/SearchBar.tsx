@@ -19,7 +19,7 @@ function SearchBar() {
           placeholder='Buscar...'
           value={search}
           onChange={(e) => handleChange(e.target.value)}
-          className='outline-none w-80 h-10 pl-4 py-4 bg-deepGreen '
+          className='outline-none w-[20rem] h-[2rem] rounded-xl pl-4 py-4 bg-deepGreen '
         />
       </div>
     </>
