@@ -44,14 +44,16 @@ function Cryptocurrency() {
 
   const handleLoadContent = () => {
     setContentPerPage((prevCount) => prevCount + 50)
-  };
+  }
 
-  const visibleData = filteredCoins.slice(0, contentPerPage)
+
+  const visibleData = filteredCoins.slice(0, contentPerPage) 
+  console.log(visibleData)
 
 
   return (
     <>
-      <article className='w-full h-full pb-20 mt-16'>
+      <article className='w-full h-full pb-20 mt-44'>
         <h1 className=' ml-11 text-xl'>Precios actuales de las criptomonedas</h1>
 
         <div className='flex justify-center mt-11 mb-11 border-t-[1px] border-lightGray'>
@@ -61,22 +63,22 @@ function Cryptocurrency() {
               loading ? <TableSkeleton /> : (
                 <TableBody>
                   {
-                    visibleData.map((coin, index) => (
+                    !visibleData ?  visibleData.map((coin, index) => (
                       <CoinsRow key={coin.id} coin={coin} index={index}/>
                     ))
+                    : <p>Moneda no encontrada</p>
                   }
                 </TableBody>
                 )
             }
           </Table>
         </div>
-
         <div className='flex justify-center w-full mt-4'>
           {
             contentPerPage <= filteredCoins.length && 
               <button 
                 onClick={handleLoadContent}
-                className='px-8 py-2 rounded-2xl font-semibold bg-deepGreen border-2 border-logoText hover:bg-brightGreen hover:text-black hover:border-2 hover:border-logoText  transition duration-500'
+                className='text-[1rem] px-8 py-2 rounded-2xl font-medium bg-deepGreen border-[.1rem] border-logoText hover:bg-brightGreen hover:text-black hover:border-[.1rem] hover:border-logoText  transition duration-700'
               >
                 Cargar Más
               </button>
