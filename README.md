@@ -13,7 +13,7 @@ Desarrollada con TypeScript, React, Tailwind CSS, y shadcn/ui, con un diseño si
 -   **React.**
 -   **Tailwind CSS**
 -   **shadcn/ui**: Componentes de interfaz de usuario.
--   **Zustand**: Estado global para las divisas (currency).
+-   **Zustand**: Estado global.
 -   **Axios**: Solicitudes a la API de CoinGecko.
 -   **Wouter**: Opción liviana para manejar la navegación entre las secciones de la aplicación.
 -   **Recharts**: Usado para construir los graficos.
