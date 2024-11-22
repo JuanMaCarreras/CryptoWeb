@@ -48,7 +48,9 @@ function Cryptocurrency() {
 
 
   const visibleData = filteredCoins.slice(0, contentPerPage) 
+  
   console.log(visibleData)
+  console.log(!visibleData)
 
 
   return (
@@ -63,10 +65,10 @@ function Cryptocurrency() {
               loading ? <TableSkeleton /> : (
                 <TableBody>
                   {
-                    !visibleData ?  visibleData.map((coin, index) => (
+                    !visibleData ?  <p>Moneda no encontrada</p>
+                    : visibleData.map((coin, index) => (
                       <CoinsRow key={coin.id} coin={coin} index={index}/>
                     ))
-                    : <p>Moneda no encontrada</p>
                   }
                 </TableBody>
                 )
