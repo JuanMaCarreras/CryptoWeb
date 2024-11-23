@@ -6,7 +6,7 @@ function Details() {
 
   return (
     <>
-      <article className='mt-24 mini:mt-11'>
+      <article className='mt-44 mini:mt-11'>
         <header className='w-full flex justify-between items-center'>
           <Link to='/'>
           <h2 className='text-sm font-semibold flex items-center gap-2 hover:text-brightGreen transition duration-500'>  
