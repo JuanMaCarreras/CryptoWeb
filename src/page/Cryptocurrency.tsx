@@ -50,7 +50,7 @@ function Cryptocurrency() {
   const visibleData = filteredCoins.slice(0, contentPerPage) 
   
   console.log(visibleData)
-  console.log(!visibleData)
+  console.log(visibleData)
 
 
   return (
@@ -65,10 +65,10 @@ function Cryptocurrency() {
               loading ? <TableSkeleton /> : (
                 <TableBody>
                   {
-                    !visibleData ?  <p>Moneda no encontrada</p>
-                    : visibleData.map((coin, index) => (
+                    visibleData.length === 0 ? visibleData.map((coin, index) => (
                       <CoinsRow key={coin.id} coin={coin} index={index}/>
-                    ))
+                    ))  
+                    :<p>Moneda no encontrada</p>
                   }
                 </TableBody>
                 )
@@ -77,13 +77,17 @@ function Cryptocurrency() {
         </div>
         <div className='flex justify-center w-full mt-4'>
           {
-            contentPerPage <= filteredCoins.length && 
-              <button 
+            visibleData.length === 0 && (
+              {
+                contentPerPage <= filteredCoins.length && 
+                <button 
                 onClick={handleLoadContent}
                 className='text-[1rem] px-8 py-2 rounded-2xl font-medium bg-deepGreen border-[.1rem] border-logoText hover:bg-brightGreen hover:text-black hover:border-[.1rem] hover:border-logoText  transition duration-700'
-              >
+                >
                 Cargar Más
-              </button>
+                </button>
+              }
+            )
           }
         </div>
         
