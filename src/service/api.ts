@@ -1,6 +1,5 @@
 import axios from 'axios'
-import { MarketCoins, CoinMarketChart, CoinDetailsById  }  from '../types/Coins'
-// import { API_KEY } from '../_key'
+import { MarketCoins, CoinMarketChart, CoinDetailsById  }  from '@/types/Coins'
 
 const BASE_URL = 'https://api.coingecko.com/api/v3'
 const API_KEY = import.meta.env.VITE_API_KEY

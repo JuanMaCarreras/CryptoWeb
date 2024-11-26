@@ -76,19 +76,16 @@ function Cryptocurrency() {
           </Table>
         </div>
         <div className='flex justify-center w-full mt-4'>
-          {
-            visibleData.length === 0 && (
-              {
-                contentPerPage <= filteredCoins.length && 
-                <button 
-                onClick={handleLoadContent}
-                className='text-[1rem] px-8 py-2 rounded-2xl font-medium bg-deepGreen border-[.1rem] border-logoText hover:bg-brightGreen hover:text-black hover:border-[.1rem] hover:border-logoText  transition duration-700'
-                >
-                Cargar Más
-                </button>
-              }
-            )
-          }
+          
+        {
+          contentPerPage <= filteredCoins.length && 
+            <button 
+              onClick={handleLoadContent}
+              className='text-[1rem] px-8 py-2 rounded-2xl font-medium bg-deepGreen border-[.1rem] border-logoText hover:bg-brightGreen hover:text-black hover:border-[.1rem] hover:border-logoText  transition duration-700'
+            >
+            Cargar Más
+            </button>
+        }
         </div>
         
         <ScrollToTop />
