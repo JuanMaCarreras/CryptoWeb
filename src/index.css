@@ -17,25 +17,20 @@ body{
     color: #ffff
 }
 
-
-/* Cambia el tamaño de la barra de scroll */
 ::-webkit-scrollbar {
   width: 14px; /* Ancho de la barra vertical */
   height: 20px; /* Alto de la barra horizontal */
 }
 
-/* Color de fondo de la barra de scroll */
 ::-webkit-scrollbar-track {
   background: transparent; /* Fondo de la pista */
 }
 
-/* Color y estilo de la barra deslizante */
 ::-webkit-scrollbar-thumb {
   background: #000000; /* Color de la barra */
   border-radius: 6px;
 }
 
-/* Cambia el color al pasar el cursor */
 ::-webkit-scrollbar-thumb:hover {
   background: #141414; /* Color al hacer hover */
 }
