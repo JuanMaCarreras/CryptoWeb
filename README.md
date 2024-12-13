@@ -22,5 +22,5 @@ Desarrollada con TypeScript, React, Tailwind CSS, y shadcn/ui, con un diseño si
 #### Aplicación desplegada en Vercel
 
 
-## PROYECTO EN PROCESO
+### PROYECTO EN PROCESO
 
