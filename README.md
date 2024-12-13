@@ -20,3 +20,7 @@ Desarrollada con TypeScript, React, Tailwind CSS, y shadcn/ui, con un diseño si
 -   **CoinGecko API**: Fuente externa utilizada para obtener datos actualizados sobre las criptomonedas.
 
 #### Aplicación desplegada en Vercel
+
+
+## PROYECTO EN PROCESO
+
