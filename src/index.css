@@ -16,21 +16,3 @@ body{
     background-color: #020D09;
     color: #ffff
 }
-
-::-webkit-scrollbar {
-  width: 14px; /* Ancho de la barra vertical */
-  height: 20px; /* Alto de la barra horizontal */
-}
-
-::-webkit-scrollbar-track {
-  background: transparent; /* Fondo de la pista */
-}
-
-::-webkit-scrollbar-thumb {
-  background: #000000; /* Color de la barra */
-  border-radius: 6px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #141414; /* Color al hacer hover */
-}
