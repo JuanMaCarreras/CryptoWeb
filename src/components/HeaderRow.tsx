@@ -16,8 +16,8 @@ function HeaderRow() {
             Nombre
           </TableHead>
           <TableHead className='text-right'>Precio</TableHead>
-          <TableHead className='text-right'>24H</TableHead>
-          <TableHead className='text-center'>Capitalización de Mercado</TableHead>
+          <TableHead className='mini:hidden text-right'>24H</TableHead>
+          <TableHead className='mini:hidden text-center'>Capitalización de Mercado</TableHead>
         </TableRow>
       </TableHeader>
     </>
