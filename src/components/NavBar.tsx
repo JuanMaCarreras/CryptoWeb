@@ -11,13 +11,13 @@ function NavBar() {
 
   return (
     <>
-      <nav className='fixed top-0 z-50 w-full flex justify-between items-center px-10  h-20 bg-darkGreen border-b-[1px] border-lightGray'>
+      <nav className='fixed top-0 z-50 w-full flex justify-between items-center px-10 h-20 mini:px-5 bg-darkGreen border-b-[1px] border-lightGray'>
         <Link to='/'>
           <div className='flex items-center'>
             <img 
               src={logo} 
               alt='Lynx logo' 
-              className='h-[2.8rem] w-[3rem] mr-1'
+              className='h-[2.8rem] w-[3rem] mr-1 mini:w-[5rem] mini:h-[3rem]'
             />
             <span className='font-sinkia text-logoText text-2xl font-bold select-none '>LYNX</span>
           </div>

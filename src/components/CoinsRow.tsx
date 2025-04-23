@@ -24,11 +24,11 @@ function CoinsRow({coin, index}: CoinProp) {
              {coin.market_cap_rank}
           </TableCell>
 
-          <TableCell className='flex'>
+          <TableCell className='flex mini:ml-[-.8rem]'>
             <img 
               src={coin.image} 
               alt={coin.name} 
-              className='mr-4 w-7 h-7 mt-1'
+              className='mr-4 w-7 h-7 mt-1 mini:mr-3'
             />
             <div className='[&>span]:block'>
               <span className='text-[1rem] font-medium'>{coin.name}</span>
