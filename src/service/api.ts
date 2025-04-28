@@ -4,7 +4,6 @@ import { MarketCoins, CoinMarketChart, CoinDetailsById  }  from '@/types/Coins'
 const BASE_URL = 'https://api.coingecko.com/api/v3'
 const API_KEY = import.meta.env.VITE_API_KEY
 
-
 const api = axios.create({
     baseURL: BASE_URL,
     headers: {
