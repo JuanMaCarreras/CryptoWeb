@@ -48,15 +48,12 @@ function Cryptocurrency() {
 
 
   const visibleData = filteredCoins.slice(0, contentPerPage) 
-  
-  console.log(visibleData)
-  console.log(visibleData)
 
 
   return (
     <>
-      <article className='w-full h-full pb-20 mt-44'>
-        <h1 className=' ml-11 text-xl'>Precios actuales de las criptomonedas</h1>
+      <article className='w-full h-full pb-20 mt-44 mini:mt-32'>
+        <h1 className='ml-11 mini:ml-4 text-xl mini:text-base'>Precios actuales de las criptomonedas</h1>
 
         <div className='flex justify-center mt-11 mb-11 border-t-[1px] border-lightGray'>
           <Table> 
@@ -65,10 +62,9 @@ function Cryptocurrency() {
               loading ? <TableSkeleton /> : (
                 <TableBody>
                   {
-                    visibleData.length === 0 ? visibleData.map((coin, index) => (
+                    visibleData.map((coin, index) => (
                       <CoinsRow key={coin.id} coin={coin} index={index}/>
-                    ))  
-                    :<p>Moneda no encontrada</p>
+                    ))
                   }
                 </TableBody>
                 )
