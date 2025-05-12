@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react'
 import { FaArrowUp } from 'react-icons/fa'
 
 
-function ScrollToTop() {
+export function ScrollToTop() {
 
   const [isVisible, setIsVisible] = useState(false)  
   
@@ -41,5 +41,3 @@ function ScrollToTop() {
     </>
   )
 }
-
-export default ScrollToTop

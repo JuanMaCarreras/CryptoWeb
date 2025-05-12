@@ -1,8 +1,8 @@
-import CoinDetails from '@/components/CoinDetails'
+import { CoinDetails } from '@/components/CoinDetails'
 import { FaArrowLeft } from 'react-icons/fa'
 import { Link } from 'wouter'
 
-function Details() {
+export function Details() {
 
   return (
     <>
@@ -20,5 +20,3 @@ function Details() {
     </>
   )
 }
-
-export default Details

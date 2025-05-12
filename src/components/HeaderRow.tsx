@@ -4,7 +4,7 @@ import {
   TableRow,
 } from '@/components/ui/table'
 
-function HeaderRow() {
+export function HeaderRow() {
   return (
     <>
       <TableHeader className='text-brightGreen py-6'>
@@ -23,5 +23,3 @@ function HeaderRow() {
     </>
   )
 }
-
-export default HeaderRow

@@ -7,7 +7,7 @@ import {
 } from '@/components/ui/select'
 import { useCryptoStore } from '@/store'
 
-function CurrencySelect() {
+export function CurrencySelect() {
 
   const currency = useCryptoStore((state) => state.currency)
   const setCurrency = useCryptoStore((state) => state.setCurrency)
@@ -29,7 +29,7 @@ function CurrencySelect() {
         value={currency} 
         onValueChange={handleChange} 
       >
-        <SelectTrigger className='w-[6rem] h-[2.1rem] rounded-xl'>
+        <SelectTrigger className='w-[6rem] h-[2.1rem]'>
           <SelectValue placeholder={`Divisas ${currency}`} />
         </SelectTrigger>
         <SelectContent  className='w-[6rem] rounded-xl'>
@@ -48,5 +48,3 @@ function CurrencySelect() {
     </>
   )
 }
-
-export default CurrencySelect

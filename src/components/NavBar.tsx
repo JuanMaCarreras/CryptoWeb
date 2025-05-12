@@ -1,9 +1,9 @@
 import { Link, useLocation } from 'wouter'
 import logo from '@/assets/logo.png'
-import SearchBar from './SearchBar'
-import CurrencySelect from './CurrencySelect'
+import { SearchBar } from './SearchBar'
+import { CurrencySelect } from './CurrencySelect'
 
-function NavBar() {
+export function NavBar() {
 
   const [location] = useLocation()
 
@@ -34,5 +34,3 @@ function NavBar() {
     </>
   )
 }
-
-export default NavBar

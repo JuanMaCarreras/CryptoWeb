@@ -27,7 +27,7 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
-function Chart ({coinId, currency}: DataParams) {
+export function Chart ({coinId, currency}: DataParams) {
 
   const [dataChart, setDataChart] = useState<DataChart[]>([])
   const [loading, setLoading] = useState(true)
@@ -87,5 +87,3 @@ function Chart ({coinId, currency}: DataParams) {
     </>
   )
 }
-
-export default Chart

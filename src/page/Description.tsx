@@ -2,7 +2,7 @@ import { Link } from 'wouter'
 import { FaArrowLeft } from 'react-icons/fa'
 import { FaLinkedin, FaGithub } from 'react-icons/fa'
 
-function Description() {
+export function Description() {
   return (
     <>
       <article className='w-full'>
@@ -71,5 +71,3 @@ function Description() {
     </>
   )
 }
-
-export default Description

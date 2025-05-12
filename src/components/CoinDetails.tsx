@@ -3,7 +3,7 @@ import { TitleDetailsSkeleton, DescDetailsSkeleton } from './LoadingSkeleton'
 import { useParams } from 'wouter'
 import { CoinDetailsById  } from '@/types/Coins'
 import { getCoinById } from '@/service/api'
-import Chart from './Chart'
+import { Chart } from './Chart'
 import {
   Card,
   CardContent,
@@ -14,7 +14,7 @@ import {
 } from '@/components/ui/card'
 import { useCryptoStore } from "@/store"
 
-function CoinDetails() {
+export function CoinDetails() {
 
   const currency = useCryptoStore(state => state.currency)
   const { coinId } = useParams<{coinId: string}>()
@@ -95,5 +95,3 @@ function CoinDetails() {
     </>
   )
 }
-
-export default CoinDetails

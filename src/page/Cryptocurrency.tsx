@@ -1,19 +1,19 @@
 import { useState, useEffect } from 'react'
-import HeaderRow from '@/components/HeaderRow'
+import { HeaderRow } from '@/components/HeaderRow'
 import { MarketCoins }from '@/types/Coins'
 import { getCoinMarket } from '@/service/api'
-import CoinsRow from '@/components/CoinsRow'
+import { CoinsRow } from '@/components/CoinsRow'
 import { TableSkeleton } from '@/components/LoadingSkeleton'
 import {
   Table,
   TableBody,
 } from '@/components/ui/table'
-import ScrollToTop from '@/components/ScrollToTop'
+import { ScrollToTop } from '@/components/ScrollToTop'
 import { useCryptoStore } from '@/store'
 import { useSearch } from '@/store'
 
 
-function Cryptocurrency() {
+export function Cryptocurrency() {
 
   const currency = useCryptoStore(state => state.currency)
   const [coins, setCoins] = useState<MarketCoins[]>([])
@@ -77,7 +77,7 @@ function Cryptocurrency() {
           contentPerPage <= filteredCoins.length && 
             <button 
               onClick={handleLoadContent}
-              className='text-[1rem] px-8 py-2 rounded-2xl font-medium bg-deepGreen border-[.1rem] border-logoText hover:bg-brightGreen hover:text-black hover:border-[.1rem] hover:border-logoText  transition duration-700'
+              className='text-[1rem] px-8 py-2 rounded-lg font-medium bg-deepGreen border-[.1rem] border-logoText hover:bg-brightGreen hover:text-black hover:border-[.1rem] hover:border-logoText  transition duration-700'
             >
             Cargar Más
             </button>
@@ -90,5 +90,3 @@ function Cryptocurrency() {
     </>
   )
 }
-
-export default Cryptocurrency

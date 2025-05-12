@@ -2,7 +2,7 @@ import { Input } from '@/components/ui/input'
 import { useSearch } from '@/store'
 
 
-function SearchBar() {
+export function SearchBar() {
   
   const search = useSearch((state) => state.search)
   const setSearch = useSearch((state) => state.setSearch)
@@ -19,11 +19,10 @@ function SearchBar() {
           placeholder='Buscar...'
           value={search}
           onChange={(e) => handleChange(e.target.value)}
-          className='outline-none w-[20rem] h-[2rem] rounded-xl pl-4 py-4 bg-deepGreen '
+          className='outline-none w-[20rem] h-[2rem] pl-4 py-4 bg-deepGreen '
         />
       </div>
     </>
   )
 }
 
-export default SearchBar
