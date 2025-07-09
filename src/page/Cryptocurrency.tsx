@@ -21,6 +21,8 @@ export function Cryptocurrency() {
   const [loading, setLoading] = useState(true)  
   const search = useSearch((state) => state.search)
 
+  console.log(coins)
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -52,7 +54,7 @@ export function Cryptocurrency() {
 
   return (
     <>
-      <article className='w-full h-full pb-20 mt-44 mini:mt-32'>
+      <section className='h-full  pb-20 mt-44 mini:mt-32'>
         <h1 className='ml-11 mini:ml-4 text-xl mini:text-base'>Precios actuales de las criptomonedas</h1>
 
         <div className='flex justify-center mt-11 mb-11 border-t-[1px] border-lightGray'>
@@ -86,7 +88,7 @@ export function Cryptocurrency() {
         
         <ScrollToTop />
 
-      </article>
+      </section>
     </>
   )
 }

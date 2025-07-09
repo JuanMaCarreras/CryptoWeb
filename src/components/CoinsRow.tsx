@@ -5,6 +5,8 @@ import {
   TableRow,
 } from '@/components/ui/table'
 import { HiOutlineExternalLink } from 'react-icons/hi'
+import { AddToFavorite } from './AddToFavorite'
+
 
 interface CoinProp {
   coin: MarketCoins
@@ -43,6 +45,9 @@ export function CoinsRow({coin, index}: CoinProp) {
             <Link to={`/coin/${coin.id}`} >
               <HiOutlineExternalLink className='h-5 w-5 text-textGray hover:text-brightGreen transition duration-500'/>
             </Link>
+          </TableCell>
+          <TableCell className='text-center'>
+            <AddToFavorite coinId={coin.id} />
           </TableCell>
       </TableRow>  
     </>

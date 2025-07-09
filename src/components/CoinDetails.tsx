@@ -18,7 +18,7 @@ export function CoinDetails() {
 
   const currency = useCryptoStore(state => state.currency)
   const { coinId } = useParams<{coinId: string}>()
-  const [coins, setCoins] = useState<CoinDetailsById | null>( null)
+  const [coins, setCoins] = useState<CoinDetailsById | null>(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(() =>{

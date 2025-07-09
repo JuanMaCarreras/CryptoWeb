@@ -6,15 +6,15 @@ export function Description() {
   return (
     <>
       <article className='w-full'>
-        <section className='mt-14 pb-40'>
+        <section className='mt-32 pb-44'>
           <Link to='/'>
-            <h2 className='text-lg font-semibold flex items-center gap-2 hover:text-brightGreen transition duration-500'> 
+            <h2 className='text-sm flex items-center gap-1 hover:text-brightGreen transition duration-500'> 
               <FaArrowLeft className='text-[1rem]'/> Volver Atras
             </h2>
           </Link>
 
-          <div className='flex flex-col space-y-14 mx-20 mt-16'>
-          <h1 className='ml-16 text-2xl'>Proyecto Personal</h1>
+          <div className='flex flex-col  space-y-14 mx-36 mt-16'>
+            <h1 className='ml-16 text-2xl'>Proyecto Personal</h1>
             <p className='text-center text-textGray'>Esta página web es un proyecto personal, creado con la intención poner a pruba conocimientos de programación 
             y a su vez ser util para usuarios que buscar informance sobre el mundo de las cripto monedas de una manera simple y sencilla.
             </p>
@@ -22,7 +22,7 @@ export function Description() {
               manejo de los datos al hacer peticiones con <span className='text-logoText'>Axios</span> a la API de <span className='text-logoText'>Coin Gecko</span>, <span className='text-logoText'>Zustand</span>para tener un estado global para seleccionar las divisas (currency),<span className='text-logoText'>Recharts</span> para los gráficos de las criptos. Y <span className='text-logoText'>Wouter</span>
               para una rápida y sencilla forma de enrutador. Además, el uso del logo obtenido de <span className='text-logoText'>Vecteezy</span> 
             </p>
-            <ul className='flex  justify-evenly'>
+            <ul className='flex justify-evenly pt-14'>
               <li>
                <a href='https://vitejs.dev/' target='_blank' rel='noopener noreferrer' className='hover:underline  hover:text-brightGreen  transition duration-500'>Vite</a>
               </li>

@@ -20,8 +20,3 @@ export const useSearch = create<Search>((set) => ({
     search: '',
     setSearch: (value) => set({ search: value }),
 }))
-
-export const getID = create<{ id: string | null; setId: (id: string | null) => void }>((set) => ({
-    id: null,
-    setId: (id) => set({ id }),
-}))
