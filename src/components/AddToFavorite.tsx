@@ -1,6 +1,12 @@
 import { useEffect, useState } from 'react'
 import { useUser } from '@clerk/clerk-react'
 import { addCoinToFavorites, deleteCoinFromFavorites, getUserFavorites } from '@/firebase/firestore'
+import { ImStarFull, ImStarEmpty  } from 'react-icons/im'
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from '@/components/ui/tooltip'
 
 interface Prop {
   coinId: string
@@ -44,13 +50,20 @@ export function AddToFavorite({ coinId }: Prop ) {
   
   return (
     <>
-      <button
-        onClick={toggleFav}
-      >
-        {
-          isFavorite ? "💔 Quitar de Favoritos" : "⭐ Favoritos"
-        }
-      </button>
+      <Tooltip>
+        <TooltipTrigger>
+          <button
+            onClick={toggleFav}
+          >
+            {
+              isFavorite ? <ImStarFull className='text-base'/> : <ImStarEmpty className='text-base'/>
+            }
+          </button>
+        </TooltipTrigger>
+        <TooltipContent className='bg-lightGray my-1'>
+          <p className='text-xs font-medium'>Añadir a Favoritos</p>
+        </TooltipContent>
+      </Tooltip>
     </>
   )
 }
