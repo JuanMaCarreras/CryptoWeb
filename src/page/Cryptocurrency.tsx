@@ -21,8 +21,6 @@ export function Cryptocurrency() {
   const [loading, setLoading] = useState(true)  
   const search = useSearch((state) => state.search)
 
-  console.log(coins)
-
   useEffect(() => {
     const fetchData = async () => {
       try {
