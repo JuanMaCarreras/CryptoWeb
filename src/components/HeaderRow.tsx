@@ -9,6 +9,9 @@ export function HeaderRow() {
     <>
       <TableHeader className='text-brightGreen py-6'>
         <TableRow>
+          <TableHead>
+            
+          </TableHead>
           <TableHead className='text-center'>
             #
           </TableHead>
