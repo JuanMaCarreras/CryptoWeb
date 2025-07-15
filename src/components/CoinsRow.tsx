@@ -6,6 +6,7 @@ import {
 } from '@/components/ui/table'
 import { HiOutlineExternalLink } from 'react-icons/hi'
 import { AddToFavorite } from './AddToFavorite'
+import { useUser } from '@clerk/clerk-react'
 
 
 interface CoinProp {
@@ -19,12 +20,17 @@ export function CoinsRow({coin, index}: CoinProp) {
   const priceColorClass =  coin.price_change_percentage_24h >= 0 ? 'text-positiveNum' : 'text-negativeNum'
   const tableColor = index % 2 === 0 ? 'bg-deepGray' : 'bg-darkGray'
 
+  const { user } = useUser()
+
   return (
     <>
       <TableRow className={`text-sm ${tableColor}`}>
-        <TableCell className='text-center'>
-          <AddToFavorite coinId={coin.id} />
-        </TableCell>
+        {
+          user && (
+          <TableCell className='text-center'>
+            <AddToFavorite coinId={coin.id} />
+          </TableCell>)
+        }
         
         <TableCell className='text-center' >
           {coin.market_cap_rank}
