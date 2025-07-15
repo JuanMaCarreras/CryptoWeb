@@ -3,15 +3,20 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
+import { useUser } from '@clerk/clerk-react'
+
 
 export function HeaderRow() {
+  
+  const { user } = useUser()
+
   return (
     <>
       <TableHeader className='text-brightGreen py-6'>
         <TableRow>
-          <TableHead>
-            
-          </TableHead>
+          {
+            user && (<TableHead></TableHead>)
+          }
           <TableHead className='text-center'>
             #
           </TableHead>
