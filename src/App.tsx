@@ -1,3 +1,4 @@
+import { ToTop } from '@/components/ToTop'
 import { NavBar } from '@/components/NavBar'
 import { Cryptocurrency } from '@/page/Cryptocurrency'
 import { Description } from '@/page/Description'
@@ -7,9 +8,12 @@ import { NotFound } from '@/page/NotFound'
 import { Route, Switch } from 'wouter'
 import './App.css'
 
+
+
 function App() {
   return (
     <>
+      <ToTop />
       <NavBar />
       <Switch>
         <main className='mx-11 mini:mx-5 h-full flex-1'>
