@@ -2,17 +2,22 @@ import {
   SignedIn,
   SignedOut,
   SignInButton,
-  UserButton
+  UserButton,
+  SignUpButton
 } from '@clerk/clerk-react'
 
 export function Auth() {
   return (
     <>
       <SignedOut>
-          <SignInButton />
-        </SignedOut>
-        <SignedIn>
-          <UserButton /> 
+        <SignInButton />
+      </SignedOut>
+      <SignedOut>
+        <SignUpButton />
+      </SignedOut>
+
+      <SignedIn>
+        <UserButton /> 
       </SignedIn>
     </>
   )
