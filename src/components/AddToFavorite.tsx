@@ -60,9 +60,17 @@ export function AddToFavorite({ coinId }: Prop ) {
             }
           </button>
         </TooltipTrigger>
-        <TooltipContent className='bg-lightGray my-1'>
-          <p className='text-xs font-medium'>Añadir a Favoritos</p>
-        </TooltipContent>
+        {
+          isFavorite ? (
+            <TooltipContent className='bg-lightGray my-1'>
+              <p className='text-xs font-medium'>Quitar de Favoritos</p>
+            </TooltipContent>
+          ) : (
+            <TooltipContent className='bg-lightGray my-1'>
+              <p className='text-xs font-medium'>Añadir a Favoritos</p>
+            </TooltipContent>
+          )
+        }
       </Tooltip>
     </>
   )
