@@ -11,6 +11,7 @@ import {
 import { ScrollToTop } from '@/components/ScrollToTop'
 import { useCryptoStore } from '@/store'
 import { useSearch } from '@/store'
+import { FavoriteList } from '@/components/FavoriteList'
 
 
 export function Cryptocurrency() {
@@ -53,6 +54,9 @@ export function Cryptocurrency() {
   return (
     <>
       <section className='h-full  pb-20 mt-44 mini:mt-32'>
+
+        <FavoriteList />
+
         <h1 className='ml-11 mini:ml-4 text-xl mini:text-base'>Precios actuales de las criptomonedas</h1>
 
         <div className='flex justify-center mt-11 mb-11 border-t-[1px] border-lightGray'>
