@@ -2,8 +2,7 @@ import {
   SignedIn,
   SignedOut,
   SignInButton,
-  UserButton,
-  SignUpButton
+  UserButton
 } from '@clerk/clerk-react'
 
 export function Auth() {
@@ -11,9 +10,6 @@ export function Auth() {
     <>
       <SignedOut>
         <SignInButton />
-      </SignedOut>
-      <SignedOut>
-        <SignUpButton />
       </SignedOut>
 
       <SignedIn>
