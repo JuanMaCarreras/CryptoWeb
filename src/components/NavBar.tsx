@@ -12,7 +12,7 @@ export function NavBar() {
 
   return (
     <>
-      <nav className='fixed top-0 z-50 w-full flex justify-between items-center px-10 mini:px-6 h-20  bg-darkGreen border-b-[1px] border-lightGray'>
+      <nav className='fixed top-0 z-50 w-full flex justify-between items-center px-7 mini:px-3 h-[4.3rem]  bg-deepGreen border-b-[1px] border-lightGray'>
         <Link to='/'>
           <div className='flex items-center'>
             <img 
@@ -24,12 +24,12 @@ export function NavBar() {
           </div>
         </Link>
 
-        <div className='flex items-center space-x-4 mini:space-x-0 mr-[1rem]'> 
+        <div className='flex items-center space-x-6 mini:space-x-0 mr-[1rem]'> 
           {
             location == '/' && <SearchBar />
           }
           {
-            (location == '/' || location == '/coin/:coinId') && <CurrencySelect />
+            (location == '/' || location.startsWith('/coin')) && <CurrencySelect />
           }
           <Auth />
         </div>
