@@ -33,7 +33,7 @@ interface  MarketData{
 }
 
 
-export interface CoinDetailsById {
+export interface CoinDetails {
   id: string
   symbol: string
   name: string
@@ -46,12 +46,4 @@ export interface CoinMarketChart {
   prices : [number, number] []
   market_caps: [number, number][]
   total_volumes: [number, number][]
-}
-
-
-export interface FavCoins extends Pick<MarketData, 'current_price'> {
-  id: string;
-  name: string;
-  symbol: string;
-  image: string;
 }
