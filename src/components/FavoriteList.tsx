@@ -1,13 +1,18 @@
 import { useEffect, useState } from 'react'
 import { useUser } from '@clerk/clerk-react'
-import { FavCoins } from '@/types/Coins'
+import { CoinDetails } from '@/types/Coins'
 import { getUserFavorites } from '@/firebase/firestore'
 import { getCoinById } from '@/service/api'
+import { FavoriteCard } from './FavoriteCard'
+import { useCryptoStore } from '@/store'
+
+
 
 export function FavoriteList() {
 
   const { user } = useUser()
-  const [coins, setCoins] = useState<FavCoins[]>([])
+  const [coins, setCoins] = useState<CoinDetails[]>([])
+  const currency = useCryptoStore(state => state.currency)
   
   useEffect(() => {
     const fetchFavorites = async () => {
@@ -24,21 +29,14 @@ export function FavoriteList() {
 
     fetchFavorites()
     
-  }, [user])
+  }, [user, currency])
 
   console.log('coins',coins)
 
   return (
     <>
-      <h1 className='text-2xl'>FAV LIST</h1>
-      {
-        coins.map(coin => (
-          <div key={coin.id}>
-            <h4>{coin.name}</h4>
-            <p>{coin.symbol}</p>
-          </div>
-        ))
-      }
+      <h2 className='text-2xl'>Fav List</h2>
+      <FavoriteCard coins={coins} currency={currency}/>
     </>
   )
 }
