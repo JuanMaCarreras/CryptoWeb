@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { MarketCoins, CoinMarketChart, CoinDetailsById  }  from '@/types/Coins'
+import { MarketCoins, CoinMarketChart, CoinDetails  }  from '@/types/Coins'
 
 const BASE_URL = 'https://api.coingecko.com/api/v3'
 const API_KEY = import.meta.env.VITE_API_KEY
@@ -24,7 +24,7 @@ export const getCoinMarket = async ({currency, contentPerPage}: { currency: stri
   return response.data
 }
 
-export const getCoinById = async (coinId: string): Promise<CoinDetailsById> => {
+export const getCoinById = async (coinId: string): Promise<CoinDetails> => {
   const response = await api.get(`/coins/${coinId}`)
   return response.data
 }
