@@ -27,12 +27,12 @@ export function CurrencySelect() {
     <>
       <Select 
         value={currency} 
-        onValueChange={handleChange} 
+        onValueChange={handleChange}
       >
-        <SelectTrigger className='w-[6rem] h-[2.1rem]'>
+        <SelectTrigger className='w-[6rem] h-[2.1rem] border-lightGray'>
           <SelectValue placeholder={`Divisas ${currency}`} />
         </SelectTrigger>
-        <SelectContent  className='w-[6rem] rounded-xl'>
+        <SelectContent  className='w-[6rem] rounded-xl border-lightGray'>
           {
             options.map(option => (
               <SelectItem className='cursor-pointer rounded-xl hover:text-brightGreen transition duration-700' 
