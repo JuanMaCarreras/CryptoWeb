@@ -27,6 +27,7 @@ interface MarketValue {
 interface  MarketData{
   current_price: MarketValue
   market_cap: MarketValue
+  price_change_percentage_24h: number
   price_change_24h: number
   high_24h: { [key: string]: number }
   low_24h: { [key: string]: number }
