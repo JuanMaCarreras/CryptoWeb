@@ -19,7 +19,7 @@ export function SearchBar() {
           placeholder='Buscar...'
           value={search}
           onChange={(e) => handleChange(e.target.value)}
-          className='outline-none w-[20rem] h-[2rem] pl-4 py-4 bg-deepGreen '
+          className='outline-none w-[20rem] h-[2rem] pl-4 py-4 bg-deepGreen border-lightGray'
         />
       </div>
     </>
