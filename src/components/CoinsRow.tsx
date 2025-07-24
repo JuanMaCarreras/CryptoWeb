@@ -7,7 +7,11 @@ import {
 import { HiOutlineExternalLink } from 'react-icons/hi'
 import { AddToFavorite } from './AddToFavorite'
 import { useUser } from '@clerk/clerk-react'
-
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from '@/components/ui/tooltip'
 
 interface CoinProp {
   coin: MarketCoins
@@ -52,9 +56,19 @@ export function CoinsRow({coin, index}: CoinProp) {
         <TableCell className={` mini:hidden text-right ${priceColorClass}`}>{coin.price_change_percentage_24h.toFixed(2)}%</TableCell>
         <TableCell className=' mini:hidden text-center'>${coin.market_cap.toLocaleString()}</TableCell>
         <TableCell>
-          <Link to={`/coin/${coin.id}`} >
-              <HiOutlineExternalLink className='h-5 w-5 text-textGray hover:text-brightGreen transition duration-500'/>
-          </Link>
+
+          <Tooltip>
+            <Link to={`/coin/${coin.id}`} >
+              <TooltipTrigger className='my-1'>
+                <HiOutlineExternalLink className='h-5 w-5 text-textGray hover:text-brightGreen transition duration-500'/>
+              </TooltipTrigger>
+            </Link>
+
+            <TooltipContent className='bg-lightGray my-1'>
+              <p className='text-xs font-medium'>Más detalles</p>
+            </TooltipContent>
+          </Tooltip>
+
         </TableCell>
       </TableRow>  
     </>
