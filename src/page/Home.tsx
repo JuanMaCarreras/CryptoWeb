@@ -8,10 +8,11 @@ export function Home() {
 
   return (
     <>
-      {
-        user ? (<FavoriteList />) 
-        : ( <div className='h-52' />  )
-      }
+      <div className='min-h-[200px]'>
+        {
+          user && <FavoriteList />
+        }
+      </div>
       <Cryptocurrency />
     </>
   )
