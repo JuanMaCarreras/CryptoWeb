@@ -55,8 +55,8 @@ export function CoinsRow({coin, index}: CoinProp) {
         <TableCell className='text-right'>${coin.current_price.toLocaleString()}</TableCell>
         <TableCell className={` mini:hidden text-right ${priceColorClass}`}>{coin.price_change_percentage_24h.toFixed(2)}%</TableCell>
         <TableCell className=' mini:hidden text-center'>${coin.market_cap.toLocaleString()}</TableCell>
+        
         <TableCell>
-
           <Tooltip>
             <Link to={`/coin/${coin.id}`} >
               <TooltipTrigger className='my-1'>
