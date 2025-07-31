@@ -10,9 +10,10 @@ import {
 
 interface Prop {
   coinId: string
+  className?: string
 }
 
-export function AddToFavorite({ coinId }: Prop ) {
+export function AddToFavorite({ coinId, className }: Prop ) {
   
   const { user } = useUser()
 
@@ -50,28 +51,31 @@ export function AddToFavorite({ coinId }: Prop ) {
   
   return (
     <>
-      <Tooltip>
-        <TooltipTrigger>
-          <button
-            onClick={toggleFav}
-          >
+      {  
+        user && ( 
+          <Tooltip>
+            <TooltipTrigger>
+              <button
+                onClick={toggleFav}
+              >
+                {
+                  isFavorite ? <ImStarFull className={`text-base ${className}`}/> : <ImStarEmpty  className={`text-base ${className}`}/>
+                }
+              </button>
+            </TooltipTrigger>
             {
-              isFavorite ? <ImStarFull className='text-base'/> : <ImStarEmpty className='text-base'/>
+              isFavorite ? (
+                <TooltipContent className='bg-lightGray my-1'>
+                  <p className='text-xs font-medium'>Quitar de Favoritos</p>
+                </TooltipContent>
+              ) : (
+                <TooltipContent className='bg-lightGray my-1'>
+                  <p className='text-xs font-medium'>Añadir a Favoritos</p>
+                </TooltipContent>
+              )
             }
-          </button>
-        </TooltipTrigger>
-        {
-          isFavorite ? (
-            <TooltipContent className='bg-lightGray my-1'>
-              <p className='text-xs font-medium'>Quitar de Favoritos</p>
-            </TooltipContent>
-          ) : (
-            <TooltipContent className='bg-lightGray my-1'>
-              <p className='text-xs font-medium'>Añadir a Favoritos</p>
-            </TooltipContent>
-          )
-        }
-      </Tooltip>
+          </Tooltip>)
+      }
     </>
   )
 }
