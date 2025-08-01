@@ -4,7 +4,7 @@ import { doc, setDoc, getDoc, updateDoc, arrayUnion, arrayRemove  } from 'fireba
 
 export const addCoinToFavorites = async (userId: string, coinId: string) => {
   try {
-    const docRef = doc(db, "favoritos", userId)
+    const docRef = doc(db, 'favorite', userId)
     const docSnap = await getDoc(docRef)
 
     if (docSnap.exists()) {
@@ -25,7 +25,7 @@ export const addCoinToFavorites = async (userId: string, coinId: string) => {
 
 export const deleteCoinFromFavorites = async (userId: string, coinId: string) => {
   try {
-    const docRef = doc(db, "favoritos", userId);
+    const docRef = doc(db, 'favorite', userId);
     await updateDoc(docRef, {
       cryptos: arrayRemove(coinId),
       updatedAt: new Date()
@@ -39,7 +39,7 @@ export const deleteCoinFromFavorites = async (userId: string, coinId: string) =>
 
 export const getUserFavorites = async (userId: string) => {
   try {
-    const docRef = doc(db, "favoritos", userId)
+    const docRef = doc(db, 'favorite', userId)
     const docSnap = await getDoc(docRef)
 
     if (docSnap.exists()) {
