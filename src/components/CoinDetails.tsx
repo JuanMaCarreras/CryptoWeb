@@ -13,7 +13,7 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 import { useCryptoStore } from "@/store"
-import { AddToFavorite } from './AddToFavorite'
+import { AddToFavorite } from './favorite/AddToFavorite'
 
 
 export function CoinDetails() {

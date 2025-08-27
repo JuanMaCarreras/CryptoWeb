@@ -15,7 +15,7 @@ interface Prop {
 
 export function AddToFavorite({ coinId, className }: Prop ) {
   
-  const { user } = useUser()
+  const { isSignedIn, user } = useUser()
 
   const [isFavorite, setIsFavorite] = useState(false)
 
@@ -52,7 +52,7 @@ export function AddToFavorite({ coinId, className }: Prop ) {
   return (
     <>
       {  
-        user && ( 
+        isSignedIn && ( 
           <Tooltip>
             <TooltipTrigger>
               <button

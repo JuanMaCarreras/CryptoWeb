@@ -5,12 +5,13 @@ import {
   TableRow,
 } from '@/components/ui/table'
 import { HiOutlineExternalLink } from 'react-icons/hi'
-import { AddToFavorite } from './AddToFavorite'
+import { AddToFavorite } from './favorite/AddToFavorite'
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from '@/components/ui/tooltip'
+import { useUser } from '@clerk/clerk-react'
 
 interface CoinProp {
   coin: MarketCoins
@@ -20,6 +21,8 @@ interface CoinProp {
 
 export function CoinsRow({coin, index}: CoinProp) {
 
+  const { isSignedIn } = useUser()
+
   const priceColorClass =  coin.price_change_percentage_24h >= 0 ? 'text-positiveNum' : 'text-negativeNum'
   const tableColor = index % 2 === 0 ? 'bg-deepGray' : 'bg-darkGray'
 
@@ -27,9 +30,12 @@ export function CoinsRow({coin, index}: CoinProp) {
     <>
       <TableRow className={`text-sm ${tableColor}`}>
         
+        {
+          isSignedIn && (
           <TableCell className='text-center'>
             <AddToFavorite coinId={coin.id} />
-          </TableCell>
+          </TableCell>)
+        }
         
         <TableCell className='text-center' >
           {coin.market_cap_rank}
