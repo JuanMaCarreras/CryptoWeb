@@ -10,8 +10,12 @@ export function Auth() {
   return (
     <>
       <SignedOut>
-        <SignInButton />
-        <SignUpButton />
+        <SignInButton>
+          <button>Iniciar sesión</button>
+        </SignInButton>
+        <SignUpButton>
+          <button>Registrarse</button>
+        </SignUpButton>
       </SignedOut>
 
       <SignedIn>
