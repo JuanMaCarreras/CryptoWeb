@@ -18,9 +18,9 @@ export const useAuth = () => {
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, (firebaseUser) => {
       setUser(firebaseUser)
-    });
+    })
     return () => unsub()
-  }, []);
+  }, [])
 
   const register = (email: string, password: string) =>
     createUserWithEmailAndPassword(auth, email, password)
@@ -34,4 +34,4 @@ export const useAuth = () => {
   const logout = () => signOut(auth)
 
   return { user, register, login, loginWithGoogle, logout }
-};
+}
