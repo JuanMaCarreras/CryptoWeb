@@ -13,7 +13,7 @@ import {
 } from "firebase/auth"
 
 export const useAuth = () => {
-  const [user, setUser] = useState<User | null>(null);
+  const [user, setUser] = useState<User | null>(null)
 
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, (firebaseUser) => {
