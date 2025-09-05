@@ -34,6 +34,7 @@ module.exports = {
       positiveNum: '#4ADE80',
       skeletonGray: '#18181b',
       skeletonGray2: '#27272a',
+      button: '#bfbfbf',
     },
     container: {
       center: true,
