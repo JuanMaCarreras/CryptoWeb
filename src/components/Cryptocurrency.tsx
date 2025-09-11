@@ -56,7 +56,6 @@ export function Cryptocurrency() {
   return (
     <>
       <section className='h-full pb-20'>
-
         <h1 className=' text-xl mini:text-base'>Precios actuales de las criptomonedas</h1>
 
         <div className='flex justify-center mt-11 mb-11 border-t-[1px] border-lightGray'>
@@ -75,17 +74,16 @@ export function Cryptocurrency() {
             }
           </Table>
         </div>
-        <div className='flex justify-center w-full mt-4'>
-          
-        {
-          contentPerPage <= filteredCoins.length && 
-            <Button 
-              onClick={handleLoadContent}
-              className='text-[1rem] px-8 py-2 rounded-lg font-medium bg-deepGreen border-[.1rem] border-lightGray hover:bg-brightGreen hover:text-black hover:border-[.1rem] hover:border-logoText  transition duration-700'
-            >
-            Cargar Más
-            </Button>
-        }
+        <div className='flex justify-center w-full mt-4'>  
+          {
+            contentPerPage <= filteredCoins.length && 
+              <Button 
+                onClick={handleLoadContent}
+                className='text-[1rem] px-8 py-2 rounded-lg font-medium bg-deepGreen border-[.1rem] border-lightGray hover:bg-brightGreen hover:text-black hover:border-[.1rem] hover:border-logoText  transition duration-700'
+              >
+              Cargar Más
+              </Button>
+          }
         </div>
         
         <ScrollToTop />

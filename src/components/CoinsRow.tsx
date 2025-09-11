@@ -11,7 +11,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from '@/components/ui/tooltip'
-import { useUser } from '@clerk/clerk-react'
+import { getAuth } from 'firebase/auth'
 
 interface CoinProp {
   coin: MarketCoins
@@ -21,7 +21,9 @@ interface CoinProp {
 
 export function CoinsRow({coin, index}: CoinProp) {
 
-  const { isSignedIn } = useUser()
+  const auth = getAuth()
+  console.log('auth',auth)
+  const user = auth.currentUser
 
   const priceColorClass =  coin.price_change_percentage_24h >= 0 ? 'text-positiveNum' : 'text-negativeNum'
   const tableColor = index % 2 === 0 ? 'bg-deepGray' : 'bg-darkGray'
@@ -31,7 +33,7 @@ export function CoinsRow({coin, index}: CoinProp) {
       <TableRow className={`text-sm ${tableColor}`}>
         
         {
-          isSignedIn && (
+          user && (
           <TableCell className='text-center'>
             <AddToFavorite coinId={coin.id} />
           </TableCell>)
