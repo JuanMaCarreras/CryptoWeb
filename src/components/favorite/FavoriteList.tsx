@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react'
-import { useUser } from '@clerk/clerk-react'
 import { CoinDetails } from '@/types/Coins'
 import { getUserFavorites } from '@/firebase/firestore'
 import { getCoinById } from '@/service/api'
 import { FavoriteCard } from './FavoriteCard'
-import { useCryptoStore } from '@/store'
 import { Link } from 'wouter'
+import { getAuth } from 'firebase/auth'
 
 import {
   Carousel,
@@ -13,19 +12,22 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel"
+} from '@/components/ui/carousel'
 
 
 export function FavoriteList() {
 
-  const { user } = useUser()
+  const auth  = getAuth()
+  console.log(auth)
+  const user = auth.currentUser
+  console.log(user)
+
   const [coins, setCoins] = useState<CoinDetails[]>([])
-  const currency = useCryptoStore(state => state.currency)
   
   useEffect(() => {
     const fetchFavorites = async () => {
       if (user) {
-        const favs = await getUserFavorites(user.id)
+        const favs = await getUserFavorites(user.uid)
         
         const details = await Promise.all(
           favs.map((coinId: string) => getCoinById(coinId))
@@ -37,7 +39,7 @@ export function FavoriteList() {
 
     fetchFavorites()
     
-  }, [user, currency])
+  },[user])
 
   return (
     <>
@@ -49,7 +51,7 @@ export function FavoriteList() {
               coins.map((coin, index) => (
                 <CarouselItem key={index} className='basis-1/3'>
                   <Link to={`/coin/${coin.id}`} >
-                    <FavoriteCard coin={coin} currency={currency} />
+                    <FavoriteCard coin={coin} />
                   </Link>
                 </CarouselItem>
               ))

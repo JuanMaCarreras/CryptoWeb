@@ -6,16 +6,14 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 import { CoinDetails } from '@/types/Coins'
-
+import { useCryptoStore } from '@/store'
 
 type FavoriteCardProps = {
   coin: CoinDetails
-  currency: string
 }
 
-
-
-export function FavoriteCard({ coin, currency }:FavoriteCardProps ) {
+export function FavoriteCard({ coin }: FavoriteCardProps ) {
+  const currency = useCryptoStore(state => state.currency)
   const priceColorClass =  coin.market_data.price_change_percentage_24h >= 0 ? 'text-positiveNum' : 'text-negativeNum'
 
   

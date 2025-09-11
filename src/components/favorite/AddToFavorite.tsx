@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { useUser } from '@clerk/clerk-react'
 import { addCoinToFavorites, deleteCoinFromFavorites, getUserFavorites } from '@/firebase/firestore'
 import { ImStarFull, ImStarEmpty  } from 'react-icons/im'
 import {
@@ -7,6 +6,8 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from '@/components/ui/tooltip'
+import { getAuth } from 'firebase/auth'
+
 
 interface Prop {
   coinId: string
@@ -14,8 +15,8 @@ interface Prop {
 }
 
 export function AddToFavorite({ coinId, className }: Prop ) {
-  
-  const { isSignedIn, user } = useUser()
+  const auth = getAuth()
+  const user = auth.currentUser
 
   const [isFavorite, setIsFavorite] = useState(false)
 
@@ -23,7 +24,7 @@ export function AddToFavorite({ coinId, className }: Prop ) {
     const check = async () => {
 
       if (user) {
-        const favs = await getUserFavorites(user.id)
+        const favs = await getUserFavorites(user.uid)
         setIsFavorite(favs.includes(coinId))
       }
     }
@@ -37,10 +38,10 @@ export function AddToFavorite({ coinId, className }: Prop ) {
 
     if (isFavorite) {
 
-      await deleteCoinFromFavorites(user.id, coinId)
+      await deleteCoinFromFavorites(user.uid, coinId)
     } else {
       
-      await addCoinToFavorites(user.id, coinId)
+      await addCoinToFavorites(user.uid, coinId)
     }
    
     setIsFavorite(!isFavorite)
@@ -52,7 +53,7 @@ export function AddToFavorite({ coinId, className }: Prop ) {
   return (
     <>
       {  
-        isSignedIn && ( 
+        user && ( 
           <Tooltip>
             <TooltipTrigger>
               <button
