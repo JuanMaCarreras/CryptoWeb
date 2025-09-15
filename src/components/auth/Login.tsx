@@ -10,7 +10,7 @@ import {
 } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { Link } from 'wouter'
+import { Link, useLocation } from 'wouter'
 
 
 export function Login() {
@@ -19,6 +19,7 @@ export function Login() {
   const [ email, setEmail ] = useState('')
   const [ password, setPassword ] = useState('')
   const [ error, setError ] = useState('')
+  const [, setLocation] = useLocation()
 
   console.log('Error state', error)
 
@@ -26,6 +27,7 @@ export function Login() {
     e.preventDefault()
     try {
       await login(email, password)
+      setLocation('/')
       console.log('Inicio de sesión exitoso')
     } catch (err: any) {
       setError(err.message)

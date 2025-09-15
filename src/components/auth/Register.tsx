@@ -11,7 +11,7 @@ import {
 } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { Link } from 'wouter'
+import { Link, useLocation } from 'wouter'
 
 export function Register() {
 
@@ -19,12 +19,15 @@ export function Register() {
   const [ email, setEmail ] = useState('')
   const [ password, setPassword ] = useState('')
   const [ error, setError ] = useState('')
+  const [, setLocation] = useLocation()
 
   
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
     try {
       await register(email, password)
+      setLocation('/')
+      console.log('Registro exitoso')
     } catch (err: any) {
       setError(err.message)
       console.log('Error state', err.message)
