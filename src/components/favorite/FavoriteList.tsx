@@ -4,8 +4,6 @@ import { getUserFavorites } from '@/firebase/firestore'
 import { getCoinById } from '@/service/api'
 import { FavoriteCard } from './FavoriteCard'
 import { Link } from 'wouter'
-import { getAuth } from 'firebase/auth'
-
 import {
   Carousel,
   CarouselContent,
@@ -14,13 +12,12 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel'
 
+import { useAuthStore } from '@/store'
+
 
 export function FavoriteList() {
 
-  const auth  = getAuth()
-  console.log(auth)
-  const user = auth.currentUser
-  console.log(user)
+  const { user } = useAuthStore()
 
   const [coins, setCoins] = useState<CoinDetails[]>([])
   

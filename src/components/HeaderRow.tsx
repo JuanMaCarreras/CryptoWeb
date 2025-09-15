@@ -3,12 +3,12 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
-import { useUser } from '@clerk/clerk-react'
+import { useAuthStore } from '@/store'
 
 
 export function HeaderRow() {
   
-  const { user } = useUser()
+  const { user } = useAuthStore()
 
   return (
     <>

@@ -6,7 +6,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from '@/components/ui/tooltip'
-import { getAuth } from 'firebase/auth'
+import { useAuthStore } from '@/store'
 
 
 interface Prop {
@@ -15,8 +15,7 @@ interface Prop {
 }
 
 export function AddToFavorite({ coinId, className }: Prop ) {
-  const auth = getAuth()
-  const user = auth.currentUser
+  const { user } = useAuthStore()
 
   const [isFavorite, setIsFavorite] = useState(false)
 
