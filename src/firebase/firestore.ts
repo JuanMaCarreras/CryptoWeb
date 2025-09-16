@@ -11,7 +11,7 @@ export const addCoinToFavorites = async (userId: string, coinId: string) => {
       await updateDoc(docRef, {
         cryptos: arrayUnion(coinId),
         updatedAt: new Date()
-      });
+      })
     } else {
       await setDoc(docRef, {
         cryptos: [coinId],
@@ -25,7 +25,7 @@ export const addCoinToFavorites = async (userId: string, coinId: string) => {
 
 export const deleteCoinFromFavorites = async (userId: string, coinId: string) => {
   try {
-    const docRef = doc(db, 'favorite', userId);
+    const docRef = doc(db, 'favorite', userId)
     await updateDoc(docRef, {
       cryptos: arrayRemove(coinId),
       updatedAt: new Date()
