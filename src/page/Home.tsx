@@ -1,10 +1,10 @@
 import { FavoriteList } from "@/components/favorite/FavoriteList"
 import { Cryptocurrency } from '@/components/Cryptocurrency'
-import { useUser } from "@clerk/clerk-react"
+import { useAuthStore } from "@/store"
 
 export function Home() {
 
-  const { user } = useUser()
+  const { user } = useAuthStore()
 
   return (
     <>
@@ -13,6 +13,7 @@ export function Home() {
           user && <FavoriteList />
         }
       </div>
+
       <Cryptocurrency />
     </>
   )
