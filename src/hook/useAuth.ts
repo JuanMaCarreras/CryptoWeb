@@ -1,27 +1,15 @@
-import { useEffect, useState } from "react"
 import { 
   auth, 
   provider 
 } from '@/firebase/firebase'
 import { 
-  User, 
-  onAuthStateChanged, 
-  signInWithEmailAndPassword, 
   createUserWithEmailAndPassword, 
-  signOut,
-  signInWithPopup 
-} from "firebase/auth"
+  signInWithEmailAndPassword, 
+  signInWithPopup, 
+  signOut 
+} from 'firebase/auth'
 
 export const useAuth = () => {
-  const [user, setUser] = useState<User | null>(null)
-
-  useEffect(() => {
-    const unsub = onAuthStateChanged(auth, (firebaseUser) => {
-      setUser(firebaseUser)
-    })
-    return () => unsub()
-  }, [])
-
   const register = (email: string, password: string) =>
     createUserWithEmailAndPassword(auth, email, password)
 
@@ -33,5 +21,5 @@ export const useAuth = () => {
 
   const logout = () => signOut(auth)
 
-  return { user, register, login, loginWithGoogle, logout }
+  return { register, login, loginWithGoogle, logout }
 }
