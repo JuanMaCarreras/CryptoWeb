@@ -5,6 +5,7 @@ import { useAuthStore } from "@/store"
 export function Home() {
 
   const { user } = useAuthStore()
+  console.log('user home',user)
 
   return (
     <>
