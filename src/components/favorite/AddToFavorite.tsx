@@ -16,7 +16,6 @@ interface Prop {
 
 export function AddToFavorite({ coinId, className }: Prop ) {
   const { user } = useAuthStore()
-
   const [isFavorite, setIsFavorite] = useState(false)
 
   useEffect(() => {
@@ -37,10 +36,10 @@ export function AddToFavorite({ coinId, className }: Prop ) {
 
     if (isFavorite) {
 
-      await deleteCoinFromFavorites(user.uid, coinId)
+      await deleteCoinFromFavorites(user?.uid, coinId)
     } else {
       
-      await addCoinToFavorites(user.uid, coinId)
+      await addCoinToFavorites(user?.uid, coinId)
     }
    
     setIsFavorite(!isFavorite)
