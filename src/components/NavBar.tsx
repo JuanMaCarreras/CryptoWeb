@@ -2,13 +2,15 @@ import { Link, useLocation } from 'wouter'
 import logo from '@/assets/logo.png'
 import { SearchBar } from './SearchBar'
 import { CurrencySelect } from './CurrencySelect'
-// import { Auth } from './Auth'
 import { Button } from './ui/button'
-
+import { useAuthStore } from '@/store'
+import { Profile } from './auth/Profile'
 
 export function NavBar() {
 
+  const { user } = useAuthStore()
   const [location] = useLocation()
+  
 
   return (
     <>
@@ -31,19 +33,22 @@ export function NavBar() {
           {
             (location == '/' || location.startsWith('/coin')) && <CurrencySelect />
           }
-          {/* <Auth /> */}
-          <div className='flex gap-2'>
-            <Link to='/sign-up'>
-              <Button className='bg-semiDarkGreen hover:bg-SemiGreen text-white text-[1rem] font-medium py-2 px-4 transition-colors duration-700'>
-                Registrarse
-              </Button>
-            </Link>
-            <Link to='/login'>
-              <Button className='bg-buttonGreen hover:bg-SemiGreen  text-white text-[1rem] font-medium py-2 px-4 transition-colors duration-700'>
-                Iniciar Sesión
-              </Button>
-            </Link>
-          </div>
+
+          {
+            user ? <Profile /> : (
+            <div className='flex gap-2'>
+              <Link to='/sign-up'>
+                <Button className='bg-semiDarkGreen hover:bg-SemiGreen text-white text-[1rem] font-medium py-2 px-4 transition-colors duration-700'>
+                  Registrarse
+                </Button>
+              </Link>
+              <Link to='/login'>
+                <Button className='bg-buttonGreen hover:bg-SemiGreen  text-white text-[1rem] font-medium py-2 px-4 transition-colors duration-700'>
+                  Iniciar Sesión
+                </Button>
+              </Link>
+            </div>)
+          }
         </div>
       </nav>
     </>
