@@ -52,9 +52,9 @@ export function CoinsRow({coin, index}: CoinProp) {
           </div>
         </TableCell>
 
-        <TableCell className='text-right'>${coin.current_price.toLocaleString()}</TableCell>
-        <TableCell className={` mini:hidden text-right ${priceColorClass}`}>{coin.price_change_percentage_24h.toFixed(2)}%</TableCell>
-        <TableCell className=' mini:hidden text-center'>${coin.market_cap.toLocaleString()}</TableCell>
+        <TableCell className='text-right text-[.9rem] font-medium'>${coin.current_price.toLocaleString()}</TableCell>
+        <TableCell className={` mini:hidden text-right text-[.9rem] font-medium ${priceColorClass}`}>{coin.price_change_percentage_24h.toFixed(2)}%</TableCell>
+        <TableCell className=' mini:hidden text-center text-[.9rem] font-medium'>${coin.market_cap.toLocaleString()}</TableCell>
         
         <TableCell>
           <Tooltip>

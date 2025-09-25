@@ -20,12 +20,12 @@ export function HeaderRow() {
           <TableHead className='text-center'>
             #
           </TableHead>
-          <TableHead >
+          <TableHead className='text-[.95rem]'>
             Nombre
           </TableHead>
-          <TableHead className='text-right'>Precio</TableHead>
-          <TableHead className='mini:hidden text-right'>24H</TableHead>
-          <TableHead className='mini:hidden text-center'>Capitalización de Mercado</TableHead>
+          <TableHead className='text-right text-[.95rem]'>Precio</TableHead>
+          <TableHead className='mini:hidden text-right text-[.95rem]'>24H</TableHead>
+          <TableHead className='mini:hidden text-center text-[.95rem]'>Capitalización de Mercado</TableHead>
         </TableRow>
       </TableHeader>
     </>
