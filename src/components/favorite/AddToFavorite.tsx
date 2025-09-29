@@ -58,7 +58,7 @@ export function AddToFavorite({ coinId, className }: Prop ) {
                 onClick={toggleFav}
               >
                 {
-                  isFavorite ? <ImStarFull className={`text-base ${className}`}/> : <ImStarEmpty  className={`text-base ${className}`}/>
+                  isFavorite ? <ImStarFull className={`text-base text-brightGreen ${className}`}/> : <ImStarEmpty  className={`text-base ${className}`}/>
                 }
               </button>
             </TooltipTrigger>
