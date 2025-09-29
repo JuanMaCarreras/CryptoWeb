@@ -10,8 +10,11 @@ import './App.css'
 
 import { Register } from '@/components/auth/Register'
 import { Login } from '@/components/auth/Login'
+import { useAuthListener } from '@/hook/useAuthListener'
+
 
 function App() {
+  useAuthListener()
   return (
     <>
       <ToTop />

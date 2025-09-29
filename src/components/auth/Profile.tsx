@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { useAuthStore } from '@/store'
 import { useAuth } from '@/hook/useAuth'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,

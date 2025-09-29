@@ -55,7 +55,7 @@ export function Cryptocurrency() {
 
   return (
     <>
-      <section className='h-full pb-20'>
+      <section className='h-full pb-20 mt-5'>
         <h1 className=' text-xl mini:text-base'>Precios actuales de las criptomonedas</h1>
 
         <div className='flex justify-center mt-11 mb-11 border-t-[1px] border-lightGray'>
