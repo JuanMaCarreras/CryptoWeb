@@ -20,7 +20,7 @@ interface CoinProp {
 
 export function CoinsRow({coin, index}: CoinProp) {
 
-  const user = useAuthStore()
+  const { user } = useAuthStore()
 
   const priceColorClass =  coin.price_change_percentage_24h >= 0 ? 'text-positiveNum' : 'text-negativeNum'
   const tableColor = index % 2 === 0 ? 'bg-deepGray' : 'bg-darkGray'
