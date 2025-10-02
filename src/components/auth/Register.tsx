@@ -15,7 +15,7 @@ import { Link, useLocation } from 'wouter'
 
 export function Register() {
 
-  const { register} = useAuth()
+  const { register, loginWithGoogle } = useAuth()
   const [ email, setEmail ] = useState('')
   const [ password, setPassword ] = useState('')
   const [ error, setError ] = useState('')
@@ -59,12 +59,6 @@ export function Register() {
               <div className='grid gap-2'>
                 <div className='flex items-center'>
                   <Label htmlFor='password'>Contraseña</Label>
-                  <a
-                    href='#'
-                    className='ml-auto inline-block text-sm underline-offset-4 hover:underline'
-                  >
-                    Olvidaste tu contraseña?
-                  </a>
                 </div>
                 <Input 
                   id='password' 
@@ -79,7 +73,7 @@ export function Register() {
               <Button type='submit' className='w-full text-black bg-button border-lightGray hover:bg-logoText transition-colors duration-500'>
                 Registrarse
               </Button>
-              <Button variant='outline' className='w-full bg-deepGreen border-[1px] border-lightGray'>
+              <Button variant='outline' onClick={loginWithGoogle} className='w-full bg-deepGreen border-[1px] border-lightGray'>
                 <FcGoogle/>Registrarse con Google
               </Button>
               <div className='flex items-center justify-center text-sm'>
