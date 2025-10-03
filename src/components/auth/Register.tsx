@@ -12,15 +12,17 @@ import {
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Link, useLocation } from 'wouter'
+import { LuEye  } from 'react-icons/lu'
+import { RiEyeCloseLine } from 'react-icons/ri'
 
 export function Register() {
 
   const { register, loginWithGoogle } = useAuth()
-  const [ email, setEmail ] = useState('')
-  const [ password, setPassword ] = useState('')
+  const [ email, setEmail ] = useState<string>('')
+  const [ password, setPassword ] = useState<string>('')
   const [ error, setError ] = useState('')
   const [, setLocation] = useLocation()
-
+  const [showPassword, setShowPassword] = useState<boolean>(false)
   
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
@@ -60,13 +62,26 @@ export function Register() {
                 <div className='flex items-center'>
                   <Label htmlFor='password'>Contraseña</Label>
                 </div>
-                <Input 
-                  id='password' 
-                  type='password' 
-                  required 
-                  className='bg-deepGreen border-lightGray'
-                  onChange={(e) => setPassword(e.target.value)}
-                />
+                <div className='relative'>
+                  <Input 
+                    id='password' 
+                    type={showPassword ? 'text' : 'password'}
+                    required 
+                    className='bg-deepGreen border-lightGray pr-10'
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                  <button
+                    onClick={() => setShowPassword(!showPassword)}
+                    className='absolute right-3 top-1/2 -translate-y-1/2 p-1 '
+                  >
+                    {
+                    showPassword ? (
+                      <RiEyeCloseLine className='w-4 h-4 text-textGray' />
+                    ) : (
+                      <LuEye className='w-4 h-4 text-textGray' />
+                    )}
+                  </button>
+                </div>
               </div>
             </div>
             <div className='mt-12 flex flex-col gap-4'>
