@@ -7,11 +7,6 @@ export function Home() {
   const { user } = useAuthStore()
   return (
     <>
-      {/* <div className='min-h-[200px]'>
-        {
-          user && <FavoriteList />
-        }
-      </div> */}
       <div 
         className={`
           overflow-hidden transition-all duration-300 ease-in-out
