@@ -6,7 +6,8 @@ import {
   createUserWithEmailAndPassword, 
   signInWithEmailAndPassword, 
   signInWithPopup, 
-  signOut 
+  signOut,
+  sendPasswordResetEmail
 } from 'firebase/auth'
 
 export const useAuth = () => {
@@ -19,7 +20,10 @@ export const useAuth = () => {
   const loginWithGoogle = () =>
     signInWithPopup(auth, provider)
 
+  const resetPassword = (email: string) =>
+    sendPasswordResetEmail(auth, email)
+  
   const logout = () => signOut(auth)
 
-  return { register, login, loginWithGoogle, logout }
+  return { register, login, loginWithGoogle, resetPassword, logout }
 }
