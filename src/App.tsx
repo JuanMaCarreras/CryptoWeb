@@ -11,6 +11,7 @@ import './App.css'
 import { Register } from '@/components/auth/Register'
 import { Login } from '@/components/auth/Login'
 import { useAuthListener } from '@/hook/useAuthListener'
+import { PasswordReset } from '@/page/PasswordReset'
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           {/* <Route component={NotFound} /> */}
           <Route path='/sign-up' component={Register} />
           <Route path='/login' component={Login} />
+          <Route path='/reset-password' component={PasswordReset} />
         </main>
       </Switch>
       <Footer />
