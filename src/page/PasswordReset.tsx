@@ -22,9 +22,9 @@ export function PasswordReset() {
   const handleReset = async () => {
     try {
       await resetPassword(email)
-      setMessage("Revisa tu correo para restablecer tu contraseña.")
+      setMessage('Revisa tu correo para restablecer tu contraseña.')
     } catch (err: any) {
-      setMessage("Error: " + err.message)
+      setMessage(err.message)
     }
   }
 
@@ -32,7 +32,7 @@ export function PasswordReset() {
   return (
     <section className='flex justify-center items-center h-full'>
       <Card className='w-full max-w-[26rem] grid gap-6 bg-deepGreen border-[1px] border-lightGray'>
-        <CardHeader>
+        <CardHeader className='grid gap-4'>
           <CardTitle className='text-lg'>Recuperar Contraseña</CardTitle>
           <CardDescription>
             Ingresa tu correo electrónico para recibir instrucciones de restablecimiento de contraseña.
@@ -58,7 +58,7 @@ export function PasswordReset() {
             </div>
           </form>
           <CardFooter>
-            <p>{message}</p>
+            <p className='text-logoText'>{message}</p>
           </CardFooter>
         </CardContent>
       </Card>
