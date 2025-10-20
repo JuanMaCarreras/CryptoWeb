@@ -8,8 +8,8 @@ import { Footer } from '@/components/Footer'
 import { Route, Switch } from 'wouter'
 import './App.css'
 
-import { Register } from '@/components/auth/Register'
-import { Login } from '@/components/auth/Login'
+import { Register } from '@/page/Register'
+import { Login } from '@/page/Login'
 import { useAuthListener } from '@/hook/useAuthListener'
 import { PasswordReset } from '@/page/PasswordReset'
 
