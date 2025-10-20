@@ -1,9 +1,9 @@
+import { FormEvent } from 'react'
 import { Button } from '@/components/ui/button'
 import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
@@ -11,23 +11,33 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { useState } from 'react'
 import { useAuth } from '@/hook/useAuth'
-
+import { VerifyEmailCard } from '@/components/auth/VerifyEmailCard'
 
 export function PasswordReset() {
-
   const { resetPassword } = useAuth()
   const [email, setEmail] = useState<string>('')
-  const [message, setMessage] = useState('')
+  const [isEmailSent, setIsEmailSent] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState('')
 
-  const handleReset = async () => {
+  const handleReset = async (e: FormEvent) => {
+    e.preventDefault()
+    setIsLoading(true)
+    setError('')
+
     try {
       await resetPassword(email)
-      setMessage('Revisa tu correo para restablecer tu contraseña.')
+      setIsEmailSent(true)
     } catch (err: any) {
-      setMessage(err.message)
+      setError(err.message)
+    } finally {
+      setIsLoading(false)
     }
   }
 
+  if (isEmailSent) {
+    return <VerifyEmailCard />
+  }
 
   return (
     <section className='flex justify-center items-center h-full'>
@@ -41,25 +51,31 @@ export function PasswordReset() {
         <CardContent>
           <form onSubmit={handleReset}>
             <div className='flex flex-col gap-6'>
-              <div className='grid gap-2'>
+              <div>
                 <Label htmlFor='email'>Email</Label>
                 <Input
                   id='email'
                   type='email'
+                  value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder='ejemplo@ejemplo.com'
-                  className='bg-deepGreen border-lightGray '
+                  className='bg-deepGreen border-lightGray'
                   required
+                  disabled={isLoading}
                 />
+                {error && (
+                  <p className='text-red-500 text-sm mt-1'>{error}</p>
+                )}
               </div>
-              <Button type='submit' className='w-full text-black bg-button border-lightGray hover:bg-logoText transition-colors duration-500'>
-                Enviar
+              <Button 
+                type='submit' 
+                className='w-full text-black bg-button border-lightGray hover:bg-logoText transition-colors duration-500'
+                disabled={isLoading}
+              >
+                {isLoading ? 'Enviando...' : 'Enviar'}
               </Button>
             </div>
           </form>
-          <CardFooter>
-            <p className='text-logoText'>{message}</p>
-          </CardFooter>
         </CardContent>
       </Card>
     </section>
