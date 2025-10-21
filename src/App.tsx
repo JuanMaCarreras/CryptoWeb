@@ -4,7 +4,7 @@ import { Home } from '@/page/Home'
 import { Description } from '@/page/Description'
 import { Details } from '@/page/Details'
 import { Footer } from '@/components/Footer'
-// import { NotFound } from '@/page/NotFound'
+import { NotFound } from '@/page/NotFound'
 import { Route, Switch } from 'wouter'
 import './App.css'
 
@@ -25,10 +25,10 @@ function App() {
           <Route path='/' component={Home}  />
           <Route path='/description' component={Description} />
           <Route path='/coin/:coinId' component={Details} />
-          {/* <Route component={NotFound} /> */}
           <Route path='/sign-up' component={Register} />
           <Route path='/login' component={Login} />
           <Route path='/reset-password' component={PasswordReset} />
+          <Route path='/:rest' component={NotFound} />
         </main>
       </Switch>
       <Footer />
