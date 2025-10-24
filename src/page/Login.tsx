@@ -7,7 +7,7 @@ import { EmailInput } from '@/components/auth/EmailInput'
 import { PasswordInput } from '@/components/auth/PasswordInput'
 import { GoogleButton } from '@/components/auth/GoogleButton'
 
-export function LoginTest() {
+export function Login() {
   const { login, loginWithGoogle } = useAuth()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
