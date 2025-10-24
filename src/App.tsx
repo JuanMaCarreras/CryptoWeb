@@ -20,17 +20,18 @@ function App() {
     <>
       <ToTop />
       <NavBar />
-      <Switch>
-        <main className='mx-11 mini:mx-5 h-full flex-1 mt-32'>
-          <Route path='/' component={Home}  />
-          <Route path='/description' component={Description} />
-          <Route path='/coin/:coinId' component={Details} />
-          <Route path='/sign-up' component={Register} />
-          <Route path='/login' component={Login} />
-          <Route path='/reset-password' component={PasswordReset} />
-          <Route path='/:rest' component={NotFound} />
-        </main>
-      </Switch>
+      <main className='mx-11 mini:mx-5 h-full flex-1 mt-32'>
+        <Switch>
+            <Route path='/' component={Home}  />
+            <Route path='/description' component={Description} />
+            <Route path='/coin/:coinId' component={Details} />
+            <Route path='/sign-up' component={Register} />
+            <Route path='/login' component={Login} />
+            <Route path='/reset-password' component={PasswordReset} />z
+            
+            <Route component={NotFound} />
+        </Switch>
+      </main>
       <Footer />
     </>
   )
