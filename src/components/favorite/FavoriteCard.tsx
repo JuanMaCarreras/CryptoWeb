@@ -38,7 +38,7 @@ export function FavoriteCard({ coin }: FavoriteCardProps ) {
 
         <CardContent className="pb-42 flex flex-col gap-1">
           <div className="flex items-center justify-between">
-            <p className="text-base font-bold text-white">
+            <p className="text-base text-white">
               ${coin.market_data.current_price[currency]}
             </p>
             <p className={`text-sm font-semibold ${priceColorClass}`}>

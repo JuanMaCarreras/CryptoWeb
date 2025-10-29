@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { FavoriteCardSkeleton } from '../LoadingSkeleton'
 import { CoinDetails } from '@/types/Coins'
 import { getCoinById } from '@/service/api'
 import { FavoriteCard } from './FavoriteCard'
@@ -13,10 +14,13 @@ import {
 import { useAuthStore } from '@/store'
 import { useFavoritesListener } from '@/hook/useFavoritesListener'
 
+
+
 export function FavoriteList() {
   const { user } = useAuthStore()
   const favorites = useFavoritesListener(user?.uid)
   const [coins, setCoins] = useState<CoinDetails[]>([])
+  const [loading, setLoading] = useState<boolean>(true)
 
   useEffect(() => {
     const fetchCoins = async () => {
@@ -25,8 +29,10 @@ export function FavoriteList() {
           favorites.map((coinId) => getCoinById(coinId))
         )
         setCoins(details)
+        setLoading(false)
       } else {
         setCoins([])
+
       }
     }
 
@@ -41,14 +47,14 @@ export function FavoriteList() {
       <div className='flex flex-row justify-center gap-2 mb-20 mt-4'>
         <Carousel className='w-full max-w-6xl'>
           <CarouselContent>
-            {
-              coins.map((coin, index) => (
+            { 
+              loading ? <FavoriteCardSkeleton /> : ( coins.map((coin, index) => (
                 <CarouselItem key={index} className='basis-1/4'>
                   <Link to={`/coin/${coin.id}`}>
                     <FavoriteCard coin={coin} />
                   </Link>
-                </CarouselItem>
-              ))
+                </CarouselItem>))
+              )
             }
           </CarouselContent>
           <CarouselPrevious className='hover:bg-bg-deepGreen border-[.1rem] border-lightGray rounded-full hover:bg-brightGreen hover:text-black hover:border-[.1rem] hover:border-logoText transition duration-700' />
