@@ -57,3 +57,11 @@ export function TableSkeleton() {
     </>
   )
 }
+
+export function FavoriteCardSkeleton() {
+  return (
+    <>
+      <Skeleton className='w-64 h-28 rounded-lg'/>
+    </>
+  )
+}
