@@ -48,12 +48,20 @@ export function FavoriteList() {
         <Carousel className='w-full max-w-6xl'>
           <CarouselContent>
             { 
-              loading ? <FavoriteCardSkeleton /> : ( coins.map((coin, index) => (
-                <CarouselItem key={index} className='basis-1/4'>
-                  <Link to={`/coin/${coin.id}`}>
-                    <FavoriteCard coin={coin} />
-                  </Link>
-                </CarouselItem>))
+              loading ? (
+                Array.from({ length: 4 }).map((_, index) => (
+                  <CarouselItem key={index} className='basis-1/4'>
+                    <FavoriteCardSkeleton />
+                  </CarouselItem>
+                ))
+              ) : (
+                coins.map((coin, index) => (
+                  <CarouselItem key={index} className='basis-1/4'>
+                    <Link to={`/coin/${coin.id}`}>
+                      <FavoriteCard coin={coin} />
+                    </Link>
+                  </CarouselItem>
+                ))
               )
             }
           </CarouselContent>
