@@ -46,10 +46,10 @@ export function CoinDetails() {
               loading ? <TitleDetailsSkeleton /> : (
                 <CardTitle className='flex items-center mb-7 ml-5 mini:justify-center mini:mb-11 mini:mt-4'>
 
-                  <AddToFavorite coinId={coinId}  className='text-[1.2rem]'/>
                   <img src={coins?.image.small} alt={coins?.name} className='ml-3 mr-2 w-9 h-9'/> 
                   <h2 className='text-3xl'>{coins?.name}</h2> 
                   <span className='uppercase text-sm text-textGray ml-3 mt-2'>{coins?.symbol}</span>
+                  <AddToFavorite coinId={coinId}  className='text-[1.2rem] ml-6'/>
                 
                 </CardTitle>
               )
