@@ -29,9 +29,6 @@ export function Cryptocurrency() {
       try {
         const res = await getCoinMarket({currency, contentPerPage})
         
-        setTimeout(() => {
-          setLoading(true)
-        }, 900)
         setCoins(res)
         setLoading(false)
 
