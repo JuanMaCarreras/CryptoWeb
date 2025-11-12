@@ -3,7 +3,7 @@ import { HeaderRow } from '@/components/HeaderRow'
 import { MarketCoins }from '@/types/Coins'
 import { getCoinMarket } from '@/service/api'
 import { CoinsRow } from '@/components/CoinsRow'
-import { TableSkeleton } from '@/components/LoadingSkeleton'
+import { Spinner } from './ui/spinner'
 import {
   Table,
   TableBody,
@@ -29,6 +29,9 @@ export function Cryptocurrency() {
       try {
         const res = await getCoinMarket({currency, contentPerPage})
         
+        setTimeout(() => {
+          setLoading(true)
+        }, 900)
         setCoins(res)
         setLoading(false)
 
@@ -59,10 +62,10 @@ export function Cryptocurrency() {
         <h1 className=' text-xl mini:text-base'>Precios actuales de las criptomonedas</h1>
 
         <div className='flex justify-center mt-11 mb-11 border-t-[1px] border-lightGray'>
-          <Table> 
-            <HeaderRow />
-            {
-              loading ? <TableSkeleton /> : (
+          {
+            loading ? <Spinner className='size-20' /> : (
+              <Table> 
+                <HeaderRow />
                 <TableBody>
                   {
                     visibleData.map((coin, index) => (
@@ -70,9 +73,8 @@ export function Cryptocurrency() {
                     ))
                   }
                 </TableBody>
-                )
-            }
-          </Table>
+              </Table>)
+          }
         </div>
         <div className='flex justify-center w-full mt-4'>  
           {
@@ -85,7 +87,6 @@ export function Cryptocurrency() {
               </Button>
           }
         </div>
-        
         <ScrollToTop />
 
       </section>
