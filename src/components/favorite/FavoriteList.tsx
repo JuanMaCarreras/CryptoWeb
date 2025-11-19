@@ -65,8 +65,8 @@ export function FavoriteList() {
               )
             }
           </CarouselContent>
-          <CarouselPrevious className='hover:bg-bg-deepGreen border-[.1rem] border-lightGray rounded-full hover:bg-brightGreen hover:text-black hover:border-[.1rem] hover:border-logoText transition duration-700' />
-          <CarouselNext className='hover:bg-bg-deepGreen border-[.1rem] border-lightGray rounded-full hover:bg-brightGreen hover:text-black hover:border-[.1rem] hover:border-logoText transition duration-700' />
+          <CarouselPrevious className='hover:border-brightGreen hover:border-[.1rem] hover:bg-SemiGreen border-[.1rem] border-lightGray rounded-full transition-colors duration-500' />
+          <CarouselNext className='hover:border-brightGreen hover:border-[.1rem] hover:bg-SemiGreen border-[.1rem] border-lightGray rounded-full transition-colors duration-500' />
         </Carousel>
       </div>
     </section>
