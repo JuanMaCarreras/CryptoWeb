@@ -52,6 +52,12 @@ export function Cryptocurrency() {
 
   const visibleData = filteredCoins.slice(0, contentPerPage) 
 
+  if(visibleData.length === 0 && !loading) return (
+    
+    <div className='flex justify-center items-center h-48'>
+      <h2 className='text-xl'>No se han encontrado resultados</h2>
+    </div>
+  )
 
   return (
     <>
