@@ -20,15 +20,15 @@ export function FavoriteCard({ coin }: FavoriteCardProps ) {
     <>
       <Card
         key={coin.id}
-        className="w-64 h-28 border-lightGray rounded-lg bg-darkGreen hover:bg-hoverGreen hover:border-brightGreen transition-colors duration-500"
+        className='w-64 h-28 select-none border-lightGray rounded-lg bg-darkGreen hover:bg-hoverGreen hover:border-brightGreen transition-colors duration-500'
       >
-        <CardHeader className="p-3 flex flex-row items-center gap-2">
+        <CardHeader className='p-3 flex flex-row items-center gap-2'>
           <img
             src={coin.image.small}
             alt={coin.name}
-            className="w-7 h-7"
+            className='w-7 h-7'
           />
-          <CardDescription className="text-lg text-gray-400 font-medium pb-1">
+          <CardDescription className='text-lg text-gray-400 font-medium pb-1'>
             {coin.name}
           </CardDescription>
           <CardDescription className='text-base font-semibold text-textGray pb-1'>
@@ -36,9 +36,9 @@ export function FavoriteCard({ coin }: FavoriteCardProps ) {
           </CardDescription>
         </CardHeader>
 
-        <CardContent className="pb-42 flex flex-col gap-1">
-          <div className="flex items-center justify-between">
-            <p className="text-base text-white">
+        <CardContent className='pb-42 flex flex-col gap-1'>
+          <div className='flex items-center justify-between'>
+            <p className='text-base text-white'>
               ${coin.market_data.current_price[currency]}
             </p>
             <p className={`text-sm font-semibold ${priceColorClass}`}>
