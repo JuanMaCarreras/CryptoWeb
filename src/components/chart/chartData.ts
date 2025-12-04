@@ -1,28 +1,21 @@
-interface CoinPoint {
-  time: string
+import { CoinMarketChart } from '@/types/Coins'
+
+interface ChartPoint {
+  date: number
   price: number
   marketCap: number
   volume: number
 }
 
-interface ChartApiResponse {
-  prices: [number, number][]
-  market_caps: [number, number][]
-  total_volumes: [number, number][]
-}
-
-export function chartData(data: ChartApiResponse): CoinPoint[] {
-
+export function chartData(data: CoinMarketChart): ChartPoint[] {
   const { prices, market_caps, total_volumes } = data
 
   const result = prices.map((point: [number, number], index: number) => ({
-    time: new Date(point[0]).toLocaleDateString(),
+    date: point[0],
     price: point[1],
     marketCap: market_caps[index][1],
     volume: total_volumes[index][1],
   }))
 
-
   return result
-
 }
