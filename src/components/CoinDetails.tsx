@@ -16,6 +16,9 @@ import { useCryptoStore } from "@/store"
 import { AddToFavorite } from './favorite/AddToFavorite'
 
 
+import { ChartPro } from './chart/ChartPro'
+
+
 export function CoinDetails() {
 
   const currency = useCryptoStore(state => state.currency)
@@ -93,6 +96,7 @@ export function CoinDetails() {
         </CardHeader>    
         <CardContent>  
           <Chart coinId={coinId} currency={currency}/>
+          <ChartPro coinId={coinId} currency={currency}/>
         </CardContent>    
         <CardFooter>
         </CardFooter>  
