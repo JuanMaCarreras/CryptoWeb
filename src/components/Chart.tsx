@@ -37,7 +37,6 @@ export function Chart ({coinId, currency}: DataParams) {
     const fetchDataChart = async () => {
       try {
         const data:CoinMarketChart  = await getCoinChartMarket({coinId,currency})
-        console.log('Data chart:', data)
         const dataFormat = data.prices.map(price => ({
           date: new Date(price[0]).toLocaleDateString(),
           price: price[1]
