@@ -84,7 +84,7 @@ export function Cryptocurrency() {
             contentPerPage <= filteredCoins.length && 
               <Button 
                 onClick={handleLoadContent}
-                className='text-[1rem] px-8 py-2 rounded-lg font-medium bg-deepGreen border-[.1rem] border-lightGray hover:bg-brightGreen hover:text-black hover:border-[.1rem] hover:border-logoText  transition duration-700'
+                className='text-[1rem] px-8 py-2 rounded-lg font-medium bg-deepGreen border-[.1rem] border-button hover:bg-hoverGreen hover:border-brightGreen transition-colors duration-500'
               >
               Cargar Más
               </Button>

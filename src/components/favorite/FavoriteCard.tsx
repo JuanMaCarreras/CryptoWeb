@@ -20,7 +20,7 @@ export function FavoriteCard({ coin }: FavoriteCardProps ) {
     <>
       <Card
         key={coin.id}
-        className='w-64 h-28 select-none border-lightGray rounded-lg bg-darkGreen hover:bg-hoverGreen hover:border-brightGreen transition-colors duration-500'
+        className='w-64 h-28 select-none border-button rounded-lg bg-darkGreen hover:bg-hoverGreen hover:border-brightGreen transition-colors duration-500'
       >
         <CardHeader className='p-3 flex flex-row items-center gap-2'>
           <img
