@@ -29,6 +29,7 @@ interface  MarketData{
   market_cap: MarketValue
   price_change_percentage_24h: number
   price_change_24h: number
+  total_volume: number
   high_24h: { [key: string]: number }
   low_24h: { [key: string]: number }
 }
@@ -47,4 +48,10 @@ export interface CoinMarketChart {
   prices : [number, number] []
   market_caps: [number, number][]
   total_volumes: [number, number][]
+}
+
+
+export interface ChartPoint {
+  date: number   // timestamp (ms)
+  price: number
 }
