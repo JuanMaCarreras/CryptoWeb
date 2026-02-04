@@ -44,6 +44,16 @@ export interface CoinDetails {
   market_data: MarketData
 }
 
+export interface CoinDetailProps {
+  market_cap_rank: number;
+  market_data: {
+    market_cap: Record<string, number>
+    total_volume: Record<string, number>
+    high_24h: Record<string, number>
+    low_24h: Record<string, number>
+  }
+}
+
 export interface CoinMarketChart {
   prices : [number, number] []
   market_caps: [number, number][]
