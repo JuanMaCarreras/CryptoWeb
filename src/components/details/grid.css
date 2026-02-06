@@ -1,0 +1,9 @@
+.card {
+  background: radial-gradient(
+  800px 500px at 50% 40%,
+  #134e3a 0%,
+  #0b2a20 35%,
+  #081814 60%,
+  #050b09 100%
+  );
+}
