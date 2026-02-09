@@ -71,7 +71,7 @@ export function Cryptocurrency() {
                 <HeaderRow />
                 <TableBody>
                   {
-                    visibleData.map((coin, index) => (
+                    coins && visibleData.map((coin, index) => (
                       <CoinsRow key={coin.id} coin={coin} index={index}/>
                     ))
                   }

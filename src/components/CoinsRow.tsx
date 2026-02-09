@@ -12,6 +12,7 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip'
 import { useAuthStore } from '@/store'
+
 interface CoinProp {
   coin: MarketCoins
   index: number
@@ -22,7 +23,7 @@ export function CoinsRow({coin, index}: CoinProp) {
 
   const { user } = useAuthStore()
 
-  const priceColorClass =  coin.price_change_percentage_24h >= 0 ? 'text-positiveNum' : 'text-negativeNum'
+  const priceColorClass =  coin?.price_change_percentage_24h && coin.price_change_percentage_24h >= 0 ? 'text-positiveNum' : 'text-negativeNum'
   const tableColor = index % 2 === 0 ? 'bg-deepGray' : 'bg-darkGray'
 
   return (
@@ -53,7 +54,7 @@ export function CoinsRow({coin, index}: CoinProp) {
         </TableCell>
 
         <TableCell className='text-right text-[.9rem] font-medium'>${coin.current_price.toLocaleString()}</TableCell>
-        <TableCell className={` mini:hidden text-right text-[.9rem] font-medium ${priceColorClass}`}>{coin.price_change_percentage_24h.toFixed(2)}%</TableCell>
+        <TableCell className={` mini:hidden text-right text-[.9rem] font-medium ${priceColorClass}`}>{coin?.price_change_percentage_24h && coin?.price_change_percentage_24h.toFixed(2)}%</TableCell>
         <TableCell className=' mini:hidden text-center text-[.9rem] font-medium'>${coin.market_cap.toLocaleString()}</TableCell>
         
         <TableCell>
