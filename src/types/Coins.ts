@@ -79,7 +79,7 @@ export interface MarketCoins {
   market_cap: number
   market_cap_rank: number
   total_volume: number
-  price_change_percentage_24h: number
+  price_change_percentage_24h: number | null
   market_cap_change_percentage_24h: number
 }
 
@@ -99,8 +99,8 @@ export interface MarketData {
   total_volume: CurrencyMap
   high_24h: CurrencyMap
   low_24h: CurrencyMap
-  price_change_percentage_24h: number
-  price_change_24h: number
+  price_change_percentage_24h: number | null
+  price_change_24h: number | null
 }
 
 export interface CoinDetails {
