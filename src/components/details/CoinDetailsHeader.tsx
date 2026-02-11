@@ -1,0 +1,43 @@
+import { AddToFavorite } from '../favorite/AddToFavorite'
+import type { CoinDetails } from '@/types/Coins'
+import { useCryptoStore } from '@/store'
+import { TitleDetailsSkeleton } from '../LoadingSkeleton'
+
+export function CoinDetailsHeader({ loading, coins, coinId}: {loading: boolean, coins: CoinDetails | null, coinId: string}) {
+  
+  const currency = useCryptoStore(state => state.currency)
+  return (
+    <>
+      {
+        loading ? <TitleDetailsSkeleton /> : (
+          <div className='mb-5 ml-5'>
+            <div className='flex items-center font-[590] mt-9 ml-3 mini:justify-center mini:mb-11 mini:mt-4'>
+
+              <img src={coins?.image.large} alt={coins?.name} className='ml-3 mr-3 size-12'/> 
+              <h2 className='text-3xl font-bold'>{coins?.name}</h2> 
+              <span className='uppercase text-lg text-textGray ml-2 mt-2'>{coins?.symbol}</span>
+              <AddToFavorite coinId={coinId}  className='text-[1.2rem] ml-6 mt-2'/>
+                  
+            </div>
+            <div className='flex items-center gap-5 flex-wrap ml-8 mt-6'>
+              <span className='text-4xl font-bold'>
+                ${coins?.market_data.current_price[currency].toLocaleString()}
+              </span>
+
+              <span
+                className={`text-lg font-medium ${
+                  coins?.market_data.price_change_percentage_24h && coins?.market_data.price_change_percentage_24h > 0
+                    ? 'text-positiveNum'
+                    : 'text-negativeNum'
+                }`}
+              >
+                {coins?.market_data.price_change_percentage_24h?.toFixed(2)}%
+              </span>
+              </div>
+          </div>
+        )
+      }
+    </>
+  )
+}
+
