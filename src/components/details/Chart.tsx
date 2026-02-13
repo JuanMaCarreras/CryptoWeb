@@ -60,7 +60,7 @@ export function Chart ({coinId, currency}: DataParams) {
     <>
       {
         loading ? <ChartSkeleton /> : (
-          <ChartContainer config={chartConfig} className='h-[23rem] max-w-[95%]'>
+          <ChartContainer config={chartConfig} className='h-[26rem] w-[60rem] max-w-[95%]'>
             <ResponsiveContainer width="20" height='50%'>
               <AreaChart accessibilityLayer data={dataChart} margin={{ right: 12 }}>
                 <CartesianGrid vertical={false}  />
