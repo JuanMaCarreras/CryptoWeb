@@ -20,7 +20,7 @@ function App() {
     <>
       <ToTop />
       <NavBar />
-      <main className='mx-11 mini:mx-5 h-full flex-1 mt-32'>
+      <main className='mx-11 mini:mx-5 h-full flex-1 mt-24'>
         <Switch>
             <Route path='/' component={Home}  />
             <Route path='/description' component={Description} />
