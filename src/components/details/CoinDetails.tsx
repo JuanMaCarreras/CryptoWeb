@@ -11,19 +11,20 @@ export function CoinDetails() {
 
   const currency = useCryptoStore(state => state.currency)
   const { coinId } = useParams<{coinId: string}>()
-  const { coins, loading, error } = useCoinDetails(coinId)
+  const { coins, loading } = useCoinDetails(coinId)
 
-  console.log('coin error', error)
 
   return (
-    <Card className='my-6 '>
-      <div className='flex '>
-        <div className='flex flex-col gap-11 mb-14'>
-          <CoinDetailsHeader loading={loading} coins={coins} coinId={coinId}/>
-          <Chart coinId={coinId} currency={currency} />
+    <section className='w-full flex justify-center border-2 border-negativeNum my-5'>
+      <Card className='w-full'>
+        <div className='flex '>
+          <div className='flex flex-col gap-11 mb-14'>
+            <CoinDetailsHeader loading={loading} coins={coins} coinId={coinId}/>
+            <Chart coinId={coinId} currency={currency} />
+          </div>
+          { coins && <MarketData coins={coins} /> }
         </div>
-        { coins && <MarketData coins={coins} /> }
-      </div>
-    </Card>
+      </Card>
+    </section>
   )
 }

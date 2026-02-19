@@ -14,12 +14,12 @@ export function CoinDetailsHeader({ loading, coins, coinId}: {loading: boolean, 
             <div className='flex items-center font-[590] mt-9 ml-3 mini:justify-center mini:mb-11 mini:mt-4'>
 
               <img src={coins?.image.large} alt={coins?.name} className='ml-3 mr-3 size-12'/> 
-              <h2 className='text-3xl font-bold'>{coins?.name}</h2> 
-              <span className='uppercase text-lg text-textGray ml-2 mt-2'>{coins?.symbol}</span>
-              <AddToFavorite coinId={coinId}  className='text-[1.2rem] ml-6 mt-2'/>
+              <h2 className='text-3xl font-bold text-button'>{coins?.name}</h2> 
+              <span className='uppercase text-lg text-textGray ml-2 mt-1'>{coins?.symbol}</span>
+              <AddToFavorite coinId={coinId}  className='text-[1.2rem] ml-3 mt-3'/>
                   
             </div>
-            <div className='flex items-center gap-5 flex-wrap ml-8 mt-6'>
+            <div className='flex items-center gap-5 flex-wrap ml-4 mt-6'>
               <span className='text-4xl font-bold'>
                 ${coins?.market_data.current_price[currency].toLocaleString()}
               </span>
