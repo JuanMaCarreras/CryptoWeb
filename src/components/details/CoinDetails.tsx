@@ -14,17 +14,38 @@ export function CoinDetails() {
   const { coins, loading } = useCoinDetails(coinId)
 
 
-  return (
-    <section className='w-full flex justify-center border-2 border-negativeNum my-5'>
-      <Card className='w-full'>
-        <div className='flex '>
-          <div className='flex flex-col gap-11 mb-14'>
-            <CoinDetailsHeader loading={loading} coins={coins} coinId={coinId}/>
+  // return (
+  //   <section className='w-full flex justify-center my-5 '>
+  //     <Card className='w-full pb-9'>
+  //       <div className='flex '>
+  //         <div className='flex flex-col gap-11 mb-14'>
+  //           <CoinDetailsHeader loading={loading} coins={coins} coinId={coinId}/>
+  //           <div className='w-[58rem] h-[25rem]'>
+  //             <Chart coinId={coinId} currency={currency} />
+  //           </div>
+  //         </div>
+  //         { coins && <MarketData coins={coins} /> }
+  //       </div>
+  //     </Card>
+  //   </section>
+  // )
+return (
+  <section className='w-full flex justify-center my-5'>
+    <Card className='w-full pb-9 overflow-hidden'>
+      <div className='flex flex-col [@media(min-width:820px)]:flex-row'>
+        
+        {/* Header + Chart */}
+        <div className='flex flex-col gap-11 mb-6 [@media(min-width:820px)]:mb-14 min-w-0 flex-1'>
+          <CoinDetailsHeader loading={loading} coins={coins} coinId={coinId}/>
+          <div className='w-full [@media(min-width:820px)]:w-[58rem] h-[25rem] px-2 [@media(min-width:820px)]:px-0'>
             <Chart coinId={coinId} currency={currency} />
           </div>
-          { coins && <MarketData coins={coins} /> }
         </div>
-      </Card>
-    </section>
-  )
+
+        {/* Market Data */}
+        {coins && <MarketData coins={coins} />}
+      </div>
+    </Card>
+  </section>
+)
 }
