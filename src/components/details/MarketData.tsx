@@ -4,9 +4,9 @@ import { useCryptoStore } from '@/store'
 
 function MarketRow({title, value, highlight}: {title: string, value: string, highlight?: boolean}) {
   return (
-    <div className='flex justify-between mb-3 border-b-2 border-lightGray pb-3'>
-      <span className='text-lg text-button'>{title}</span>
-      <span className={`text-xl font-medium uppercase ${highlight ? 'text-brightGreen' : ''}`}>
+    <div className='flex justify-between mb-3 border-b-2 border-lightGray pb-3 gap-4'>
+      <span className='text-[.95rem] text-button shrink-0'>{title}</span>
+      <span className={`text-xl font-medium uppercase text-right break-all ${highlight ? 'text-brightGreen' : ''}`}>
         {value}
       </span>
     </div>
@@ -32,12 +32,11 @@ export function MarketData({ coins }: { coins: CoinDetails }) {
 
   return (
     <>
-      <aside className='flex flex-col gap-3 w-[25rem] min-x-[20rem] p-5 mx-10 mt-12'>
+      <aside className='flex flex-col gap-3 w-full [@media(min-width:820px)]:w-[25rem] [@media(min-width:820px)]:min-w-[20rem] p-5 mx-0 [@media(min-width:820px)]:mx-10 my-6 [@media(min-width:820px)]:my-12'>
         <p className='text-2xl mb-5'>Datos del Mercado</p>
-        {
-          marketItems.map((item, index) => (
-          <MarketRow key={index} {...item} />))
-        }
+        {marketItems.map((item, index) => (
+          <MarketRow key={index} {...item} />
+        ))}
       </aside>
     </>
   )
