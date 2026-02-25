@@ -33,16 +33,12 @@ return (
   <section className='w-full flex justify-center my-5'>
     <Card className='w-full pb-9 overflow-hidden'>
       <div className='flex flex-col [@media(min-width:820px)]:flex-row'>
-        
-        {/* Header + Chart */}
         <div className='flex flex-col gap-11 mb-6 [@media(min-width:820px)]:mb-14 min-w-0 flex-1'>
           <CoinDetailsHeader loading={loading} coins={coins} coinId={coinId}/>
-          <div className='w-full [@media(min-width:820px)]:w-[58rem] h-[25rem] px-2 [@media(min-width:820px)]:px-0'>
+          <div className='ml-10 w-full [@media(min-width:820px)]:w-[58rem] h-[25rem] px-2 [@media(min-width:820px)]:px-0'>
             <Chart coinId={coinId} currency={currency} />
           </div>
         </div>
-
-        {/* Market Data */}
         {coins && <MarketData coins={coins} />}
       </div>
     </Card>

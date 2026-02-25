@@ -58,32 +58,30 @@ export function Chart ({coinId, currency}: DataParams) {
 
   return (
     <>
-      {
-        loading ? <ChartSkeleton /> : (
-          <ChartContainer config={chartConfig} className='h-[26rem] w-[60rem] max-w-[95%]'>
-            <ResponsiveContainer width="20" height='50%'>
-              <AreaChart accessibilityLayer data={dataChart} margin={{ right: 12 }}>
-                <CartesianGrid vertical={false}  />
-                <YAxis domain={[minPrice * 0.95, maxPrice * 1.05]} tick={false}/>
-                <XAxis 
-                  dataKey='date'
-                  tickLine={true}
-                  tickMargin={8}
-                />
-                <ChartTooltip cursor={false} content={<ChartTooltipContent hideLabel />}/>
-                <Area
-                    dataKey="price"
-                    type="linear"
-                    fill="var(--color-desktop)"
-                    fillOpacity={0.1}
-                    stroke="#07F2B0"
-                    strokeWidth={2}
-                  />
-              </AreaChart>
-            </ResponsiveContainer>
-          </ChartContainer>
-        )
-      }
+      {loading ? <ChartSkeleton /> : (
+        <ChartContainer config={chartConfig} className='h-[26rem] w-full'>
+          <ResponsiveContainer width="100%" height="100%">
+            <AreaChart accessibilityLayer data={dataChart} margin={{ right: 12 }}>
+              <CartesianGrid vertical={false} />
+              <YAxis domain={[minPrice * 0.95, maxPrice * 1.05]} tick={false} width={0} />
+              <XAxis 
+                dataKey='date'
+                tickLine={true}
+                tickMargin={8}
+              />
+              <ChartTooltip cursor={false} content={<ChartTooltipContent hideLabel />}/>
+              <Area
+                dataKey="price"
+                type="linear"
+                fill="var(--color-desktop)"
+                fillOpacity={0.1}
+                stroke="#07F2B0"
+                strokeWidth={2}
+              />
+            </AreaChart>
+          </ResponsiveContainer>
+        </ChartContainer>
+      )}
     </>
   )
 }
