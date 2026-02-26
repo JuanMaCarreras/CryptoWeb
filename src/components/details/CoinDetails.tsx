@@ -5,7 +5,7 @@ import { useCryptoStore } from '@/store'
 import { MarketData } from './MarketData'
 import { Card } from '../ui/card'
 import { CoinDetailsHeader } from './CoinDetailsHeader'
-import { useCoinDetails } from '@/hooks/useCoinDetails'
+import { useCoinDetails } from '@/hook/useCoinDetails'
 
 export function CoinDetails() {
 
