@@ -17,12 +17,15 @@ export function CoinDetails() {
     <section className='w-full flex justify-center my-5'>
       <Card className='w-full pb-9 overflow-hidden'>
         <div className='flex flex-col [@media(min-width:820px)]:flex-row'>
-          <div className='flex flex-col gap-11 mb-6 [@media(min-width:820px)]:mb-14 min-w-0 flex-1'>
+          
+          {/* Header + Chart */}
+          <div className='flex flex-col gap-11 mb-6 [@media(min-width:820px)]:mb-14 w-full [@media(min-width:820px)]:flex-1 min-w-0'>
             <CoinDetailsHeader loading={loading} coins={coins} coinId={coinId}/>
-            <div className='ml-10 w-full [@media(min-width:820px)]:w-[58rem] h-[25rem] px-2 [@media(min-width:820px)]:px-0'>
+            <div className='w-full h-[25rem]'>
               <Chart coinId={coinId} currency={currency} />
             </div>
           </div>
+
           {coins && <MarketData coins={coins} />}
         </div>
       </Card>

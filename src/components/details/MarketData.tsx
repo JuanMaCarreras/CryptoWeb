@@ -32,7 +32,7 @@ export function MarketData({ coins }: { coins: CoinDetails }) {
 
   return (
     <>
-      <aside className='flex flex-col gap-3 w-full [@media(min-width:820px)]:w-[25rem] [@media(min-width:820px)]:min-w-[20rem] p-5 mx-0 [@media(min-width:820px)]:mx-10 my-6 [@media(min-width:820px)]:my-12'>
+      <aside className='flex flex-col gap-3 w-full [@media(min-width:820px)]:w-[22rem] [@media(min-width:820px)]:shrink-0 p-5 px-6 my-6 [@media(min-width:820px)]:my-12 [@media(min-width:820px)]:mx-4'>
         <p className='text-2xl mb-5'>Datos del Mercado</p>
         {marketItems.map((item, index) => (
           <MarketRow key={index} {...item} />
