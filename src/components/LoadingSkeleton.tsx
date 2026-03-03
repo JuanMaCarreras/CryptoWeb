@@ -1,13 +1,5 @@
 import { Skeleton } from '@/components/ui/skeleton'
 
-export function ChartSkeleton() {
-  return (
-    <>
-      <Skeleton className='ml-[70px] mb-[45px] h-[33rem] w-[87%] rounded-xl'/>
-    </>
-  )
-}
-
 export function TitleDetailsSkeleton() {
   return (
     <>
