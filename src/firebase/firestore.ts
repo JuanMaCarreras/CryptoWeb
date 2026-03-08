@@ -1,5 +1,5 @@
 import { db } from './firebase'
-import { doc, setDoc, getDoc, updateDoc, arrayUnion, arrayRemove  } from 'firebase/firestore'
+import { doc, setDoc, getDoc, updateDoc, arrayUnion, arrayRemove, serverTimestamp  } from 'firebase/firestore'
 
 
 export const addCoinToFavorites = async (userId: string, coinId: string) => {
@@ -10,12 +10,12 @@ export const addCoinToFavorites = async (userId: string, coinId: string) => {
     if (docSnap.exists()) {
       await updateDoc(docRef, {
         cryptos: arrayUnion(coinId),
-        updatedAt: new Date()
+        updatedAt: serverTimestamp()
       })
     } else {
       await setDoc(docRef, {
         cryptos: [coinId],
-        updatedAt: new Date()
+        updatedAt: serverTimestamp()
       })
     }
   } catch (error) {
@@ -28,7 +28,7 @@ export const deleteCoinFromFavorites = async (userId: string, coinId: string) =>
     const docRef = doc(db, 'favorite', userId)
     await updateDoc(docRef, {
       cryptos: arrayRemove(coinId),
-      updatedAt: new Date()
+      updatedAt: serverTimestamp()
     })
 
     console.log('Coin removed from favorites successfully')
