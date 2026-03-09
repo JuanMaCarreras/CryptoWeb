@@ -12,6 +12,7 @@ Desarrollada con TypeScript, React, Tailwind CSS, y shadcn/ui, con un diseño si
 -   **TypeScript.**
 -   **React.**
 -   **Tailwind CSS**
+-   **Firebase (firestore y Authentication)**: Autenticación para Guarda y mostrar favorios del usuario (Reglas de seguridad y rate limit)
 -   **shadcn/ui**: Componentes de interfaz de usuario.
 -   **Zustand**: Estado global.
 -   **Axios**: Solicitudes a la API de CoinGecko.
