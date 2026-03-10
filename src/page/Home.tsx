@@ -2,7 +2,7 @@ import { FavoriteList } from "@/components/favorite/FavoriteList"
 import { Cryptocurrency } from '@/components/Cryptocurrency'
 import { useAuthStore } from "@/store"
 
-export function Home() {
+export default function Home() {
 
   const { user } = useAuthStore()
   return (
