@@ -1,9 +1,10 @@
+import { memo } from 'react'
 import { AddToFavorite } from '../favorite/AddToFavorite'
 import type { CoinDetails } from '@/types/Coins'
 import { useCryptoStore } from '@/store'
 import { TitleDetailsSkeleton } from '../LoadingSkeleton'
 
-export function CoinDetailsHeader({ loading, coins, coinId}: {loading: boolean, coins: CoinDetails | null, coinId: string}) {
+export const CoinDetailsHeader = memo(function CoinDetailsHeader({ loading, coins, coinId}: {loading: boolean, coins: CoinDetails | null, coinId: string}) {
   
   const currency = useCryptoStore(state => state.currency)
   return (
@@ -39,5 +40,5 @@ export function CoinDetailsHeader({ loading, coins, coinId}: {loading: boolean, 
       }
     </>
   )
-}
+})
 

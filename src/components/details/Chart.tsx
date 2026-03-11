@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import { AreaChart, CartesianGrid, XAxis, YAxis, ResponsiveContainer, Area } from 'recharts'
 import {
   ChartConfig,
@@ -20,7 +21,7 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
-export function Chart ({coinId, currency}: DataParams) {
+export const Chart = memo(function Chart ({coinId, currency}: DataParams) {
 
   const { dataChart, loading, minPrice, maxPrice } = useCoinChart(coinId, currency)
   
@@ -54,4 +55,4 @@ export function Chart ({coinId, currency}: DataParams) {
       }
     </>
   )
-}
+})

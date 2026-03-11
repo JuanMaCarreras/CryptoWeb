@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import { formatMarketCap } from '@/utils/formatNum'
 import type { CoinDetails } from '@/types/Coins'
 import { useCryptoStore } from '@/store'
@@ -15,7 +16,7 @@ function MarketRow({title, value, highlight}: {title: string, value: string, hig
 
 
 
-export function MarketData({ coins }: { coins: CoinDetails }) {
+export const MarketData = memo(function MarketData({ coins }: { coins: CoinDetails }) {
   
   const currency = useCryptoStore(state => state.currency)
   const { market_cap_rank, market_data } = coins
@@ -40,4 +41,4 @@ export function MarketData({ coins }: { coins: CoinDetails }) {
       </aside>
     </>
   )
-}
+})
