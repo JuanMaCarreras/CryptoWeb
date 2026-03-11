@@ -3,7 +3,7 @@ import { formatMarketCap } from '@/utils/formatNum'
 import type { CoinDetails } from '@/types/Coins'
 import { useCryptoStore } from '@/store'
 
-function MarketRow({title, value, highlight}: {title: string, value: string, highlight?: boolean}) {
+const MarketRow = memo(function MarketRow({title, value, highlight}: {title: string, value: string, highlight?: boolean}) {
   return (
     <div className='flex justify-between mb-3 border-b-2 border-lightGray pb-3 gap-4'>
       <span className='text-[.95rem] text-button shrink-0'>{title}</span>
@@ -12,7 +12,7 @@ function MarketRow({title, value, highlight}: {title: string, value: string, hig
       </span>
     </div>
   )
-}
+})
 
 
 
