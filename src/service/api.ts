@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { MarketCoins, CoinMarketChart, CoinDetails  }  from '@/types/Coins'
 
-const BASE_URL = 'https://api.coingecko.com/api/v3'
+const BASE_URL = import.meta.env.VITE_BASE_URL
 const API_KEY = import.meta.env.VITE_API_KEY
 
 const api = axios.create({
@@ -13,12 +13,23 @@ const api = axios.create({
 })
 
 
-export const getCoinMarket = async ({currency, contentPerPage}: { currency: string; contentPerPage: number }): Promise<MarketCoins[]> => {
+// export const getCoinMarket = async ({currency, contentPerPage}: { currency: string; contentPerPage: number }): Promise<MarketCoins[]> => {
+//   const response = await api.get<MarketCoins[]>('/coins/markets', {
+//     params: {
+//       vs_currency: currency, 
+//       per_page: contentPerPage,
+//       page: 1
+//     },
+//   })
+//   return response.data
+// }
+
+export const getCoinMarket = async ({currency, page = 1, perPage = 50}: {currency: string; page?: number; perPage?: number}): Promise<MarketCoins[]> => {
   const response = await api.get<MarketCoins[]>('/coins/markets', {
     params: {
       vs_currency: currency, 
-      per_page: contentPerPage,
-      page: 1
+      per_page: perPage,
+      page: page      
     },
   })
   return response.data
