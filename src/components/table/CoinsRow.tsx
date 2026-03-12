@@ -5,7 +5,7 @@ import {
   TableRow,
 } from '@/components/ui/table'
 import { HiOutlineExternalLink } from 'react-icons/hi'
-import { AddToFavorite } from './favorite/AddToFavorite'
+import { AddToFavorite } from '../favorite/AddToFavorite'
 import {
   Tooltip,
   TooltipContent,
@@ -19,7 +19,7 @@ interface CoinProp {
 }
 
 
-export function CoinsRow({coin, index}: CoinProp) {
+export function CoinsRow({ coin, index }: CoinProp) {
 
   const { user } = useAuthStore()
 

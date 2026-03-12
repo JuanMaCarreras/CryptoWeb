@@ -1,63 +1,57 @@
-import { useState, useEffect } from 'react'
-import { HeaderRow } from '@/components/HeaderRow'
-import { MarketCoins }from '@/types/Coins'
-import { getCoinMarket } from '@/service/api'
-import { CoinsRow } from '@/components/CoinsRow'
+import { HeaderRow } from '@/components/table/HeaderRow'
+import { CoinsRow } from '@/components/table/CoinsRow'
 import { Spinner } from './ui/spinner'
-import {
-  Table,
-  TableBody,
-} from '@/components/ui/table'
+import { EmptyState } from '@/components/table/EmptyState'
+import { Table, TableBody } from '@/components/ui/table'
 import { ScrollToTop } from '@/components/ScrollToTop'
 import { useCryptoStore } from '@/store'
+import { usePaginatedCoins } from '@/hook/usePaginatedCoins'
 import { useSearch } from '@/store'
+import { TablePagination } from '@/components/table/TablePagination'
 
 
-import { Button } from '@/components/ui/button'
-
+const ITEMS_PER_PAGE = 50
+const TOTAL_PAGES = 20
 
 export function Cryptocurrency() {
 
   const currency = useCryptoStore(state => state.currency)
-  const [coins, setCoins] = useState<MarketCoins[]>([])
-  const [contentPerPage, setContentPerPage] = useState<number>(50)
-  const [loading, setLoading] = useState(true)  
-  const search = useSearch((state) => state.search)
+  const search = useSearch(state => state.search)
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await getCoinMarket({currency, contentPerPage})
-        
-        setCoins(res)
-        setLoading(false)
+  const { coins, loading, currentPage, goToPage, hasSearch } = usePaginatedCoins({ 
+    currency, 
+    searchQuery: search,
+    itemsPerPage: ITEMS_PER_PAGE 
+  })
 
-      } catch (error) {
-        console.log(error)
-      }
 
-    }
-    fetchData()
-  },[currency,contentPerPage])
-
-  const filteredCoins = coins.filter(coin =>
-    coin.name.toLowerCase().includes(search.toLowerCase()) ||
-    coin.symbol.toLowerCase().includes(search.toLowerCase())
-  )
-
-  const handleLoadContent = () => {
-    setContentPerPage((prevCount) => prevCount + 50)
+  if (loading) {
+    return (
+      <section className='h-full pb-20 mt-5'>
+        <h1 className='text-xl mini:text-base'>
+          Precios actuales de las criptomonedas
+        </h1>
+        <div className='flex justify-center mt-11'>
+          <Spinner className='size-20' />
+        </div>
+      </section>
+    )
   }
 
+  if (coins.length === 0) {
+    return (
+      <section className='h-full pb-20 mt-5'>
+        <h1 className='text-xl mini:text-base'>
+          Precios actuales de las criptomonedas
+        </h1>
+        <EmptyState 
+          title='No se encontraron resultados'
+          description={hasSearch ? `No hay coincidencias para "${search}"` : undefined}
+        />
+      </section>
+    )
+  }
 
-  const visibleData = filteredCoins.slice(0, contentPerPage) 
-
-  if(visibleData.length === 0 && !loading) return (
-    
-    <div className='flex justify-center items-center h-48'>
-      <h2 className='text-xl'>No se han encontrado resultados</h2>
-    </div>
-  )
 
   return (
     <>
@@ -65,31 +59,32 @@ export function Cryptocurrency() {
         <h1 className=' text-xl mini:text-base'>Precios actuales de las criptomonedas</h1>
 
         <div className='flex justify-center mt-11 mb-11 border-t-[1px] border-lightGray'>
-          {
-            loading ? <Spinner className='size-20' /> : (
-              <Table> 
-                <HeaderRow />
-                <TableBody>
-                  {
-                    coins && visibleData.map((coin, index) => (
-                      <CoinsRow key={coin.id} coin={coin} index={index}/>
-                    ))
-                  }
-                </TableBody>
-              </Table>)
-          }
+          <Table> 
+            <HeaderRow />
+            <TableBody>
+              {
+                coins.map((coin, index) => (
+                  <CoinsRow 
+                    key={coin.id}
+                    coin={coin}
+                    index={index}
+                  />
+                ))
+              }
+            </TableBody>
+          </Table>
         </div>
-        <div className='flex justify-center w-full mt-4'>  
-          {
-            contentPerPage <= filteredCoins.length && 
-              <Button 
-                onClick={handleLoadContent}
-                className='text-[1rem] px-8 py-2 rounded-lg font-medium bg-deepGreen border-[.1rem] border-button hover:bg-hoverGreen hover:border-brightGreen transition-colors duration-500'
-              >
-              Cargar Más
-              </Button>
-          }
-        </div>
+
+        {
+          !hasSearch && (
+            <TablePagination 
+              currentPage={currentPage}
+              totalPages={TOTAL_PAGES}
+              onPageChange={goToPage}
+              className='mt-8'
+            />
+          )
+        }
         <ScrollToTop />
 
       </section>
