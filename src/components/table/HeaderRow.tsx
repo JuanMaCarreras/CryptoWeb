@@ -21,6 +21,8 @@ export function HeaderRow() {
     { key: 'price', label: 'Precio', className: 'text-right text-[.95rem]' },
     { key: '24h', label: '24H', className: 'mini:hidden text-right text-[.95rem]' },
     { key: 'marketcap', label: 'Capitalización de Mercado',  className: 'mini:hidden text-center text-[.95rem]' },
+    { key: 'high_24h', label: 'Máx. 24H', className: 'mini:hidden text-center text-[.95rem]' },
+    { key: 'low_24h', label: 'Mín. 24H', className: 'mini:hidden text-center text-[.95rem]' },
   ]
 
   return (
