@@ -20,6 +20,7 @@ export function NavBar() {
             <img 
               src={logo} 
               alt='Lynx logo' 
+              loading='lazy'
               className='h-[2.8rem] w-[3rem] mr-1 mini:w-[3.3rem] mini:h-[3rem]'
             />
             <span className='font-sinkia text-logoText text-2xl font-bold select-none '>LYNX</span>
