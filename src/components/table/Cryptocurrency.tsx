@@ -1,6 +1,6 @@
-import { HeaderRow } from '@/components/table/HeaderRow'
+import { HeaderRow } from '@/components/table/TableHeader'
 import { CoinsRow } from '@/components/table/CoinsRow'
-import { Spinner } from './ui/spinner'
+import { Spinner } from '../ui/spinner'
 import { EmptyState } from '@/components/table/EmptyState'
 import { Table, TableBody } from '@/components/ui/table'
 import { ScrollToTop } from '@/components/ScrollToTop'

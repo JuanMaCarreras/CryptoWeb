@@ -1,5 +1,5 @@
 import { FavoriteList } from "@/components/favorite/FavoriteList"
-import { Cryptocurrency } from '@/components/Cryptocurrency'
+import { Cryptocurrency } from '@/components/table/Cryptocurrency'
 import { useAuthStore } from "@/store"
 
 export default function Home() {
