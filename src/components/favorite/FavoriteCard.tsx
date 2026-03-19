@@ -6,12 +6,13 @@ import {
 } from '@/components/ui/card'
 import { CoinDetails } from '@/types/Coins'
 import { useCryptoStore } from '@/store'
+import { memo } from 'react'
 
 type FavoriteCardProps = {
   coin: CoinDetails
 }
 
-export function FavoriteCard({ coin }: FavoriteCardProps ) {
+export const FavoriteCard = memo(function FavoriteCard({ coin }: FavoriteCardProps ) {
   const currency = useCryptoStore(state => state.currency)
 
   const priceChange = coin.market_data.price_change_percentage_24h ?? 0
@@ -53,4 +54,4 @@ export function FavoriteCard({ coin }: FavoriteCardProps ) {
 
     </>
   )
-}
+})
