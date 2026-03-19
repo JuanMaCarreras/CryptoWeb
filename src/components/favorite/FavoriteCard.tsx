@@ -13,7 +13,10 @@ type FavoriteCardProps = {
 
 export function FavoriteCard({ coin }: FavoriteCardProps ) {
   const currency = useCryptoStore(state => state.currency)
-  const priceColorClass =  coin.market_data.price_change_percentage_24h >= 0 ? 'text-positiveNum' : 'text-negativeNum'
+
+  const priceChange = coin.market_data.price_change_percentage_24h ?? 0
+  const priceColorClass = priceChange >= 0 ? 'text-positiveNum' : 'text-negativeNum'
+
 
   
   return (
@@ -42,7 +45,7 @@ export function FavoriteCard({ coin }: FavoriteCardProps ) {
               ${coin.market_data.current_price[currency]}
             </p>
             <p className={`text-sm font-semibold ${priceColorClass}`}>
-              {coin.market_data.price_change_percentage_24h.toFixed(2)}% (24H)
+              {priceChange.toFixed(2)}% (24H)
             </p>
           </div>
         </CardContent>
