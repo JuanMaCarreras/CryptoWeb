@@ -21,7 +21,7 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
-export const Chart = memo(function Chart ({coinId, currency}: DataParams) {
+ const Chart = memo(function Chart ({coinId, currency}: DataParams) {
 
   const { dataChart, loading, minPrice, maxPrice } = useCoinChart(coinId, currency)
   
@@ -56,3 +56,5 @@ export const Chart = memo(function Chart ({coinId, currency}: DataParams) {
     </>
   )
 })
+
+export default Chart

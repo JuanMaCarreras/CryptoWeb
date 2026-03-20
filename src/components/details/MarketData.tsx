@@ -16,7 +16,7 @@ const MarketRow = memo(function MarketRow({title, value, highlight}: {title: str
 
 
 
-export const MarketData = memo(function MarketData({ coins }: { coins: CoinDetails }) {
+const MarketData = memo(function MarketData({ coins }: { coins: CoinDetails }) {
   
   const currency = useCryptoStore(state => state.currency)
   const { market_cap_rank, market_data } = coins
@@ -42,3 +42,5 @@ export const MarketData = memo(function MarketData({ coins }: { coins: CoinDetai
     </>
   )
 })
+
+export default MarketData
