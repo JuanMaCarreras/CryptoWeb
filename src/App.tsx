@@ -28,9 +28,8 @@ function App() {
             <Route path='/coin/:coinId' component={Details} />
             <Route path='/sign-up' component={Register} />
             <Route path='/login' component={Login} />
-            <Route path='/reset-password' component={PasswordReset} />z
-            
-            <Route component={NotFound} />
+            <Route path='/reset-password' component={PasswordReset} />
+            <Route path='/:rest*' component={NotFound} />
         </Switch>
       </main>
       <Footer />
