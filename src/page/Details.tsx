@@ -1,4 +1,4 @@
-import { CoinDetails } from '@/components/details/CoinDetails'
+import CoinDetails from "@/components/details/CoinDetails"
 import { FaArrowLeft } from 'react-icons/fa'
 import { Link } from 'wouter'
 
