@@ -1,29 +1,51 @@
-import type { CoinDetails } from '@/types/Coins'
-import { getCoinById } from '@/service/api'
+// src/hook/useCoinDetails.ts
 import { useState, useEffect } from 'react'
+import { getCoinById } from '@/service/api'
+import { CoinDetails } from '@/types/Coins'
 
-export function useCoinDetails(coinId: string) {
-  const [coins, setCoins] = useState<CoinDetails | null>(null) 
-  const [loading, setLoading] = useState(true) 
-  const [error, setError] = useState<Error | null>(null) 
+export function useCoinDetails(coinId: string | undefined) {
+  const [coins, setCoins] = useState<CoinDetails | null>(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<Error | null>(null)
 
   useEffect(() => {
-    if (!coinId) return
+    setLoading(true)
+    setError(null)
+    setCoins(null)
+
+    if (!coinId) {
+      setLoading(false)
+      setError(new Error('No coin ID provided'))
+      return
+    }
+
+    let cancelled = false
 
     const fetchDetailById = async () => {
       try {
-        setLoading(true)
         const res = await getCoinById(coinId)
-        setCoins(res) 
+        
+        if (!cancelled) {
+          setCoins(res)
+          setError(null)
+        }
       } catch (err) {
-        setError(err as Error)
-        console.error('fetch details data', err)
+        if (!cancelled) {
+          console.error('Error fetching coin details:', err)
+          setError(err as Error)
+        }
       } finally {
-        setLoading(false)
+        if (!cancelled) {
+          setLoading(false)
+        }
       }
-    } 
+    }
 
-    fetchDetailById() 
+    fetchDetailById()
+
+    return () => {
+      cancelled = true
+    }
   }, [coinId])
 
   return { coins, loading, error }
