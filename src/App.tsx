@@ -1,3 +1,7 @@
+import Home from '@/page/Home'
+import Description from '@/page/Description'
+import Details from '@/page/Details'
+import { ErrorBoundary } from '@/components/ErrorBoundary'
 import { Register } from '@/page/Register'
 import { Login } from '@/page/Login'
 import { NotFound } from '@/page/NotFound'
@@ -8,10 +12,7 @@ import { Route, Switch } from 'wouter'
 import './App.css'
 import { useAuthListener } from '@/hook/useAuthListener'
 import { PasswordReset } from '@/page/PasswordReset'
-import { ErrorBoundary } from '@/components/ErrorBoundary'
-import Home from '@/page/Home'
-import Description from '@/page/Description'
-import Details from '@/page/Details'
+
 
 function App() {
   useAuthListener()
