@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'wouter'
+import { Link, useLocation, useRoute } from 'wouter'
 import logo from '@/assets/logo.png'
 import { SearchBar } from './SearchBar'
 import { CurrencySelect } from './CurrencySelect'
@@ -10,8 +10,12 @@ export function NavBar() {
 
   const { user } = useAuthStore()
   const [location] = useLocation()
-  
-  const isAuthPage = location === '/login' || location === '/sign-up';
+
+  const [isNotFound] = useRoute('/:rest*')
+
+  const isAuthPage = location === '/login' || location === '/sign-up' || location === '/reset-password'
+
+  const shouldHide = isAuthPage || isNotFound
 
   return (
     <>
@@ -37,7 +41,7 @@ export function NavBar() {
           }
 
           {
-            !isAuthPage && (
+            !shouldHide && (
               user ? <Profile /> : (
                 <div className='flex gap-2'>
                 <Link to='/sign-up'>
