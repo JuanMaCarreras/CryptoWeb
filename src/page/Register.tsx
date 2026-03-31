@@ -7,10 +7,11 @@ import { EmailInput } from '@/components/auth/EmailInput'
 import { PasswordInput } from '@/components/auth/PasswordInput'
 import { GoogleButton } from '@/components/auth/GoogleButton'
 import { AlertError } from '@/components/auth/AlertError'
-
+import { getAuthErrorMessage, isFirebaseError } from '@/utils/authErrors'
 
 export function Register() {
   const { register, loginWithGoogle } = useAuth()
+  const [loading, setLoading] = useState(false)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error,  setError] = useState('')
@@ -22,8 +23,19 @@ export function Register() {
       await register(email, password)
       setLocation('/')
     } catch (err) {
+
       setError('Error al registrar')
       console.error('Error al registrar', err)
+     
+      if (isFirebaseError(err)) {
+        setError(getAuthErrorMessage(err.code))
+    
+      } else {
+        setError('Ocurrió un error inesperado')
+      }
+    
+    } finally {
+      setLoading(false)
     }
   }
 
@@ -32,7 +44,7 @@ export function Register() {
       title='Regístrate' 
       description='Descubre el mundo de las criptomonedas con Lynx'
     >
-      {error && <AlertError />}
+      {error && <AlertError error={error} />}
       
       <form onSubmit={handleSubmit}>
         <div className='flex flex-col gap-6'>
@@ -45,7 +57,7 @@ export function Register() {
             type='submit'
             className='w-full text-black bg-button border-lightGray hover:bg-logoText transition-colors duration-500'
           >
-            Registrarse
+            { loading ? 'Creando cuenta...' : 'Crear Cuenta' }
           </Button>
           <GoogleButton onClick={loginWithGoogle} text='Registrarse con Google' />
           <div className='flex items-center justify-center text-sm'>

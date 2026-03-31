@@ -3,6 +3,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { LuEye } from 'react-icons/lu'
 import { RiEyeCloseLine } from 'react-icons/ri'
+import { Link } from 'wouter'
 
 interface PasswordInputProps {
   value: string
@@ -19,12 +20,13 @@ export function PasswordInput({ value, onChange, showForgotPassword }: PasswordI
         <Label htmlFor='password'>Contraseña</Label>
         {
           showForgotPassword && (
-          <a
-            href='#'
+          <Link
+            href='/reset-password'
+            tabIndex={-1}
             className='ml-auto inline-block text-sm underline-offset-4 hover:underline'
           >
-            ¿Olvidaste tu contraseña?
-          </a>
+            Olvide mi contraseña
+          </Link>
           )
         }
       </div>
