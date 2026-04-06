@@ -13,43 +13,6 @@ export function TitleDetailsSkeleton() {
   )
 }
 
-export function DescDetailsSkeleton() {
-  return (
-    <>
-      <div className='flex justify-around'>
-           <div className='space-y-2'> 
-            <Skeleton className='h-4 w-14 rounded-xl'/>
-            <Skeleton className='h-5 w-24 rounded-xl'/>
-           </div>
-
-           <div className='space-y-2'> 
-            <Skeleton className='h-4 w-14 rounded-xl'/>
-            <Skeleton className='h-5 w-24 rounded-xl'/>
-           </div>
-
-           <div className='space-y-2'> 
-            <Skeleton className='h-4 w-14 rounded-xl'/>
-            <Skeleton className='h-5 w-24 rounded-xl'/>
-           </div>
-          
-           <div className='space-y-2'> 
-            <Skeleton className='h-4 w-14 rounded-xl'/>
-            <Skeleton className='h-5 w-24 rounded-xl'/>
-           </div>
-      </div>
-    </>
-  )
-}
-
-
-export function TableSkeleton() {
-  return (
-    <>
-      <Skeleton className='w-[1255px] h-[3000px] rounded-lg'/>
-    </>
-  )
-}
-
 export function FavoriteCardSkeleton() {
   return (
     <>
