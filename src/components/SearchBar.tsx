@@ -23,7 +23,7 @@ export function SearchBar() {
           placeholder='Buscar...'
           value={search}
           onChange={(e) => handleChange(e.target.value)}
-          className='outline-none w-[20rem] h-[2rem] pl-4 py-4 pr-10 bg-deepGreen border-lightGray'
+          className='outline-none [@media(min-width:890px)]:w-[20rem] [@media(min-width:890px)]:h-[2rem] [@media(min-width:820px)]:pl-4 [@media(min-width:820px)]:py-4 [@media(min-width:820px)]:pr-10 w-[10rem] h-[2rem] bg-deepGreen border-lightGray'
         />
         
         {
