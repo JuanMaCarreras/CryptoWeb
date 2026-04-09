@@ -1,20 +1,25 @@
 import { Link, useLocation, useRoute } from 'wouter'
 import logo from '@/assets/logo.png'
 import { SearchBar } from './SearchBar'
-import { CurrencySelect } from './CurrencySelect'
+import { CurrencySelect } from './currencySelector/CurrencySelect'
 import { Button } from './ui/button'
 import { useAuthStore } from '@/store'
 import { Profile } from './auth/Profile'
+import { MobileMenu } from './MobileMenu'
+import { useMediaQuery } from '@/hook/useMediaQuery'
+
 
 export function NavBar() {
 
   const { user } = useAuthStore()
   const [location] = useLocation()
-
   const [isNotFound] = useRoute('/:rest*')
 
-  const isAuthPage = location === '/login' || location === '/sign-up' || location === '/reset-password'
+  const isMobile = useMediaQuery('(max-width: 698px)')
 
+  const isAuthPage = location === '/login' || location === '/sign-up' || location === '/reset-password'
+  const isHomePage = location === '/'
+  const isCoinPage = location.startsWith('/coin')
   const shouldHide = isAuthPage || isNotFound
 
   return (
@@ -26,36 +31,43 @@ export function NavBar() {
               src={logo} 
               alt='Lynx logo' 
               loading='lazy'
-              className='h-[2.8rem] w-[3rem] mr-1 mini:w-[3.3rem] mini:h-[3rem]'
+              className='h-[2rem] w-[2rem] mr-1 [@media(min-width:820px)]:w-[3rem] [@media(min-width:820px)]:h-[3rem]'
             />
-            <span className='font-sinkia text-logoText text-2xl font-bold select-none '>LYNX</span>
+            <span className='font-sinkia text-logoText text-2xl font-bold select-none [@media(max-width:890px)]:hidden'>LYNX</span>
           </div>
         </Link>
 
-        <div className='flex items-center space-x-6 mini:space-x-0 mr-[1rem]'> 
+        <div className='flex items-center space-x-3'>
           {
-            location == '/' && <SearchBar />
-          }
-          {
-            (location == '/' || location.startsWith('/coin')) && <CurrencySelect />
+            isHomePage && <SearchBar />
           }
 
           {
-            !shouldHide && (
-              user ? <Profile /> : (
-                <div className='flex gap-2'>
-                <Link to='/sign-up'>
-                  <Button className='bg-semiDarkGreen hover:bg-SemiGreen text-white text-[1rem] font-medium py-2 px-4 transition-colors duration-700'>
-                    Registrarse
-                  </Button>
-                </Link>
-                <Link to='/login'>
-                  <Button className='bg-buttonGreen hover:bg-SemiGreen  text-white text-[1rem] font-medium py-2 px-4 transition-colors duration-700'>
-                    Iniciar Sesión
-                  </Button>
-                </Link>
-              </div>)
-              )
+            isMobile ? <MobileMenu /> : (
+            <div className='flex items-center space-x-6 mr-[1rem]'> 
+              
+              {
+                (isHomePage || isCoinPage) && <CurrencySelect  variant='nav'/>
+              }
+
+              {
+                !shouldHide && (
+                  user ? <Profile /> : (
+                    <div className='flex gap-2'>
+                    <Link to='/sign-up'>
+                      <Button className='bg-semiDarkGreen hover:bg-SemiGreen text-white text-[1rem] font-medium py-2 px-4 transition-colors duration-700'>
+                        Registrarse
+                      </Button>
+                    </Link>
+                    <Link to='/login'>
+                      <Button className='bg-buttonGreen hover:bg-SemiGreen  text-white text-[1rem] font-medium py-2 px-4 transition-colors duration-700'>
+                        Iniciar Sesión
+                      </Button>
+                    </Link>
+                  </div>)
+                  )
+              }
+            </div>)
           }
         </div>
       </nav>
