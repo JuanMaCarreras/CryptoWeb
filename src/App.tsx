@@ -13,7 +13,6 @@ import './App.css'
 import { useAuthListener } from '@/hook/useAuthListener'
 import { PasswordReset } from '@/page/PasswordReset'
 
-
 function App() {
   useAuthListener()
   return (
