@@ -29,7 +29,7 @@ const chartConfig = {
     <>
       {
         loading ? <Spinner className='size-20 ' /> : (
-          <ChartContainer config={chartConfig} className='h-[26rem] w-full'>
+          <ChartContainer config={chartConfig} className='h-[26rem] w-full [@media(max-width:890px)]:h-[18rem] [@media(max-width:840px)]:mt-5'>
             <ResponsiveContainer width="100%" height="100%">
               <AreaChart accessibilityLayer data={dataChart} margin={{ right: 12 }}>
                 <CartesianGrid vertical={false} />

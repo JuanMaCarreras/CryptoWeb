@@ -19,16 +19,16 @@ function App() {
     <>
       <ToTop />
       <NavBar />
-      <main className='mx-11 mini:mx-5 h-full flex-1 mt-24'>
+      <main className='mx-9 [@media(max-width:870px)]:mx-3 h-full flex-1 mt-24'>
         <ErrorBoundary>
           <Switch>
-              <Route path='/' component={Home}  />
-              <Route path='/description' component={Description} />
-              <Route path='/coin/:coinId' component={Details} />
-              <Route path='/sign-up' component={Register} />
-              <Route path='/login' component={Login} />
-              <Route path='/reset-password' component={PasswordReset} />
-              <Route path='/:rest*' component={NotFound} />
+            <Route path='/' component={Home}  />
+            <Route path='/description' component={Description} />
+            <Route path='/coin/:coinId' component={Details} />
+            <Route path='/sign-up' component={Register} />
+            <Route path='/login' component={Login} />
+            <Route path='/reset-password' component={PasswordReset} />
+            <Route path='/:rest*' component={NotFound} />
           </Switch>
         </ErrorBoundary>
       </main>

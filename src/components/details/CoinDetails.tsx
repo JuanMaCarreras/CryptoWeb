@@ -121,7 +121,7 @@ export default function CoinDetails() {
               coinId={coinId}
             />
             
-            <div className='w-full h-[25rem] pl-10'>
+            <div className='w-full h-[25rem] pl-10 pr-7 [@media(max-width:870px)]:px-2'>
               <Suspense fallback={
                 <div className='flex justify-center items-center h-full'>
                   <Spinner className='size-20' />
