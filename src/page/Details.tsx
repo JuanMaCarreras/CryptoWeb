@@ -10,8 +10,8 @@ export default function Details() {
       <article className='mb-20'>
         <header className='w-full flex justify-between items-center'>
           <Link to='/'>
-            <h2 className='text-sm font-semibold flex items-center gap-2 hover:text-brightGreen transition duration-500'>  
-              <FaArrowLeft className='text-[1rem]'/> <span className='mini:hidden'>Volver Atras</span>
+            <h2 className='text-sm flex items-center gap-1 hover:text-brightGreen transition duration-500'> 
+              <FaArrowLeft className='text-[1rem]'/> Volver Atras
             </h2>
           </Link>
         </header>
