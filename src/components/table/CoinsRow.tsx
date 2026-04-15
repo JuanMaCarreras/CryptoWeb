@@ -8,6 +8,7 @@ import { AddToFavorite } from '@/components/favorite/AddToFavorite'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 import { useAuthStore } from '@/store'
 
+
 interface CoinsRowProps {
   coin: MarketCoins
   index: number
@@ -19,8 +20,6 @@ export const CoinsRow = memo(function CoinsRow({ coin, index }: CoinsRowProps) {
   const isPricePositive = (coin.price_change_percentage_24h ?? 0) >= 0
   const priceColorClass = isPricePositive ? 'text-positiveNum' : 'text-negativeNum'
   const tableColor = index % 2 === 0 ? 'bg-deepGray' : 'bg-darkGray'
-
-
   const cellTextClass = 'text-[.9rem] font-medium'
 
   return (
@@ -58,19 +57,19 @@ export const CoinsRow = memo(function CoinsRow({ coin, index }: CoinsRowProps) {
         ${coin.current_price.toLocaleString()}
       </TableCell>
 
-      <TableCell className={`mini:hidden text-right ${cellTextClass} ${priceColorClass}`}>
+      <TableCell className={`[@media_(max-width:_870px)]:hidden text-right ${cellTextClass} ${priceColorClass}`}>
         {coin.price_change_percentage_24h?.toFixed(2) ?? '0.00'}%
       </TableCell>
 
-      <TableCell className={`mini:hidden text-center ${cellTextClass}`}>
+      <TableCell className={`[@media_(max-width:_870px)]:hidden text-center ${cellTextClass}`}>
         ${coin.market_cap.toLocaleString()}
       </TableCell>
 
-      <TableCell className={`mini:hidden text-center ${cellTextClass}`}>
+      <TableCell className={`[@media_(max-width:_870px)]:hidden text-center ${cellTextClass}`}>
         {coin.high_24h?.toLocaleString()}
       </TableCell>
       
-      <TableCell className={`mini:hidden text-center ${cellTextClass}`}>
+      <TableCell className={`[@media_(max-width:_870px)]:hidden text-center ${cellTextClass}`}>
         {coin.low_24h?.toLocaleString()}
       </TableCell>
       

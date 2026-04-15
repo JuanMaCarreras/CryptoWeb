@@ -19,10 +19,10 @@ export function HeaderRow() {
     { key: 'rank', label: '#', className: 'text-center text-[.95rem]' },
     { key: 'name', label: 'Nombre', className: 'text-[.95rem]' },
     { key: 'price', label: 'Precio', className: 'text-right text-[.95rem]' },
-    { key: '24h', label: '24H', className: 'mini:hidden text-right text-[.95rem]' },
-    { key: 'marketcap', label: 'Capitalización de Mercado',  className: 'mini:hidden text-center text-[.95rem]' },
-    { key: 'high_24h', label: 'Máx. 24H', className: 'mini:hidden text-center text-[.95rem]' },
-    { key: 'low_24h', label: 'Mín. 24H', className: 'mini:hidden text-center text-[.95rem]' },
+    { key: '24h', label: '24H', className: '[@media_(max-width:_870px)]:hidden text-right text-[.95rem]' },
+    { key: 'marketcap', label: 'Capitalización de Mercado',  className: '[@media_(max-width:_870px)]:hidden text-center text-[.95rem]' },
+    { key: 'high_24h', label: 'Máx. 24H', className: '[@media_(max-width:_870px)]:hidden text-center text-[.95rem]' },
+    { key: 'low_24h', label: 'Mín. 24H', className: '[@media_(max-width:_870px)]:hidden text-center text-[.95rem]' },
   ]
 
   return (
