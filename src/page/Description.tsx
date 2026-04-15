@@ -7,7 +7,7 @@ export default function Description() {
   return (
     <>
       <article className='w-full'>
-        <section className='mt-32 pb-44'>
+        <section >
           <Link to='/'>
             <h2 className='text-sm flex items-center gap-1 hover:text-brightGreen transition duration-500'> 
               <FaArrowLeft className='text-[1rem]'/> Volver Atras
@@ -15,14 +15,10 @@ export default function Description() {
           </Link>
 
           <div className='flex flex-col  space-y-14 mx-36 mt-16'>
-            <h1 className='ml-16 text-2xl'>Proyecto Personal</h1>
-            <p className='text-center text-textGray'>Esta página web es un proyecto personal, creado con la intención poner a pruba conocimientos de programación 
-            y a su vez ser util para usuarios que buscar informance sobre el mundo de las cripto monedas de una manera simple y sencilla.
-            </p>
-            <p className='text-center text-textGray'>Usando <span className='text-logoText'>Vite</span> como empaquetador,  <span className='text-logoText'>React</span> para la interface de usuario y <span className='text-logoText'>TailwindCSS</span> para los estilos. <span className='text-logoText'>TypeScript</span> para un mejor 
-              manejo de los datos al hacer peticiones con <span className='text-logoText'>Axios</span> a la API de <span className='text-logoText'>Coin Gecko</span>, <span className='text-logoText'>Zustand</span>para tener un estado global para seleccionar las divisas (currency),<span className='text-logoText'>Recharts</span> para los gráficos de las criptos. Y <span className='text-logoText'>Wouter</span>
-              para una rápida y sencilla forma de enrutador. Además, el uso del logo obtenido de <span className='text-logoText'>Vecteezy</span> 
-            </p>
+            <h1 className='ml-16 text-2xl'>CryptoWeb: Seguimiento de Criptomonedas</h1>
+            <p className='text-center text-textGray'>CryptoWeb es una aplicación web creada para seguir el mercado de criptomonedas de forma accesible y práctica. Ofrece información actualizada sobre precios, volúmenes y cambios del mercado, y está pensada para que tanto principiantes como usuarios avanzados puedan explorar el mundo cripto con facilidad.</p>
+            <p className='text-center text-textGray'>La plataforma permite buscar monedas por nombre o símbolo, filtrar y paginar resultados, cambiar entre distintas monedas fiat y consultar el detalle de cada criptomoneda con gráficos de evolución. También incluye autenticación de usuario, gestión de favoritos y sincronización de preferencias para una experiencia más personalizada.</p>
+            <p className='text-center text-textGray'>La aplicación se construyó con <span className='text-logoText'>Vite</span> como empaquetador, <span className='text-logoText'>React</span> para la interfaz, <span className='text-logoText'>TailwindCSS</span> para estilos y <span className='text-logoText'>TypeScript</span> para el manejo seguro de datos. Utiliza <span className='text-logoText'>Axios</span> para consumir la API de <span className='text-logoText'>CoinGecko</span>, <span className='text-logoText'>Zustand</span> para el estado global de divisas y <span className='text-logoText'>Recharts</span> para mostrar gráficos de precios. <span className='text-logoText'>Firebase</span> gestiona la autenticación y las listas de favoritos.</p>
             <ul className='flex justify-evenly pt-14'>
               <li>
                <a href='https://vitejs.dev/' target='_blank' rel='noopener noreferrer' className='hover:underline  hover:text-brightGreen  transition duration-500'>Vite</a>
