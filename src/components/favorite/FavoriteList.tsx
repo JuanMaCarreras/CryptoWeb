@@ -56,7 +56,7 @@ export function FavoriteList() {
                 ))
               ) : (
                 coins.map((coin, index) => (
-                  <CarouselItem key={index} className='basis-1/4'>
+                  <CarouselItem key={index} className='basis-1/4 [@media(max-width:870px)]:basis-1/2'>
                     <Link to={`/coin/${coin.id}`}>
                       <FavoriteCard coin={coin} />
                     </Link>

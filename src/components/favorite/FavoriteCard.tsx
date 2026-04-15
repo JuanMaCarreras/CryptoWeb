@@ -7,6 +7,8 @@ import {
 import { CoinDetails } from '@/types/Coins'
 import { useCryptoStore } from '@/store'
 import { memo } from 'react'
+import { useMediaQuery } from '@/hook/useMediaQuery'
+
 
 type FavoriteCardProps = {
   coin: CoinDetails
@@ -18,13 +20,13 @@ export const FavoriteCard = memo(function FavoriteCard({ coin }: FavoriteCardPro
   const priceChange = coin.market_data.price_change_percentage_24h ?? 0
   const priceColorClass = priceChange >= 0 ? 'text-positiveNum' : 'text-negativeNum'
 
-
+  const isMobile = useMediaQuery('(max-width: 870px)')
   
   return (
     <>
       <Card
         key={coin.id}
-        className='w-64 h-28 select-none border-button rounded-lg bg-darkGreen hover:bg-hoverGreen hover:border-brightGreen transition-colors duration-500'
+        className='w-64 h-28 [@media(max-width:870px)]:w-52 select-none border-button rounded-lg bg-darkGreen hover:bg-hoverGreen hover:border-brightGreen transition-colors duration-500'
       >
         <CardHeader className='p-3 flex flex-row items-center gap-2'>
           <img
@@ -45,9 +47,13 @@ export const FavoriteCard = memo(function FavoriteCard({ coin }: FavoriteCardPro
             <p className='text-base text-white'>
               ${coin.market_data.current_price[currency]}
             </p>
-            <p className={`text-sm font-semibold ${priceColorClass}`}>
-              {priceChange.toFixed(2)}% (24H)
-            </p>
+            {
+              !isMobile && (
+                <p className={`text-sm font-semibold ${priceColorClass}`}>
+                  {priceChange.toFixed(2)}% (24H)
+                </p>
+              )
+            }
           </div>
         </CardContent>
       </Card>
