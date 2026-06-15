@@ -8,7 +8,8 @@ export function SearchBar() {
   const setSearch = useSearch((state) => state.setSearch)
   
   const handleChange = (value: string) => {
-    setSearch(value)
+    const trimmedValue = value.trim().toLowerCase().toLocaleString()
+    setSearch(trimmedValue)
   }
 
   const handleClear = () => {
